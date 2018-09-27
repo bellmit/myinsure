@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>名阳分公司分布图</title>
+	  <link rel="shortcut icon" href="/myinsure-website/sysadmin/assets/img/favicon.png" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="/myinsure-website/sysadmin/website/institution/css/main.css">
+	<!-- Echarts3 -->
+	<script type="text/javascript" src="/myinsure-website/sysadmin/website/institution/js/echarts.min.js"></script>
+	<!-- 全国344个市、区、州对应的数字编号 -->
+	<style type="text/css">
+	*{list-style-type:none;}
+	ul{margin-left: 15%;}
+	li{margin-bottom: 8px;}
+	#nr{width:85%;margin-top: 30%;}
+	</style>
+</head>
+<body>
+<div id="main" style="width: 100%;height:800px;position:relative;"></div>
+<!--弹出层时背景层DIV-->  
+<div id="fade" class="black_overlay" >  
+</div>  
+ <div id="MyDiv" class="white_content" style="width:30%;height: 35%"> 
+ 	<div id="company" style="margin-top: 10%;"></div>
+    <div class="closeDiv">
+    	<span style="font-size: 12px;margin-right: 5px;" onclick="CloseDiv('MyDiv','fade')">关闭</span>  
+    </div>
+    <div id="nr">
+    <ul >
+    <li>负责人：<span id="popel"></span></li>
+    <li>地址：<span id="address"></span></li>
+    <li>经营范围：<span id="range"></span></li>
+    <li>电话：<span id="phone"></span></li>
+    </ul>
+    </div>
+ </div>  
+ <div id="info" class="white_content"> 
+ 	<div id="company" style="margin-top: 40%;">暂无信息</div>
+    <div class="closeDiv">
+    	<span style="font-size: 12px;margin-right: 5px;" onclick="CloseDiv('info','fade')">关闭</span>  
+    </div>
+ </div> 
+<script type="text/javascript" src="/myinsure-website/sysadmin/website/institution/js/jquery.min.js"></script>
+<script type="text/javascript" src="/myinsure-website/sysadmin/website/institution/js/app.js"></script>
+</body>
+</html>

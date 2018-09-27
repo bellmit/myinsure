@@ -1,0 +1,16 @@
+.head-gdlogo{
+	width:150px;
+	height:45px;
+	}
+.head-lllogo{
+	margin-top: 10px;
+	margin-left:45px;
+	vertical-align: middle;
+	}
+.btn_add{
+background-color:#2dc3e8;
+color: white;
+width: 100px;
+height:38px;
+margin:3px 3px 5px 3px;
+}

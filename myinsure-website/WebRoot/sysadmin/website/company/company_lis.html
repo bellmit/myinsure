@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<!-- Head -->
+<head>
+    <title>模块管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="description" content="data tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="${sys_cxt}/assets/img/favicon.png" type="image/x-icon"/>
+
+    <link href="${sys_cxt}/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/weather-icons.min.css" rel="stylesheet" />
+    <!--Fonts-->
+    <!--<link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">-->
+    <!--Beyond styles-->
+    <link rel="stylesheet" href="${sys_cxt}/assets/css/beyond.min.css" />
+    <link href="${sys_cxt}/assets/css/demo.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <!--Page Related styles-->
+    <link href="${sys_cxt}/assets/css/dataTables.bootstrap.css" rel="stylesheet" />	
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="${sys_cxt}/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="${sys_cxt}/assets/js/skins.min.js"></script>
+    <link href="${sys_cxt}/css/head.css" rel="stylesheet" type="text/css" />
+	<link href="${sys_cxt}/css/custom.css" rel="stylesheet" type="text/css"/>
+	 <link rel="stylesheet" href="${cxt }/front/css/button.css" />
+	<link rel="stylesheet" href="${sys_cxt}/css/global.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${cxt}/hlib/layui/css/layui.css" />
+
+<script type="text/javascript" src="${cxt }/hlib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="${cxt }/hlib/layui/layui.js" charset="utf-8"></script>
+<style>
+.header-right{
+  	width:75%;
+  	height:41px;
+  	background-color: #667add;
+  	color:#fff;
+    float: left;
+}
+.header-right dl{
+	float: left;
+	color:#fff;
+	padding: 0px 0px 0px 0px;
+}
+.header-right dl dt{
+	padding: 12px 40px 0px 2px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+    color:#fff;
+}
+.header-right dl dt a{
+   color:#fff; 
+}
+.header-right dl dt:hover {
+   color: #2dc3e8;
+}
+.page-header .header-buttons a {
+  height: 35px;
+}
+.page-header {
+  height: 37px;
+}
+.page-header .header-title h1 {
+           line-height: 17px;
+         }
+button{
+	border: 0px;
+	margin:auto auto 10px 10px;
+}
+/*a:link {color:white}
+      a:visited {color: #00FF00}
+   a:hover {color: #FF00FF}
+   a:active {color: #0000FF}*/
+#company_list li {width:260px;height:150px;background:#fff;box-shadow:0px 0px 5px #000;padding:5px;margin:0px 20px 20px 0;float:left;}
+#company_list li h1{font-size:16px;font-weight:bold;color:#008B45;margin:10px;}
+#company_list li h1 i{float:right;margin-top:5px;}
+#company_list li img{width:120px;height:100px;float:left;margin:0 10px;border:1px solid #CFCFCF;}
+#company_list li div div{text-indent:28px;}
+#company_list li div div div{height:80px;color:#000;overflow:hidden;text-overflow:ellipsis;}
+#company_list li div div .show_produce{display:block;text-align:right;margin-right:5px;}
+#company_list li div div:hover .introduce{color:#000;}/* text-decoration:underline; */
+#company_list li div div:hover .show_produce{color:#2E8B57;text-decoration:underline;}
+.titl{
+font-size: 1.4rem;
+line-height: 35px;
+}
+</style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+    <!-- Page Header -->
+    <div class="page-header position-relative">
+        <div class="header-title">
+            <span class="titl">
+                   网站管理                        
+                <span>
+                    <i class="fa fa-angle-right"></i>
+                                           合作伙伴
+                </span>
+            </span>
+        </div>
+        <!--Header Buttons-->
+        <div class="header-buttons">
+           <!--  <a class="sidebar-toggler" href="#">
+                <i class="fa fa-arrows-h"></i>
+            </a>
+            <a class="refresh" id="refresh-toggler" href="">
+                <i class="glyphicon glyphicon-refresh"></i>
+            </a>
+            <a class="fullscreen" id="fullscreen-toggler" href="#">
+                <i class="glyphicon glyphicon-fullscreen"></i>
+            </a> -->
+        </div>
+        <!--Header Buttons End-->
+    </div>
+    <!-- /Page Header -->
+    <!-- Page Body -->
+    <div class="page-body">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="widget">
+                    <div class="widget-header ">
+                      <!--  <span class="widget-caption">Simple DataTable</span>-->
+                        <!-- <div class="widget-buttons">
+                            <a href="#" data-toggle="maximize">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                            <a href="#" data-toggle="collapse">
+                                <i class="fa fa-minus"></i>
+                            </a>
+                            <a href="#" data-toggle="dispose">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div> -->
+                    </div>
+                    <div class="widget-body" style="overflow-x:hidden;">
+             			<div id="horizontal-form">
+                            <form class="form-horizontal" role="form" id="fhgzwform" name="fhgzwform" method="post">
+                                 <div class="form-group">
+                                    <!-- <label for="inputEmail3" class="col-sm-1 control-label no-padding-right"> </label>
+                                    <div class="col-sm-2">
+                                          <button type="button" class="btn btn-success" onclick="selsub('0','${path!}','fhgzwform');"><i class="fa fa-search"></i>查询</button>
+                                    </div> -->
+                                    <div class="col-sm-2">
+	                                    <a type="button" class="button button-raised button-primary button-box button-small" href="${sys_cxt }/website/company/toAddCompany">
+											<i class="fa fa-plus"></i>新增	
+								   		</a> 
+                                    </div>
+                                    <!-- <label class="col-sm-1 control-label no-padding-right"> </label>
+                                    <div class="col-sm-2">
+                                       <button type="reset" class="btn btn-danger"  onclick="delBatch()"><i class="fa  fa-undo"></i>刪除</button>
+                                    </div>
+                                    <label class="col-sm-1 control-label no-padding-right"> </label>
+                                    <div class="col-sm-2">
+                                    	<button type="submit" class="btn btn-primary" onclick="selsub('1','${path!}','fhgzwform');"><i class="fa fa-plus"></i>导出</button>
+                                    </div> -->
+                                </div>
+                            </form>
+                        </div>
+	                      <form id="form" method="post" class="layui-form" style="margin: 20px;">
+							<div style="margin-top:20px;">
+								<ul id="company_list">
+									<%for (company in companys) { %>
+										<li company="${company.company_id }">
+											<h1>${company.company_name! }</h1>
+											<div >
+												<img  src="${cxt}/front${company.company_logo! }" alt="图片无法显示" style="border: 1px solid red"/>
+												<div >
+													<div >
+														${company.company_introduce! }
+													</div>
+												</div>
+											</div>
+										</li>
+									<%}%>
+								</ul>
+								<div style="clear:both;"></div>
+							</div>
+							<div id="pager" style="background:#fff;margin-top:20px;padding-left:15px;">
+								<!-- 分页及查询 -->
+							</div>
+						</form>
+                  	</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="caozuo" style="display:none;position:absolute;border:1px solid #BEBEBE;padding:5px;background:#fff;">
+		<a id="edit" href="#" style="display:block;">编辑</a>
+		<a id="del" href="#" style="display:block;border-top:1px solid #BEBEBE;color:red;">删除</a>
+	</div>
+  <!-- /Page Body -->
+
+    <!--Basic Scripts-->
+    <script src="${sys_cxt}/assets/js/bootstrap.min.js"></script>
+
+    <!--Beyond Scripts-->
+    <script src="${sys_cxt}/assets/js/beyond.min.js"></script>
+
+    <!--Page Related Scripts-->
+    <script src="${sys_cxt}/assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/ZeroClipboard.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/dataTables.tableTools.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/dataTables.bootstrap.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/datatables-init.js"></script>
+    <script>
+        InitiateSimpleDataTable.init();
+        InitiateEditableDataTable.init();
+        InitiateExpandableDataTable.init();
+        InitiateSearchableDataTable.init();
+        $(function(){
+        	$(document).bind("contextmenu",function(e){//禁用鼠标右键功能
+                return false;
+            });
+        });
+        $('#company_list').find('li').mousedown(function(e){//获取点击的位置，并将编辑按钮显示在鼠标点击的位置
+        	e.stopPropagation();
+        	var x = e.pageX;
+        	var y = e.pageY;
+        	var companyId = $(this).attr('company');
+        	if(e.button == 2){
+        		$('#edit').prop('href','toEditCompany?companyId='+companyId);
+        		$('#del').off("click");
+        		$('#del').on("click",{companyId:companyId},function(e){
+        			if (confirm('确定删除吗？')) {
+        				$.ajax({
+        					cache : true,
+        					type : "POST",
+        					url : "delCompany",
+        					data : {companyId:companyId},
+        					async : false,
+        					error : function(request) {
+        						alert("连接错误");
+        					},
+        					success : function(data) {
+        						window.location.reload();
+        					}
+        				});
+        			};
+        		})
+                $('#caozuo').css({
+        			'display':'block',
+        			'top':y,
+        			'left':x
+        		});
+            };
+        });
+        $('body').click(function(){//点击其他位置，隐藏编辑按钮
+        	$('#caozuo').css({'display':'none'});
+        });
+        layui.use([ 'element','laypage', 'layer' ],function() {
+        		var laypage = layui.laypage, layer = layui.layer,element = layui.element;
+
+        		var num = ${totalPage};
+        		var totalRow = ${totalRow};
+        		//调用分页
+        		laypage.render({
+        			  elem: 'pager',
+        			  count: totalRow, //数据总数，从服务端得到
+        			  limit:50,
+        			  groups:50,
+        			  prev:'上一页',
+        			  next:'下一页',
+        			  first:'首页',
+        			  last:'尾页',
+        			  layout:['count', 'prev', 'page','next', 'skip'],
+        			  jump: function(obj, first){
+        				var currentPage = obj.curr;//获取点击的页码   
+        				//layer.msg(obj.curr);
+        				if (first != true) {//是否首次进入页面  
+        					window.location.href = "getCompanys?pageNum="+ currentPage;
+        				};
+        			  },
+        			  curr : function() { //通过url获取当前页，也可以同上（pages）方式获取  
+        					var page = location.search.match(/pageNum=(\d+)/);
+        					return page ? page[1] : 1;
+        			 }()
+        		});
+        	});
+    </script>
+</body>
+</html>

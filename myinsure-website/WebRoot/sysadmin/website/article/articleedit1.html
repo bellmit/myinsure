@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<!-- Head -->
+<head>
+    <title>模块管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="description" content="data tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="${sys_cxt}/assets/img/favicon.png" type="image/x-icon"/>
+
+    <link href="${sys_cxt}/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/weather-icons.min.css" rel="stylesheet" />
+    <!--Fonts-->
+    <!--<link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">-->
+    <!--Beyond styles-->
+    <link rel="stylesheet" href="${sys_cxt}/assets/css/beyond.min.css" />
+    <link href="${sys_cxt}/assets/css/demo.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <!--Page Related styles-->
+    <link href="${sys_cxt}/assets/css/dataTables.bootstrap.css" rel="stylesheet" />	
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="${sys_cxt}/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="${sys_cxt}/assets/js/skins.min.js"></script>
+    <link href="${sys_cxt}/css/head.css" rel="stylesheet" type="text/css" />
+	<link href="${sys_cxt}/css/custom.css" rel="stylesheet" type="text/css"/>
+	 <link rel="stylesheet" href="${cxt }/front/css/button.css" />
+	<script type="text/javascript" src="${cxt }/hlib/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="${cxt }/hlib/layui/css/layui.css" />
+	<script type="text/javascript" src="${cxt }/hlib/layui/layui.js"></script>
+	<script type="text/javascript" src="${cxt }/hlib/ajaxfileupload.js" charset="utf-8"></script>
+<!-- 	<script type="text/javascript" charset="utf-8" src="${cxt }/hlib/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="${cxt }/hlib/ueditor/ueditor.all.js"> </script>
+	<script type="text/javascript" charset="utf-8" src="${cxt }/hlib/ueditor/lang/zh-cn/zh-cn.js"></script> -->
+	<link rel="stylesheet" href="${sys_cxt}/website/institution/kindeditor/themes/default/default.css" />
+<script charset="utf-8" src="${sys_cxt}/website/institution/kindeditor/kindeditor-all.js"></script>
+<script charset="utf-8" src="${sys_cxt}/website/institution/kindeditor/lang/zh_CN.js"></script>
+	<script type="text/javascript" src="${cxt }/hlib/zTree/js/jquery.ztree.core.js" charset="utf-8"></script>
+    <script type="text/javascript" src="${cxt }/hlib/zTree/js/jquery.ztree.excheck.js" charset="utf-8"></script>
+<style>
+.header-right{
+  	width:75%;
+  	height:41px;
+  	background-color: #667add;
+  	color:#fff;
+    float: left;
+}
+.header-right dl{
+	float: left;
+	color:#fff;
+	padding: 0px 0px 0px 0px;
+}
+.header-right dl dt{
+	padding: 12px 40px 0px 2px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+    color:#fff;
+}
+.header-right dl dt a{
+   color:#fff; 
+}
+.header-right dl dt:hover {
+   color: #2dc3e8;
+}
+.page-header .header-buttons a {
+  height: 35px;
+}
+.page-header {
+  height: 37px;
+}
+.page-header .header-title h1 {
+           line-height: 17px;
+         }
+button{
+	border: 0px;
+	margin:auto auto 10px 10px;
+}
+.titl{
+font-size: 1.4rem;
+line-height: 35px;
+}
+/*a:link {color:white}
+      a:visited {color: #00FF00}
+   a:hover {color: #FF00FF}
+   a:active {color: #0000FF}*/
+</style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+    <!-- Page Header -->
+    <div class="page-header position-relative">
+        <div class="header-title">
+            <span class="titl">
+                   网站管理                        
+                <span>
+                    <i class="fa fa-angle-right"></i>
+                                           编辑文章
+                </span>
+            </span>
+        </div>
+        <!--Header Buttons-->
+        <div class="header-buttons">
+            <!-- <a class="sidebar-toggler" href="#">
+                <i class="fa fa-arrows-h"></i>
+            </a>
+            <a class="refresh" id="refresh-toggler" href="">
+                <i class="glyphicon glyphicon-refresh"></i>
+            </a>
+            <a class="fullscreen" id="fullscreen-toggler" href="#">
+                <i class="glyphicon glyphicon-fullscreen"></i>
+            </a> -->
+        </div>
+        <!--Header Buttons End-->
+    </div>
+    <!-- /Page Header -->
+    <!-- Page Body -->
+    <div class="page-body">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="widget">
+                    <div class="widget-header ">
+                      <!--  <span class="widget-caption">Simple DataTable</span>-->
+                       <!--  <div class="widget-buttons">
+                            <a href="#" data-toggle="maximize">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                            <a href="#" data-toggle="collapse">
+                                <i class="fa fa-minus"></i>
+                            </a>
+                            <a href="#" data-toggle="dispose">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div> -->
+                    </div>
+                    <div class="widget-body" style="overflow-x:hidden;">
+             			<form action="#" id="form" class="layui-form" style="margin: 20px;">
+							<input type="hidden" name="article_key" value="${article.article_key}"/>
+							<input type="hidden" name="id" value="${article.id}"/>
+							<div class="left" style="float:left;width:73%;">
+								<div class="title-warp" style="margin-bottom:15px;">
+									<input class="layui-input" type="text" name="title" value="${article.title}" placeholder="在此输入标题"/>
+								</div>
+								<div style="text-align:right;margin:10px 0;color:#66B3FF;cursor:pointer;">
+									<span id="switchedit" onclick="simpleedit()"><!-- 切换编辑器 --></span>
+								</div>
+								<div class="content-warp" style="margin-top:5px;overflow:hidden;">
+									<!-- <textarea id="content" name="content" rows="" cols="">${article.content}</textarea> -->
+									<textarea id="mul_input" name="content" style="width:100%;height:400px;visibility:hidden;display: block;">	${article.content!}
+</textarea> 
+
+  
+
+									
+								</div>
+								<!-- <div class="content-warp2" style="margin-top:5px;height:0;overflow:hidden;">
+									<textarea id="content2" name="content" rows="" cols="" style="display:none;"></textarea>
+								</div> -->
+								<div style="background:#fff;margin-top:10px;" class="layui-collapse">
+									<div class="layui-colla-item">
+										<h2 class="layui-colla-title" style="background:#fff;font-size:1.4rem;">属性设置</h2>
+										<div class="layui-colla-content layui-show" style="font-size: 1.3rem">
+											<div class="layui-tab layui-tab-brief">
+											  	<ul class="layui-tab-title">
+												    <li class="layui-this " style="font-size: 1.3rem">常用</li>
+												    <li style="font-size: 1.3rem">SEO</li>
+												    <li  style="font-size:1.3rem" >位置</li>
+												    <li style="font-size:1.3rem">备注</li>
+												    <li style="font-size:1.3rem">元数据</li>
+											  	</ul>
+											  	<div class="layui-tab-content" style="">
+												    <div class="layui-tab-item layui-show">
+												    	<div class="layui-form-item">
+														    <label class="layui-form-label" style="font-size: 1.3rem">标识</label>
+														    <div class="layui-input-block">
+														      <input type="text" name="identification" placeholder="请输入标识" autocomplete="off" class="layui-input" value="${article.identification}" style="font-size: 1.3rem"/>
+														    </div>
+														</div>
+														<div class="layui-form-item">
+														    <label class="layui-form-label" style="font-size: 1.3rem">作者</label>
+														    <div class="layui-input-block">
+														      <input style="font-size: 1.3rem" type="text" name="issue" placeholder="请输入作者" autocomplete="off" class="layui-input" value="${article.issue}"/>
+														    </div>
+														</div>
+														<div class="layui-form-item">
+														    <label class="layui-form-label" style="font-size: 1.3rem">评论</label>
+														    <div class="layui-input-block">
+														      <select name="comment" lay-verify="required">
+														        <option value="1" style="font-size: 1.3rem">开启</option>
+														        <option value="2" style="font-size: 1.3rem">关闭</option>
+														      </select>
+														    </div>
+														</div>
+												    </div>
+												    <div class="layui-tab-item">
+													    <div class="layui-form-item">
+													      <textarea name="keywords" placeholder="请输入关键字" class="layui-textarea">${article.keywords}</textarea>
+														</div>
+													    <div class="layui-form-item">
+													      <textarea name="description" placeholder="请输入描述内容" class="layui-textarea">${article.description}</textarea>
+														</div>
+												    </div>
+												    <div class="layui-tab-item">
+												    	<div class="layui-form-item">
+														    <label class="layui-form-label"style="font-size: 1.3rem">经度</label>
+														    <div class="layui-input-block">
+														      <input type="text" style="font-size: 1.3rem" name="longitude" required value="${article.longitude}" lay-verify="required" placeholder="请输入经度" autocomplete="off" class="layui-input" />
+														    </div>
+														</div>
+												    	<div class="layui-form-item">
+														    <label class="layui-form-label" style="font-size: 1.3rem">纬度</label>
+														    <div class="layui-input-block">
+														      <input type="text" style="font-size: 1.3rem" name="latitude" required value="${article.latitude}" lay-verify="required" placeholder="请输入纬度" autocomplete="off" class="layui-input" />
+														    </div>
+														</div>
+												    </div>
+												    <div class="layui-tab-item">
+												    	<div class="layui-form-item">
+													      <textarea name="remarks" style="font-size: 1.3rem" placeholder="请输入备注信息" class="layui-textarea">${article.remarks}</textarea>
+														</div>
+												    </div>
+												    <div class="layui-tab-item">
+												    	<div class="layui-form-item">
+														    <label class="layui-form-label" style="font-size: 1.3rem">元数据1</label>
+														    <div class="layui-input-block">
+														      <input type="text" style="font-size:1.3rem" name="metadata1" required value="${article.metadata1}" lay-verify="required" placeholder="元数据测试1" autocomplete="off" class="layui-input" />
+														    </div>
+														</div>
+												    	<div class="layui-form-item">
+														    <label class="layui-form-label" style="font-size: 1.3rem">元数据2</label>
+														    <div class="layui-input-block">
+														      <input type="text" style="font-size: 1.3rem" name="metadata2" required value="${article.metadata2}" lay-verify="required" placeholder="元数据测试2" autocomplete="off" class="layui-input" />
+														    </div>
+														</div>
+											    	</div>
+												</div>
+										 	</div><!--tab选项卡结束  -->
+										</div><!--面板第一项内容结束  -->
+									</div><!--面板第一项结束  -->
+								</div><!--面板结束  -->
+							</div>
+							<div class="right" style="float:right;width:25%;padding:5px;">
+								<div style="background:#fff;height:60px;line-height:60px;border-radius:5px;">
+									<button type="button" class="button button-primary button-box button-giant button-longshadow-right button-small" onclick="release(2)">发布</button>
+									<button type="button" class="button button-action button-box button-giant button-longshadow-left  button-small" onclick="release(1)" >草稿</button>
+								<button type="button" class="button button-action button-box button-caution button-longshadow-left  button-small" onclick="release(0)" >移至垃圾箱</button>
+								</div>
+								<div class="layui-collapse" style="margin-top:10px;border:none;">
+									<div class="layui-colla-item" style="margin-bottom:15px;">
+									    <h2 class="layui-colla-title" style="background:#fff;font-size:1.3rem;">分类</h2>
+									    <div class="layui-colla-content layui-show" style="background:#fff;">
+									    	
+											<ul style="font-size: 1rem" class="layui-form-item">
+											<%for(column in webColumns!){%>
+												<li style="margin-left:20px;margin-bottom:0px;font-size: 1rem" class="layui-input-inline">
+													<%if(isNotEmpty(column.webColumns)){%>
+													<img src="${sys_cxt}/images/anyou.gif" class="parent" onclick="change_pic('${column.id}')" style="margin-right:6px;" />
+													<%}else{%>
+													<img src="${sys_cxt}/images/anyou.gif" class="parent" onclick="change_pic('${column.id}')" style="margin-right:6px;visibility:hidden;" />
+													<%}%>
+													<%if(array.contain(columns,column.id)){%>
+														<input type="checkbox" style="font-size: 0.5rem" name="class1" checked value="${column.id}" title="${column.name}" lay-skin="primary" /><!--一级菜单  -->
+													<%}else{%>
+														<input type="checkbox" style="font-size: 0.5rem" name="class1" value="${column.id}" title="${column.name}" lay-skin="primary" /><!--一级菜单  -->
+													<%}%>
+													<ul style="display:none;" class="grade_${column.id}">
+														<%for(col in column.webColumns!){%>
+														<li style="margin-left:20px;margin-bottom:0px; font-size: 0.5rem" class="layui-input-inline">
+															<%if(isNotEmpty(col.webColumns)){%>
+															<img src="${sys_cxt}/images/anyou.gif" class="parent" onclick="change_pic('${col.id}')" style="margin-right:6px;" />
+															<%}else{%>
+															<img src="${sys_cxt}/images/anyou.gif" class="parent" onclick="change_pic('${column.id}')" style="margin-right:6px;visibility:hidden;" />
+															<%}%>
+															<%if(array.contain(columns,col.id)){%>
+																<input type="checkbox" style="font-size: 1rem" name="class2" checked value="${col.id}" title="${col.name}" lay-skin="primary" /><!--二级菜单  -->
+															<%}else{%>
+																<input type="checkbox" style="font-size: 1rem" name="class2" value="${col.id}" title="${col.name}" lay-skin="primary" /><!--二级菜单  -->
+															<%}%>
+															<ul style="display:none;" class="grade_${col.id}">
+																<%for(c in col.webColumns!){%>
+																<li style="margin-left:20px;margin-bottom:0px;font-size: 1rem" class="layui-input-inline">
+																	<%if(array.contain(columns,c.id)){%>
+																		<input type="checkbox" style="font-size: 1rem"  name="class3" checked value="${c.id}" title="${c.name}" lay-skin="primary" /><!--一级菜单  -->
+																	<%}else{%>
+																		<input type="checkbox" style="font-size: 1rem" name="class3" value="${c.id}" title="${c.name}" lay-skin="primary" /><!--一级菜单  -->
+																	<%}%>
+																</li>
+																<%}%>
+															</ul>
+														</li>
+														<%}%>
+													</ul>
+												</li>
+												<%}%>
+											</ul>
+											
+									    </div>
+									</div>
+									<div class="layui-colla-item" style="margin-bottom:15px;">
+									    <h2 class="layui-colla-title" style="background:#fff;font-size:1.4rem;">专题</h2>
+									    <div class="layui-colla-content layui-show" style="background:#fff;text-indent:20px;font-size: 1rem">
+									    	<%if(article.recommend ==1){%>
+									    		<input type="radio"  name="recommend" value="1" checked title="不推荐"/>
+									    		<input type="radio"  name="recommend" value="0" title="推荐"/>
+									    	<%}else{%>
+									    		<input type="radio"  name="recommend" value="1" title="不推荐"/>
+									    		<input type="radio"  name="recommend" value="0" checked title="推荐"/>
+									    	<%}%>
+									    </div><!-- special -->
+									</div>
+									<div class="layui-colla-item" style="margin-bottom:15px;">
+									    <h2 class="layui-colla-title" style="background:#fff;font-size:1.4rem;">模板</h2>
+									    <div class="layui-colla-content layui-show" style="background:#fff;text-indent:20px;">
+									    	 <div class="layui-form-item">
+											    <div class="layui-input-inline" style="text-indent:0;font-size: 1rem">
+											      <input type="radio" name="template" value="1" style="font-size: 1rem" title="模板一"/>
+											      <input type="radio" name="template" value="2" style="font-size: 1rem" title="模板二" checked/>
+											      <input type="radio" name="template" value="3" style="font-size: 1rem" title="模板三"/>
+											      <input type="radio" name="template" value="4" style="font-size: 1rem" title="模板四"/>
+											    </div>
+											  </div>
+									    </div>
+									</div><!-- template -->
+									<div class="layui-colla-item" style="margin-bottom:15px;">
+									    <h2 class="layui-colla-title" style="background:#fff;font-size:1.4rem;">标签</h2>
+									    <div class="layui-colla-content layui-show" style="background:#fff;padding:0;">
+									    	<ul style="padding:0;font-size: 1rem" >
+									    		<li style="border-bottom:1px solid #F0F0F0;height:45px;line-height:45px;padding-left:20px;"><input type="text" name="tags" class="layui-input" style="display:block;margin-top:10px;font-size: 1rem" value="${article.tags}" /></li>
+									    		<li style="border-bottom:1px solid #F0F0F0;height:35px;line-height:35px;padding-left:20px;font-size: 1rem">多个标签请用 “回车键” 或英文逗号 “,” 隔开。</li>
+									    	</ul>
+									    </div>
+									</div>
+									<div class="layui-colla-item" style="margin-bottom:15px;">
+									    <h2 class="layui-colla-title" style="background:#fff;font-size:1.4rem;">封面</h2>
+									    <div class="layui-colla-content layui-show" style="background:#fff;text-indent:20px;font-size: 1rem">
+									    	 <div class="layui-form-item">
+											 	<%if(article.imgurl! == null || article.imgurl! == ''){%>
+									    			<img id="image" src="${sys_cxt}/images/timg.jpg" alt="" style="height:200px;width:200px;"/>
+									    		<%}%>
+									    		<%if(article.imgurl! != null && article.imgurl! != ''){%>
+									    			<img id="image" src="${cxt}/front/${article.imgurl! }" alt="" style="height:200px;width:200px;"/>
+									    		<%}%>
+							  					<input id="icon" style="font-size: 1rem" type="hidden" name="news_pic" value="${article.imgurl! }"/>
+								  				<input type="file"  id="imageFile" name="image" style="display:none;font-size: 1rem" onchange="upload(this,'${cxt }')"/>
+							  					<div class="layui-form-item">
+								  					<div class="layui-input-inline" style="padding-left:25px;">
+									    				<label for="imageFile" class="layui-btn layui-btn-normal"  >点击上传图片</label>
+								    				</div>
+							  					</div>
+											 </div>
+									    </div>
+									</div><!-- 封面 -->
+									<!-- <div class="layui-colla-item" style="margin-bottom:15px;padding:0;">
+									    <h2 class="layui-colla-title" style="background:#fff;font-size:18px;">缩略图</h2>
+									 	<div class="layui-colla-content layui-show" style="background:#fff;padding:0;">
+									 		<div>
+									 			<img id="img-show" src="image/zanwu.png" alt="" style="width:100%;"/>
+									 		</div>
+									 		<div style="padding:15px;">
+									 			<span onclick="uploadimg()" class="layui-btn layui-btn-primary layui-btn-small" style="background:#F0F0F0;">选择图片</span><a href="javascript:delSmallImg();" style="color:#66B3FF;margin-left:20px;">移除缩略图</a>
+									 		</div>
+									 	</div>
+									</div> -->
+								</div>
+							</div>
+							<input type="hidden" id="recycle" name="recycle" />
+							<div style="clear:both;"></div>
+						</form>
+					</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- /Page Body -->
+
+    <!--Basic Scripts-->
+    <script src="${sys_cxt}/assets/js/bootstrap.min.js"></script>
+
+    <!--Beyond Scripts-->
+    <script src="${sys_cxt}/assets/js/beyond.min.js"></script>
+      <script>
+        //简单模式初始化
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="content"]', {
+            	uploadJson: "${cxt }/sysadmin/website/article/uploadImg",
+            	 allowFileManager : true,
+                resizeType : 1,
+                allowPreviewEmoticons : false,
+                allowImageUpload : false,
+                afterCreate : function() { 
+                    this.sync(); 
+                   }, 
+                   afterBlur:function(){ 
+                       this.sync(); 
+                   } ,           
+                items : [
+                         'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+                         'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+                         'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+                         'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+                         'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+                         'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+                         'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+                         'anchor', 'link', 'unlink', '|', 'about'
+                 ]
+            });
+        });
+    </script>
+    <script>
+ 	// 子菜单的打开关闭
+    function change_pic(columnid) {
+    	$('.grade_' + columnid).fadeToggle();// 当前点击元素下的子菜单class选择器
+    	var parentid = $($('.grade_' + columnid).find('input')[0]).val();// 当前点击元素的子菜单的id值，其作为下一级菜单的class的后缀
+    	if ($('.grade_' + columnid).is(":visible")) {// 如果内容可见
+    		$(event.target).attr('src', '${sys_cxt}/images/anxia.gif');
+    	} else {
+    		$(event.target).attr('src', '${sys_cxt}/images/anyou.gif');
+    		$('.grade_' + parentid).hide();
+    		$('.grade_' + columnid).find('.parent').attr('src',
+    				'${sys_cxt}/images/anyou.gif');
+    	}
+    }
+    $(function() { 
+    	$("#form span").css("font-size","1rem");
+        //任何需要执行的js特效
+    });
+    
+    </script>
+        <script>
+  //后台处理照片后重新显示
+    function upload(obj,ctx) {
+    	var fileName = $('#imageFile').val();
+    	$.ajaxFileUpload({
+    		url : 'uploadNewsPic', //提交的路径
+    		secureuri : false, // 是否启用安全提交，默认为false
+    		fileElementId : 'imageFile', // file控件id
+    		dataType : 'json',
+    		data : {fileName:fileName},//传递参数，用于解析出文件名// 键:值，传递文件名
+    		success : function(data, status) {
+    			if (data.error == 0) {
+    				var src = data.src;
+    				//显示图片
+    				$('#image').attr('src',ctx + '/front/upload/' + src);
+    				//保存文件名
+    				$('#icon').val('/upload/' + src);
+    				layui.use('layer', function(){
+    				 	var layer = layui.layer;
+    				 	layer.msg("上传成功！");	
+    				 });
+    			} else {
+    				layui.use('layer', function(){
+    				 	var layer = layui.layer;
+    				 	layer.msg("上传失败！");
+    				 });
+    			}
+    		},
+    		error : function(data, status) {
+    			layui.use('layer', function(){
+    			 	var layer = layui.layer;
+    			 	layer.msg("连接错误");
+    			 });
+    		}
+    	});
+    }
+    </script>
+    <script>
+var form,layer,layedit,laydate,element;
+layui.use([ 'element','form', 'layedit', 'laydate','layer' ],function() {
+		element = layui.element;
+		form = layui.form, 
+		layer = layui.layer, 
+		layedit = layui.layedit, 
+		laydate = layui.laydate;
+		form.render();
+});
+
+</script>
+<script language="javascript" type="text/javascript">
+//点击查看缩略图
+function select(obj){
+	 $('#img-show').attr('src',$(obj).attr('src'));
+	 $('#picture').val($(obj).attr('src'));
+	 layer.close(i);
+}
+//删除缩略图
+function delSmallImg(){
+	 $('#img-show').attr('src','image/zanwu.png');
+}
+//发布文章
+function release(i){
+	 $('#recycle').val(i);
+	 /* $('#content').val(tinyMCE.activeEditor.getContent()); */
+	 
+	 $.ajax({
+			cache : true,
+			type : "POST",
+			url : "updateArticle",
+			data : $('#form').serialize(),
+			dataType:'json',
+			async: false,
+			error : function(request) {
+				layer.msg("连结错误！");
+			},
+			success : function(data) {
+				layer.msg(data.msg);
+				/* window.location.href = "article/articleList"; */
+			}
+		});
+}
+</script>
+</body>
+</html>

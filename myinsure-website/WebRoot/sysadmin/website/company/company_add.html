@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<!-- Head -->
+<head>
+    <title>模块管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="description" content="data tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="${sys_cxt}/assets/img/favicon.png" type="image/x-icon"/>
+<link rel="stylesheet" href="${cxt }/front/css/button.css" />
+    <link href="${sys_cxt}/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/weather-icons.min.css" rel="stylesheet" />
+    <!--Fonts-->
+    <!--<link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">-->
+    <!--Beyond styles-->
+    <link rel="stylesheet" href="${sys_cxt}/assets/css/beyond.min.css" />
+    <link href="${sys_cxt}/assets/css/demo.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <!--Page Related styles-->
+    <link href="${sys_cxt}/assets/css/dataTables.bootstrap.css" rel="stylesheet" />	
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="${sys_cxt}/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="${sys_cxt}/assets/js/skins.min.js"></script>
+    <link href="${sys_cxt}/css/head.css" rel="stylesheet" type="text/css" />
+	<link href="${sys_cxt}/css/custom.css" rel="stylesheet" type="text/css"/>
+	
+	<link rel="stylesheet" href="${sys_cxt}/css/global.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="${cxt}/hlib/layui/css/layui.css" />
+	
+	<script type="text/javascript" src="${cxt }/hlib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="${cxt }/hlib/layui/layui.js" charset="utf-8"></script>
+	<script type="text/javascript" src="${cxt }/hlib/ajaxfileupload.js" charset="utf-8"></script>
+	<script type="text/javascript" src="${cxt }/hlib/tinymce/tinymce.min.js"></script>
+	<script type="text/javascript" src="${sys_cxt}/role/js/role.js"></script>
+	<script type="text/javascript" charset="utf-8" src="${cxt }/hlib/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="${cxt }/hlib/ueditor/ueditor.all.js"> </script>
+	<script type="text/javascript" charset="utf-8" src="${cxt }/hlib/ueditor/lang/zh-cn/zh-cn.js"></script>
+<style>
+.header-right{
+  	width:75%;
+  	height:41px;
+  	background-color: #667add;
+  	color:#fff;
+    float: left;
+}
+.header-right dl{
+	float: left;
+	color:#fff;
+	padding: 0px 0px 0px 0px;
+}
+.header-right dl dt{
+	padding: 12px 40px 0px 2px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+    color:#fff;
+}
+.header-right dl dt a{
+   color:#fff; 
+}
+.header-right dl dt:hover {
+   color: #2dc3e8;
+}
+.page-header .header-buttons a {
+  height: 35px;
+}
+.page-header {
+  height: 37px;
+}
+.page-header .header-title h1 {
+           line-height: 17px;
+         }
+button{
+	border: 0px;
+	margin:auto auto 10px 10px;
+}
+.titl{
+font-size: 1.4rem;
+line-height: 35px;
+}
+/*a:link {color:white}
+      a:visited {color: #00FF00}
+   a:hover {color: #FF00FF}
+   a:active {color: #0000FF}*/
+.form-label{min-width:120px;}
+.data_choose{margin-bottom:10px;}
+.data_choose input{width:280px;height:26px;}
+</style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+    <!-- Page Header -->
+    <div class="page-header position-relative">
+        <div class="header-title">
+            <span class="titl">
+                   网站管理                        
+                <span>
+                    <i class="fa fa-angle-right"></i>
+                                           编辑合作伙伴
+                </span>
+            </span>
+        </div>
+        <!--Header Buttons-->
+        <div class="header-buttons">
+            <!-- <a class="sidebar-toggler" href="#">
+                <i class="fa fa-arrows-h"></i>
+            </a>
+            <a class="refresh" id="refresh-toggler" href="">
+                <i class="glyphicon glyphicon-refresh"></i>
+            </a>
+            <a class="fullscreen" id="fullscreen-toggler" href="#">
+                <i class="glyphicon glyphicon-fullscreen"></i>
+            </a> -->
+        </div>
+        <!--Header Buttons End-->
+    </div>
+    <!-- /Page Header -->
+    <!-- Page Body -->
+    <div class="page-body">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="widget">
+                    <div class="widget-header ">
+                      <!--  <span class="widget-caption">Simple DataTable</span>-->
+                        <!-- <div class="widget-buttons">
+                            <a href="#" data-toggle="maximize">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                            <a href="#" data-toggle="collapse">
+                                <i class="fa fa-minus"></i>
+                            </a>
+                            <a href="#" data-toggle="dispose">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div> -->
+                    </div>
+                    <div class="widget-body" style="overflow-x:hidden;">
+             			<form id="form" method="post" class="layui-form">
+							<div class="jqzoom" style="display:inline-block; margin-right:15px;margin-top:15px;margin-left:5%;">
+								<input type="hidden" name="companyId" value="${company.company_id! }"/>
+								<div class="layui-form-item">
+								    <label class="layui-form-label" style="min-width:120px;">保险公司名称:</label>
+								    <div class="layui-input-inline" style="width:660px;">
+								      <input id="short_name" type="text" name="company_name" value="${company.company_name! }" required  lay-verify="required" placeholder="请输入公司名称" autocomplete="off" class="layui-input"/>
+								    </div>
+								 </div>
+								<div class="layui-form-item">
+								    <label class="layui-form-label" style="min-width:120px;">理赔电话:</label>
+								    <div class="layui-input-inline" style="width:660px;">
+								        <input id="claims_phone" type="text" name="claims_phone" value="${company.claims_phone! }" required  lay-verify="required" placeholder="请输入公司详情链接" autocomplete="off" class="layui-input"/>
+								    </div>
+								 </div>
+								<div class="layui-form-item">
+								    <label class="layui-form-label" style="min-width:120px;">保险公司链接:</label>
+								    <div class="layui-input-inline" style="width:660px;">
+								        <input id="company_url" type="text" name="company_url" value="${company.company_url! }" required  lay-verify="required" placeholder="请输入公司详情链接" autocomplete="off" class="layui-input"/>
+								    </div>
+								    <button type="button" onclick="linkCompany()" class="layui-btn layui-btn-warm layui-btn-sm" style="padding:4px 0;margin-left:0;"><i class="layui-icon">&#xe65f;</i></button>
+								 </div>
+								<!-- <div class="layui-form-item">
+								    <label class="layui-form-label" style="min-width:100px;">验证保单链接:</label>
+								    <div class="layui-input-inline" style="width:660px;">
+								        <input id="test_url" type="text" name="test_url" value="${company.test_url! }" required  lay-verify="required" placeholder="请输入保单验证链接" autocomplete="off" class="layui-input"/>
+								    </div>
+								 </div> -->
+								<div id="show" class="layui-form-item" style="margin:15px 0; padding:0rem 0rem;">
+						    		<%if(company.company_logo! == null || company.company_logo! == ''){%>
+						    			<img id="image" src="${sys_cxt}/images/timg.jpg" alt="" style="margin-left:110px;height:400px;width:660px;"/>
+						    		<%}%>
+						    		<%if(company.company_logo! != null && company.company_logo! != ''){%>
+						    			<img id="image" src="${cxt}/front/${company.company_logo! }" alt="" style="margin-left:110px;height:400px;width:660px;"/>
+						    		<%}%>
+				  					<input id="icon" type="hidden" name="company_logo" value="${company.pic! }"/>
+					  				<input type="file" id="imageFile" name="image" style="display:none;" onchange="upload(this,'${cxt }')"/>
+				  					<div class="layui-form-item" style="padding-right:10px;">
+					  					<div class="layui-input-block">
+						    				<label for="imageFile" class="layui-btn layui-btn-normal" style="display:block;margin:10px auto;" onclick="">点击上传图片</label>
+					    				</div>
+				  					</div>
+				 				</div>
+				 				<div style="padding-right:10px;">
+				 					<!-- <textarea style="width:100%;" id="introduce" rows="10" cols="" name="company_introduce" placeholder="请输入公司简介">${company.company_introduce! }</textarea> -->
+				 					<script id="editor" type="text/plain" style="width:800px;height:500px;">
+									${company.company_introduce! }
+							</script>
+				 				</div>
+				 				<div class="" style="margin-top:15px;text-align:left;padding-right:15px;">
+				 					<button type="button" onclick="saveCompany()"  class="button button-pill button-raised button-primary button-small">保存</button>
+				 					<button type="button" class="button button-pill button-raised button-royal  button-small" onclick="javascript:history.back();">返回</button>
+				 				</div> 
+							</div>
+						</form>
+                  	</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- 保险公司详情跳转链接 -->
+<div id="linkCompanyDetail" style="padding:15px;display:none;">
+	<ul>
+		<li style="cursor:pointer;">front/getCompanyDetail</li>
+	</ul>
+</div>
+  <!-- /Page Body -->
+
+    <!--Basic Scripts-->
+    <script src="${sys_cxt}/assets/js/bootstrap.min.js"></script>
+
+    <!--Beyond Scripts-->
+    <script src="${sys_cxt}/assets/js/beyond.min.js"></script>
+
+    <!--Page Related Scripts-->
+    <script src="${sys_cxt}/assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/ZeroClipboard.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/dataTables.tableTools.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/dataTables.bootstrap.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/datatables-init.js"></script>
+    <script>
+        InitiateSimpleDataTable.init();
+        InitiateEditableDataTable.init();
+        InitiateExpandableDataTable.init();
+        InitiateSearchableDataTable.init();
+    </script>
+    <script>
+var form,layer,layedit,laydate,element;
+layui.use([ 'element','form', 'layedit', 'laydate','layer' ],function() {
+		element = layui.element;
+		form = layui.form, 
+		layer = layui.layer, 
+		layedit = layui.layedit, 
+		laydate = layui.laydate;
+		form.render();
+});
+var ue = UE.getEditor('editor',{
+	toolbars: [
+	             [
+	              'source', //源代码
+	             'cleardoc', //清空文档
+	             'undo', //撤销
+	             'indent', //首行缩进
+	             'bold', //加粗
+	             'italic', //斜体
+	             'underline', //下划线
+	             'strikethrough', //删除线
+	             'subscript', //下标
+	             'superscript', //上标
+	             'fontborder', //字符边框
+	             'formatmatch', //格式刷
+	             'pasteplain', //纯文本粘贴模式
+	             'preview', //预览
+	             'removeformat', //清除格式
+	             'time', //时间
+	             'date', //日期
+	             'insertparagraphbeforetable', //"表格前插入行"
+	             'fontfamily', //字体
+	             'fontsize', //字号
+	             'paragraph', //段落格式
+	             'link', //超链接
+	             'unlink', //取消链接
+	             'spechars', //特殊字符
+	             'justifyleft', //居左对齐
+	             'justifyright', //居右对齐
+	             'justifycenter', //居中对齐
+	             'justifyjustify', //两端对齐
+	             'forecolor', //字体颜色
+	             'backcolor', //背景色
+	             'lineheight', //行间距
+	             'edittip ', //编辑提示
+	             'autotypeset', //自动排版
+	             'touppercase', //字母大写
+	             'tolowercase', //字母小写
+	             'insertorderedlist', //有序列表
+	             'insertunorderedlist', //无序列表
+	             'fullscreen', //全屏
+	             'rowspacingtop', //段前距
+	             'rowspacingbottom', //段后距
+	             'pagebreak', //分页
+	             'simpleupload',
+	             'imagenone', //默认
+	             'imageleft', //左浮动
+	             'imageright', //右浮动
+	             'imagecenter', //居中
+	             'wordimage', //图片转存
+	             'inserttable', //插入表格
+	             'deletetable', //删除表格
+	             'background' //背景
+	          ]
+	       ],
+	serverUrl: "${cxt }/sysadmin/ueditor/ueditor",
+	textarea:'company_introduce',//提交到后台的name名称
+	       
+});
+UE.Editor.prototype._bkGetActionUrl = UE.Editor.prototype.getActionUrl;
+UE.Editor.prototype.getActionUrl = function(action) {
+    //这里很重要，很重要，很重要，要和配置中的imageActionName值一样
+    if (action == 'uploadimage') {
+    //这里调用后端我们写的图片上传接口
+	    return "${cxt }/sysadmin/website/company/uploadImg";
+	}else{
+	     return this._bkGetActionUrl.call(this, action);
+	}
+}
+
+//保险公司详情链接选择弹框
+var company = null;
+function linkCompany(){
+	company = layer.open({
+	  title:'链接产品',
+	  type: 1,
+	  area: ['600px','550px'],
+	  offset: '100px',
+	  content: $('#linkCompanyDetail'),
+	  cancel: function(index, layero){ 
+		  $('#products').css('display','none');
+		  layer.close(index);
+	  }
+	}); 
+	$("#linkCompanyDetail").find("li").each(function(i){
+		var $this = $(this);
+		$this.click(function(){
+			var value = $this.text();
+			$("#company_url").val(value);
+			layer.close(company);
+		});
+	});
+}
+//保存保险公司
+function saveCompany(){
+	var short_name = $('#short_name').val();
+	var claims_phone = $('#claims_phone').val();
+	var company_url = $('#company_url').val();
+	var icon = $('#icon').val();
+	var introduce = UE.getEditor('editor').getContent();
+	if(short_name == ''){
+		alert("保险公司名称不能为空！");
+		return false;
+	}
+	if(claims_phone == ''){
+		alert("理赔电话不能为空！");
+		return false;
+	}
+	if(company_url == ''){
+		alert("保险公司链接不能为空！");
+		return false;
+	}
+	if (/.*[\u4e00-\u9fa5]+.*$/.test(company_url)) {
+		alert("页面链接不能含有汉字！");
+		return false;
+	}
+	if(icon == ''){
+		alert("图片不能为空！");
+		return false;
+	}
+	if(introduce == ''){
+		alert("简介不能为空！");
+		return false;
+	}
+	$.ajax({
+		cache : true,
+		type : "POST",
+		url : "saveCompany",
+		data : $('#form').serialize(),
+		async : false,
+		error : function(request) {
+			alert("连接错误");
+		},
+		success : function(data) {
+			window.location.href = "getCompanys";
+		}
+	});
+}
+//后台处理照片后重新显示
+function upload(obj,ctx) {
+	var fileName = $('#imageFile').val();
+	$.ajaxFileUpload({
+		url : 'uploadCompanyPhoto', //提交的路径
+		secureuri : false, // 是否启用安全提交，默认为false
+		fileElementId : 'imageFile', // file控件id
+		dataType : 'json',
+		data : {fileName:fileName},//传递参数，用于解析出文件名// 键:值，传递文件名
+		success : function(data, status) {
+			if (data.error == 0) {
+				var src = data.src;
+				//显示图片
+				$('#image').attr('src',ctx + '/front/upload/' + src);
+				//保存文件名
+				$('#icon').val('/upload/' + src);
+				layui.use('layer', function(){
+				 	var layer = layui.layer;
+				 	layer.msg("上传成功！");	
+				 });
+			} else {
+				layui.use('layer', function(){
+				 	var layer = layui.layer;
+				 	layer.msg("上传失败！");
+				 });
+			}
+		},
+		error : function(data, status) {
+			layui.use('layer', function(){
+			 	var layer = layui.layer;
+			 	layer.msg("连接错误");
+			 });
+		}
+	});
+}
+</script>
+</body>
+</html>

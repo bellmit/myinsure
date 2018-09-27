@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<meta name="keywords" content="名阳保险," />
+<meta name="description" content="" />
+<title>${sonColumn.name}_名阳保险</title>
+<link href="${domain}/img/4_conew2.png" rel="shortcut icon" type="image/x-icon" />
+<link href="${cxt}/front/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="${cxt}/front/css/header.css" rel="stylesheet" type="text/css" />
+<link href="${cxt}/front/css/footer.css" rel="stylesheet" type="text/css" />
+<link href="${cxt}/front/css/inner.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="${cxt}/front//-themes-/yuexiu2014/ye.ico" />
+<script type="text/javascript" src="${cxt}/front/js/PagingTag.js"></script>
+
+</head>
+
+<body>
+<div class="pc_header">
+	<!--导航+页头-->
+	<div id="yuexiu-member-wrap">
+	  <div class="yuexiu-member-header"></div>
+	  <div class="yuexiu-topLine">
+	    <div id="yuexiu-topLine-in"></div>
+	  </div>
+	</div>
+	<!-- <div class="yuexiu-topLine yuexiu-topLineToggle">
+	  <div id="yuexiu-topLine-in"></div>
+	</div> -->
+	<div class="tou-p1">
+	   <div class="top-1">
+	       全国统一服务专线：${contact_hotline!}
+           <a class="top-a" href="http://iir.circ.gov.cn/web">经纪人查询</a>
+           <!-- <a class="top-a marg-rit30" href="">客户登录</a> -->
+           <div style="clear: both;"></div>
+	    </div>
+	 </div>
+	<div id="yuexiu-header-wrap">
+	  <div class="yuexiu-header">
+	    <!--Logo-->
+	    <a href="${domain}/index.html"><img class="logo_img" src="${domain}/img/2.gif" /></a>
+	    <!--菜单部分可修改栏目名称以及栏目链接-->
+	    <div class="yuexiu-mainMenu">
+	      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	        <tr>
+	          <%for(column in columns){%>
+	          <td class="yuexiu-seperate">
+	              <img src="${cxt}/front/img/yuexiu_menu_seperate.jpg" />
+	          </td>
+	          <td rel="yuexiu-subNav0${columnLP.index -1}">
+	              <a href="${column.out_url!}">${column.name!}</a>
+	          </td>
+	          <%}%>
+	          <td class="yuexiu-seperate">
+	              <img src="${cxt}/front/img/yuexiu_menu_seperate.jpg" />
+	          </td>
+	        </tr>
+	      </table>
+	    </div>
+	    <!-- <div class="yuexiu-submenuWrap"><a href="/yuexiu2014/" class="yuexiu-site">越秀网站</a> <span class="yuexiu-sWL"></span> <span class="yuexiu-sWR" id="yuexiu-showMember"></span>
+	      子菜单部分
+	      <ul class="yuexiu-submenu">
+	        <li><a href="/newscenter/search">搜索</a></li>
+	        <li><a href="/yuexiu2014/lxwm/">联系我们</a></li>
+	        <li><a id="StranLink" href="javascript:StranBody()">繁体中文</a></li>
+	        <li class="yuexiu-clearBg"><a href="/english/">ENGLISH</a></li>
+	      </ul>
+	    </div> -->
+	  </div>
+	</div>
+	<div id="yuexiu-bottomLine">
+	  <div id="yuexiu-bottomLine-in"></div>
+	</div>
+	<div id="yuexiu-breadcrumb">
+	  <div class="yuexiu-subNav yuexiu-default">
+		<div class="today">
+		      2018年6月22日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;星期五&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  <!-- <img src="img/yintian.png" style="width: 25px;"> -->
+		  阴转晴
+		</div>
+	  </div>
+	  <!--以下插入二级菜单代码-->
+	  <%for(column in columns){%>
+	  <div class="yuexiu-subNav yuexiu-subNavMenu yuexiu-displayNone yuexiu-subNav0${columnLP.index-1}">
+	   <span>
+		<%for(sonColumn in column.sonColumns){%>
+		<a href="${sonColumn.out_url!}" onfocus='blur()'>${sonColumn.name!}</a>
+		<%}%>
+	   </span>
+	  </div>
+	  <%}%>
+	</div>
+
+</div>
+<div class="mobile_header">
+
+
+
+<div class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <div class="lang">
+            	<a id="StranLink_m" href="javascript:StranBody()">繁体</a> / <a href="/english/">EN</a>
+        	</div> -->
+            <a class="navbar-brand" href="${domain}/index.html" data-src="${domain}/img/2.gif">
+                  <img alt="Brand" width="148" height="66" src="${domain}/img/2.gif"/>
+            </a>
+        </div>
+        
+        <div class="navbar-collapse collapse">
+            <div class="navbar-right">
+                <form action="/newscenter/search" method="get">
+                    <div class="input-group searchWrap">
+                        <input name="query" type="text" class="form-control" placeholder="请输入文章标题...">
+                        <span class="input-group-addon"><button type="submit" class="glyphicon glyphicon-search"></button></span>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav" role="tablist">
+                     <%for(column in columns){%>
+                     <li role="presentation" class="libg">
+                            <a href="${column.out_url!}" data-target="#" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">${column.name!}
+                                  <span class="glyphicon glyphicon-chevron-down"></span>
+                            </a>
+                            <%if(isNotEmpty(column.sonColumns)){%>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            	<%for(sonColumn in column.sonColumns){%>
+                                <li>
+                                      <a href="${sonColumn.out_url!}">
+                                            ${sonColumn.name!}<span class="glyphicon glyphicon-chevron-down"></span>
+                                       </a>
+                                </li>
+                             	<%}%>
+                            </ul>
+                            <%}else{%>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <li>
+                                      <a href="${column.out_url!}">
+                                            ${column.name!}<span class="glyphicon glyphicon-chevron-down"></span>
+                                       </a>
+                                </li>
+                            </ul>
+                            <%}%>
+                    </li>
+                    <%}%>
+                </ul>  
+            </div>
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</div>
+</div>
+<div class="in_bg_rp">
+    <div class="in_bg">
+        <div class="inWrap">
+            <div class="center">
+                <div class="centerInner">
+
+
+                    <div class="breadcrumb">
+<a href='${domain}/index.html'>首页</a> > <a href='${firstColumn.out_url}'>${firstColumn.name}</a> > <a href='${sysdomain}/${sonColumn.out_url}'>${sonColumn.name}</a>
+                    </div>
+                    <h3 class="in_title">${sonColumn.name}<span>${sonColumn.foldername}</span></h3>
+                    <div class="in_content list">
+<div id="pageregion"><!-- PR{pageregion}S -->
+
+
+
+<div id="paging"><!-- PT{paging}S --><ul>
+<%for(news in newsList){%>
+	<li><span class="date">${news.addtime,dateFormat="yyyy-MM-dd"}</span><a href="${domain}/static/${sonColumn.foldername}/${news.links}" title="${news.title}" target="_blank">${news.title}</a></li>
+<%}%>
+</ul><!-- PT{paging}E --></div>
+<script type="text/javascript">
+var paging = new PagingTag({'parent':'pageregion','target':'paging','navigator':'pageN','pageKey':'_page_','size':20,'page':'${pageNumber}','itemCount':'${totalRow}','pageCount':'${totalPage}'})
+</script>
+
+<div id="pageN" style="display:none">
+	<span class="pageInfo">{itemCount}条记录</span>
+        <span class="pageNav">
+            <a class="pagePrev" href="javascript:paging.prev()">上一页</a> &nbsp;
+            <span class="pageNum">{navigator}</span>
+            <span class="pageInfo2">第{page}页 / 共{pageCount}页</span>
+            <a class="pageNext" href="javascript:paging.next()">下一页</a>
+        </span>
+</div><!-- end pageN -->
+<!-- PR{pageregion}E --></div>
+                    </div>
+                </div>
+            </div>
+            <div class="inLeft hidden-xs">
+                <div class="subMenu">
+					<h3>${firstColumn.name}</h3>
+					<ul>
+					<%for(column in firstColumn.list){%>
+						<%if(column.id == sonColumn.id){%>
+						<li class="selected"><a href="${column.out_url}">${column.name}</a></li>
+						<%}else{%>
+						<li class=""><a href="${column.out_url}">${column.name}</a></li>
+						<%}%>
+					<%}%>
+					</ul>
+                </div><!-- end subMenu -->
+            </div><!-- end inLeft -->
+            <div class="inRight hidden-xs hidden-sm">
+                $[{"type":"column","quantity":1,"name":"column2","param":"保险超市"}]
+                <div class="right_box">
+                    <div class="title">
+                        <h3>保险超市</h3>
+                        <h4>Insurance Supermarket</h4>
+                    </div>
+                    <a href="${column2.out_url!}" class="img_link"><img style="width:80%;height:80%;margin-left:10%;" src="${cxt}/front${column2.img_src!}"/></a>
+                </div>
+                $[{"type":"column","quantity":1,"name":"column3","param":"名阳家园"}]
+                <div class="right_box">
+                    <div class="title">
+                        <h3>名阳家园</h3>
+                        <h4>MingYang Home</h4>
+                    </div>
+                    <a href="${column3.out_url!}" class="img_link"><img style="width:80%;height:80%;margin-left:10%;" src="${cxt}/front${column3.img_src!}"/></a>
+                </div>
+                $[{"type":"column","quantity":1,"name":"column4","param":"新闻中心"}]
+                <div class="right_box">
+                    <div class="title">
+                        <h3>新闻中心</h3>
+                        <h4>News</h4>
+                    </div>
+                    <a href="${column4.out_url!}" class="img_link"><img style="width:80%;height:80%;margin-left:10%;" src="${cxt}/front${column4.img_src!}"/></a>
+                </div>
+            </div>
+            
+            <div class="cb"></div>
+            <div class="bottomMenu visible-xs-block">
+            	<h3>${firstColumn.name}</h3>
+				<ul>
+					<%for(column in firstColumn.list){%>
+						<%if(column.id == sonColumn.id){%>
+						<li class="selected"><a href="${column.out_url}">${column.name}</a></li>
+						<%}else{%>
+						<li class=""><a href="${column.out_url}">${column.name}</a></li>
+						<%}%>
+					<%}%>
+				</ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+      <div class="met-footnav text-center" style="padding: 25px 0px 15px 0px;">
+    <div class="container">
+    <div class="row mob-masonry">
+    <div class="col-md-8 info-right" style="color: #ccc;">
+             	<div class="dibu-1" style="">
+				        <div style="text-align: left;">
+				            <p class="lxrx">联系热线：${contact_hotline!} | 地址：${company_address!} </p>
+				        </div>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="dibu-1">
+		             <ol class="" style="color: #5e7387;text-align: left; padding: 0px;">
+			             <li style="text-align: left;">
+			               ${company_name!} | 版权所有 ${web_copyright!} | 技术支持：${technical_support!}
+                         </li>
+		             </ol>
+	            </div>
+            <div class="clearfix">  
+                   <div class="col-md-2 col-sm-2 col-xs-6 list masonry-item">
+			             <a href="http://www.12377.cn/"><img src="${domain}/images/footer_img03.png" style="width: 100%;"/></a>
+		             </div>
+		             <div class="col-md-2 col-sm-2 col-xs-6 list masonry-item">
+		             	<a href="http://www.miibeian.gov.cn/publish/query/indexFirst.action"><img src="${domain}/images/footer_img01.png" style="width: 100%;"/></a>
+		             </div>
+		             <div class="col-md-2 col-sm-2 col-xs-6 list masonry-item">
+			             <a href="http://www.gov.cn/"><img src="${domain}/images/logo-foot2.png" style="width: 100%;"/></a>
+		             </div>
+		             <div class="col-md-2 col-sm-2 col-xs-6 list masonry-item">
+			             <a href="http://webscan.360.cn/"><img src="${domain}/images/footer_img02.png" style="width: 100%;"/></a>
+		             </div>
+            </div>
+        </div>
+            <div class="col-md-4 col-xs-12  clearfix">
+                       <!-- <div class="col-md-3 col-sm-2 col-xs-6 info-left list masonry-item">
+                                            &nbsp;
+                                        </div>
+                                        <div class="col-md-3 col-sm-2 col-xs-6 info-left list masonry-item">
+                                           &nbsp;
+                                        </div> -->
+                <div class="col-md-5 col-sm-2 col-xs-6 info-left list masonry-item">
+                      <img src="${cxt}/front/images/erweima-1.png" style="width: 100%;">
+                  </div>
+                  <div class="col-md-5 col-sm-2 col-xs-6 info-left list masonry-item">
+                     <img src="${cxt}/front/images/erweima-2.png" style="width: 100%;">
+                  </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--   <div class="container text-center">
+  <p>名阳保险销售责任有限公司版权所</p>
+      <p>名阳保险销售责任有限公司版权所</p>
+  <div class="powered_by_metinfo">Powered&nbsp;by&nbsp;<a href="" tppabs="" target="_blank" title="企业网站管理系统">MetInfo</a>&nbsp;5.3.17</div>
+  </div> -->
+</footer>
+
+<script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8a458d8b62d0da0a71edea23235b49d3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script src="${cxt}/front/js/ga.js" type="text/javascript"></script>
+<script src="${domain}/js/jquery-1.11.1.min.js"></script>
+<script src="${cxt}/front/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="${cxt}/front/js/trans.js" type="text/javascript"></script>
+<script src="${cxt}/front/js/header.js"></script>
+<script src="${cxt}/front/js/foot.js"></script>
+<script src="${cxt}/front/js/lazy.min.js" type="text/javascript"></script>
+<script src="${cxt}/front/js/date_weather.js" type="text/javascript"></script>
+</body>
+
+</html>

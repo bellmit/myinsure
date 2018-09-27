@@ -1,0 +1,509 @@
+@charset "utf-8";
+/* 所有样式命名前必须统一加上“yuxiu-”防止与其他子站css名称冲突*/
+body {
+  margin: 0;
+  padding: 0; }
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.yuexiu-displayNone {
+  display: none; }
+
+.yuexiu-clearBg {
+  background-image: none !important; }
+
+/**页头部分**/
+#yuexiu-header-wrap {
+  width: 100%;
+  position: relative;
+  padding-top: 4px;
+  z-index: 99999;
+  /* background: url(../images/yuexiu-header-wrap_bg.gif) repeat-x 0 4px;  */}
+
+.yuexiu-header {
+  width: 1340px;
+  /**最大宽度不能超过1340px**/
+  height: 60px;
+  /**顶部菜单区域高度**/
+  margin: 0 auto;
+  position: relative; }
+
+.yuexiu-header img {
+  float: left; }
+
+/**主菜单部分**/
+.yuexiu-mainMenu {
+  /**菜单定位**/
+  float: right;
+  position: relative;
+  top: 5px;
+  width: 1000px;
+  /**菜单宽度，根据logo位置调整**/ }
+
+.yuexiu-mainMenu td {
+  text-align: center; }
+
+.yuexiu-mainMenu li {
+  float: left;
+  padding: 0 20px 0 5px;
+  background: url(../images/yuexiu_menu_seperate.jpg) no-repeat right 4px; }
+
+.yuexiu-mainMenu a {
+  font: 16px/16px "Microsoft YaHei";
+  /**文字大小/行距 字体**/
+  color: #5e4b46;
+  /**文字颜色**/
+  font-weight: 400;
+  /**文字加粗**/
+  text-decoration: none; }
+
+.yuexiu-mainMenu a:hover {
+  color: #e8900a; }
+
+.yuexiu-mainMenu .active {
+  background: url(../img/yuexiu-active.gif) no-repeat center 42px; }
+
+.yuexiu-mainMenu .active a {
+  color: #e8900a; }
+
+.yuexiu-seperate {
+  width: 16px;
+  height: 50px;
+  vertical-align: middle; }
+
+/**子菜单部分**/
+.yuexiu-submenuWrap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0 20px 0 158px;
+  background: url(../images/yuexiu-topmenu-bg.jpg);
+  height: 22px; }
+
+.yuexiu-submenuWrap .yuexiu-sWL {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: url(../images/yuexiu-submenu-conrer_03.jpg) no-repeat;
+  width: 17px;
+  height: 22px;
+  overflow: hidden;
+  display: block; }
+
+.yuexiu-site {
+  position: absolute;
+  left: -7px;
+  top: 0;
+  font: 12px/22px \5B8B\4F53;
+  color: #9e7850;
+  background: #fff;
+  padding: 0 10px 0 10px;
+  text-decoration: none; }
+
+.yuexiu-site:hover {
+  text-decoration: underline; }
+
+.yuexiu-submenuWrap .yuexiu-sWR {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  background: url(../images/yuexiu-WR_03.jpg);
+  width: 117px;
+  height: 22px;
+  cursor: pointer; }
+
+.yuexiu-submenuWrap .yuexiu-sWR-open {
+  background: url(../images/yuexiu-member-button-open.gif) no-repeat; }
+
+.yuexiu-submenu li {
+  float: left;
+  padding: 0 9px 0 10px;
+  background: url(../images/yuexiu_topmenu_seperate_08.gif) no-repeat right 9px; }
+
+.yuexiu-submenu li a {
+  font: 12px/22px \5B8B\4F53;
+  color: #a6a6a6;
+  text-decoration: none; }
+
+.yuexiu-submenu li a:hover {
+  text-decoration: underline; }
+
+.yuexiu-submenu li a.yuexiu-downarrow {
+  background: url(../images/yuexiu_down_arrow_11.jpg) no-repeat right 5px;
+  padding: 0 10px 0 0; }
+
+/**头部菜单搜索文本框**/
+.yuexiu-searchText {
+  width: 126px;
+  height: 14px;
+  border: 1px solid #e8e8e8;
+  border-right: 0;
+  padding-left: 2px;
+  color: #cbcbcb; }
+
+/**头部菜单搜索按钮**/
+.yuexiu-searchButton {
+  background: url(../images/yuexiu_search_ico_08.jpg) no-repeat;
+  marign: 0;
+  padding: 0;
+  width: 21px;
+  height: 18px;
+  border: 0;
+  position: relative;
+  left: -5px;
+  top: 1px;
+  cursor: pointer; }
+
+#yuexiu-member-wrap {
+  width: 100%;
+  background: url(../images/yuexiu-member-bg_04.jpg) repeat-x;
+  display: none;
+  position: absolute;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  height: 117px; }
+
+.yuexiu-member-header {
+  width: 1340px;
+  height: 113px;
+  margin: 0 auto;
+  position: relative; }
+
+.yuexiu-topLine {
+  /*background: url(../images/yuexiu-top-line_02.jpg) repeat-x;*/
+  width: 100%;
+  height: 4px;
+  _overflow: hidden; }
+
+#yuexiu-topLine-in {
+  /* background: url("../images/yuexiu-top-line_02.jpg") repeat-x scroll 0 0 transparent; */
+  height: 4px;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 1340px; }
+
+#yuexiu-bottomLine {
+  background: url(../img/yuexiu_menu_BG_05.jpg) repeat-x;
+  width: 100%;
+  height: 3px;
+  _overflow: hidden; }
+
+#yuexiu-bottomLine-in {
+  background: url(../img/yuexiu_menu_BG_05.jpg) repeat-x;
+  width: 100%;
+  height: 3px;
+  overflow: hidden;
+  margin: 0 auto; }
+
+/**面包屑**/
+#yuexiu-breadcrumb {
+  height: 33px;
+  width: 100%;
+  background: url(../img/yuexiu-breadcrumb_bg.gif) repeat-x; }
+
+.yuexiu-subNav {
+  width: 1340px;
+  text-align: center;
+  height: 33px;
+  margin: 0 auto;
+  line-height: 33px;
+  overflow: hidden;
+  position: relative; }
+
+.yuexiu-subNav span {
+  position: absolute;
+  white-space: nowrap;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+.yuexiu-subNav a {
+  font: 14px/150% \5FAE\8F6F\96C5\9ED1, \5B8B\4F53;
+  color: #707070;
+  margin: 0 15px 0 15px;
+  font-weight: 100;
+  text-decoration: none; }
+
+.yuexiu-subNav a:hover {
+  color: #e8900a; }
+
+.yuexiu-readBody {
+  text-align: center; }
+
+.yuexiu-readTopWrap {
+  width: 100%;
+  height: 25px;
+  background: url(../images/yuexiu-footer-bar-bg.jpg) repeat-x; }
+
+.yuexiu-readTop {
+  height: 25px;
+  width: 1340px;
+  position: relative;
+  margin: 0 auto;
+  cursor: pointer; }
+
+.yuexiu-footer-button {
+  background: url(../images/yuexxiu-read-button.jpg) no-repeat;
+  width: 107px;
+  height: 25px;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.yuexiu-footer-button-on {
+  background: url(../images/yuexxiu-read-button2.jpg) no-repeat; }
+
+.yuexiu-topLineToggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999; }
+
+#yuexiu-member-IFrame {
+  margin: 0 auto;
+  height: 113px;
+  width: 100%;
+  overflow: hidden; }
+
+.yueiu-loading {
+  background: url(../images/001.gif) no-repeat;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  position: absolute;
+  top: 30px;
+  left: 50%; }
+
+#yuexiu-reader-IFrame {
+  margin: 0 auto;
+  height: 176px;
+  width: 100%;
+  overflow: hidden; }
+
+#yuexiu-readWrap {
+  position: relative; }
+
+.yuexiu-code {
+  float: left; }
+
+.yuexiuj-share {
+  float: right; }
+
+.yuexiu-default .bread {
+  height: 33px;
+  float: left;
+  width: 600px;
+  font: 12px/33px \5B8B\4F53;
+  text-align: left; }
+
+.yuexiu-default .bread a {
+  font: 12px/33px \5B8B\4F53;
+  padding: 0;
+  margin: 0; }
+
+.yuexiu-default .today {
+  float: right;
+  font-size: 12px; }
+
+.pc_header {
+  display: none; }
+
+@media (min-width: 1200px) {
+  .mobile_header {
+    display: none; }
+
+  .pc_header {
+    display: block; } }
+/*****手机版header的样式*****/
+.navbar {
+  background-color: #fff;
+  margin: 0;
+  border-bottom: 0 none; }
+  .navbar .container {
+    padding: 0px; }
+    .navbar .container .navbar-header {
+      margin: 0;
+      height: 55px; }
+      .navbar .container .navbar-header .navbar-toggle {
+        border: 0 none;
+        margin: 10px 12px 10px 0;
+        padding: 7px; }
+        .navbar .container .navbar-header .navbar-toggle:hover, .navbar .container .navbar-header .navbar-toggle:focus {
+          background: none; }
+        .navbar .container .navbar-header .navbar-toggle .icon-bar {
+          background: #ed990a;
+          height: 4px;
+          border-radius: 3px 0 3px 0; }
+          .navbar .container .navbar-header .navbar-toggle .icon-bar + .icon-bar {
+            margin-top: 3px; }
+      .navbar .container .navbar-header .collapsed .icon-bar {
+        background: #7d7d7d; }
+      .navbar .container .navbar-header .lang {
+        margin: 10px 12px 10px 0;
+        float: right; }
+        .navbar .container .navbar-header .lang, .navbar .container .navbar-header .lang a {
+          font: 16px/32px Microsoft YaHei;
+          color: #7e7e7e;
+          text-decoration: none; }
+        .navbar .container .navbar-header .lang a:active {
+          color: #ed990a; }
+      .navbar .container .navbar-header .navbar-brand {
+        padding: 5px 12px;
+        height: 52px; }
+        .navbar .container .navbar-header .navbar-brand img {
+          width: auto;
+          height: 42px; }
+
+.navbar .navbar-collapse .navbar-right li {
+  padding-left: 10px; }
+
+.navbar .navbar-collapse .navbar-right li a {
+  position: relative; }
+
+.navbar .navbar-collapse .navbar-right li span.glyphicon-chevron-down {
+  position: absolute;
+  right: 30px;
+  top: 14px; }
+
+.navbar .navbar-collapse .navbar-right li span.glyphicon-chevron-down:before {
+  color: #adadad;
+  font-size: 11px; }
+
+.navbar .navbar-collapse .navbar-right li.open span:before {
+  content: "\e113";
+  color: #f08601; }
+
+.navbar .navbar-collapse .navbar-right li.open a:focus {
+  background: #f8f8f8;
+  color: #f08601 !important; }
+
+.navbar .in li {
+  border-bottom: 1px solid #f8f8f8; }
+
+.navbar .in li .dropdown-menu li {
+  position: relative; }
+
+.navbar .in li .dropdown-menu li:last-of-type {
+  border: 0; }
+
+.navbar .in li .dropdown-menu span.glyphicon-chevron-down {
+  top: 14px;
+  right: 30px; }
+
+.navbar .in li .dropdown-menu span.glyphicon-chevron-down:before {
+  content: "\e080"; }
+
+.searchWrap {
+  width: 100%;
+  padding: 5px;
+  border-bottom: 1px solid #f8f8f8; }
+
+.searchWrap .input-group-addon {
+  padding: 0; }
+
+.searchWrap button {
+  border: 0;
+  background: none;
+  width: 40px;
+  height: 25px; }
+
+@media (max-width: 767px) {
+  .navbar-nav > li > a {
+    font-size: 16px; }
+
+  .navbar-nav .open .dropdown-menu > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px; } }
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+  .navbar .container {
+    padding: 0;
+    /* height: 100px; */
+    position: relative; }
+    .navbar .container .navbar-header {
+      height: 100px; }
+      .navbar .container .navbar-header .lang {
+        margin: 0;
+        position: absolute;
+        top: 16px;
+        right: 220px; }
+      .navbar .container .navbar-header .navbar-brand {
+        margin: 18px 0;
+        padding: 0; }
+        .navbar .container .navbar-header .navbar-brand img {
+          height: 65px; }
+
+  .navbar .navbar-collapse .navbar-right {
+    position: absolute;
+    bottom: 9px;
+    right: 0;
+    /**覆盖下拉**/ }
+
+  .navbar .navbar-collapse .navbar-right .libg a:before {
+    content: "/";
+    color: #eaeaea;
+    position: absolute;
+    left: -8px; }
+
+  .navbar .navbar-collapse .navbar-right .dropdown-menu a:before {
+    content: ""; }
+
+  .navbar .navbar-collapse .nav {
+    /**缩小菜单间距**/ }
+
+  .navbar .navbar-collapse .nav > li > a {
+    padding: 10px 2px; }
+
+  .navbar .navbar-collapse .nav a {
+    color: #5e4b46; }
+
+  .navbar .navbar-collapse .nav a:hover {
+    color: #eb9d28; }
+
+  .navbar .navbar-collapse .nav span.glyphicon-chevron-down {
+    display: none; }
+
+  .navbar .navbar-collapse .navbar-nav > li.active > a {
+    background: none;
+    color: #eb9d28;
+    box-shadow: none; }
+
+  .navbar .navbar-header .navbar-brand {
+    float: left; }
+
+  .navbar .languageWrap {
+    right: 200px;
+    top: 25px; }
+
+  .navbar .searchWrap {
+    width: 200px;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    border: 0; } }
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px) {
+  .navbar .navbar-collapse .nav {
+    /**缩小菜单间距**/ }
+
+  .navbar .navbar-collapse .nav > li > a {
+    padding: 10px 12px; } }
+
+/*# sourceMappingURL=header.css.map */
+
+
+/*30周年*/
+@media (min-width: 768px){
+	.navbar .container{/* height:123px; */}
+	.navbar .container .navbar-header .navbar-brand{margin:10px 0;}
+	.navbar .navbar-collapse .navbar-right{bottom:3px;width:100%;}
+	.navbar .searchWrap{top:-60px;}
+	.navbar .container .navbar-header .lang{top:25px;}
+}
+@media (max-width: 768px){
+	.navbar .container .navbar-header .navbar-brand img{}
+}

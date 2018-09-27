@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="keywords" content="名阳保险," />
+<meta name="description" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>新闻中心_名阳保险</title>
+<link href="${domain}/img/4_conew2.png" rel="shortcut icon" type="image/x-icon" />
+<link href="${domain}/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="${domain}/css/header.css" rel="stylesheet" type="text/css" />
+<link href="${domain}/css/footer.css" rel="stylesheet" type="text/css" />
+<link href="${domain}/css/inner.css" rel="stylesheet"/>
+<link href="${domain}/css/channel_demo.css" rel="stylesheet"/>
+<link rel="shortcut icon" href="${domain}/newscenter/-themes-/yxxw2014/ye.ico" />
+<script src="${domain}/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="${domain}/js/PagingTag.js"></script>
+<!-- <script type="text/javascript" src="js/analytics.js"></script> -->
+<script src="${domain}/js/ga.js" type="text/javascript"></script>
+<script src="${domain}/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="${domain}/js/trans.js" type="text/javascript"></script>
+<script src="${domain}/js/header.js"></script>
+<script src="${domain}/js/foot.js"></script>
+<script src="${domain}/js/lazy.min.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+<div class="pc_header">
+	<!--导航+页头-->
+	<div id="yuexiu-member-wrap">
+	  <div class="yuexiu-member-header"></div>
+	  <div class="yuexiu-topLine">
+	    <div id="yuexiu-topLine-in"></div>
+	  </div>
+	</div>
+	<!-- <div class="yuexiu-topLine yuexiu-topLineToggle">
+	  <div id="yuexiu-topLine-in"></div>
+	</div> -->
+	<div class="tou-p1">
+	   <div class="top-1">
+	       全国统一服务专线：${contact_hotline!}
+           <a class="top-a" href="http://iir.circ.gov.cn/web">经纪人查询</a>
+           <!-- <a class="top-a marg-rit30" href="">客户登录</a> -->
+           <div style="clear: both;"></div>
+	    </div>
+	 </div>
+	<div id="yuexiu-header-wrap">
+	  <div class="yuexiu-header">
+	    <!--Logo-->
+	    <a href="${domain}/index.html"><img class="logo_img" src="${domain}/img/2.gif" /></a>
+	    <!--菜单部分可修改栏目名称以及栏目链接-->
+	    <div class="yuexiu-mainMenu">
+	      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	        <tr>
+	          <%for(column in columns){%>
+	          <td class="yuexiu-seperate">
+	              <img src="${domain}/img/yuexiu_menu_seperate.jpg" />
+	          </td>
+	          <td rel="yuexiu-subNav0${columnLP.index -1}">
+	              <a href="${column.out_url!}">${column.name!}</a>
+	          </td>
+	          <%}%>
+	          <td class="yuexiu-seperate">
+	              <img src="${domain}/img/yuexiu_menu_seperate.jpg" />
+	          </td>
+	        </tr>
+	      </table>
+	    </div>
+	    <!-- <div class="yuexiu-submenuWrap"><a href="/yuexiu2014/" class="yuexiu-site">越秀网站</a> <span class="yuexiu-sWL"></span> <span class="yuexiu-sWR" id="yuexiu-showMember"></span>
+	      子菜单部分
+	      <ul class="yuexiu-submenu">
+	        <li><a href="/newscenter/search">搜索</a></li>
+	        <li><a href="/yuexiu2014/lxwm/">联系我们</a></li>
+	        <li><a id="StranLink" href="javascript:StranBody()">繁体中文</a></li>
+	        <li class="yuexiu-clearBg"><a href="/english/">ENGLISH</a></li>
+	      </ul>
+	    </div> -->
+	  </div>
+	</div>
+	<div id="yuexiu-bottomLine">
+	  <div id="yuexiu-bottomLine-in"></div>
+	</div>
+	<div id="yuexiu-breadcrumb">
+	  <div class="yuexiu-subNav yuexiu-default">
+		<div class="today">
+		      2018年6月22日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;星期五&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  <!-- <img src="img/yintian.png" style="width: 25px;"> -->
+		  阴转晴
+		</div>
+	  </div>
+	  <!--以下插入二级菜单代码-->
+	  <%for(column in columns){%>
+	  <div class="yuexiu-subNav yuexiu-subNavMenu yuexiu-displayNone yuexiu-subNav0${columnLP.index-1}">
+	   <span>
+		<%for(sonColumn in column.sonColumns){%>
+		<a href="${sonColumn.out_url!}" onfocus='blur()'>${sonColumn.name!}</a>
+		<%}%>
+	   </span>
+	  </div>
+	  <%}%>
+	</div>
+
+</div>
+<div class="mobile_header">
+
+
+
+<div class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <div class="lang">
+            	<a id="StranLink_m" href="javascript:StranBody()">繁体</a> / <a href="/english/">EN</a>
+        	</div> -->
+            <a class="navbar-brand" href="${domain}/index.html" data-src="${domain}/img/2.gif">
+                  <img alt="Brand" width="148" height="66" src="${domain}/img/2.gif"/>
+            </a>
+        </div>
+        
+        <div class="navbar-collapse collapse">
+            <div class="navbar-right">
+                <form action="/newscenter/search" method="get">
+                    <div class="input-group searchWrap">
+                        <input name="query" type="text" class="form-control" placeholder="请输入文章标题..."/>
+                        <span class="input-group-addon"><button type="submit" class="glyphicon glyphicon-search"></button></span>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav" role="tablist">
+                     <%for(column in columns){%>
+                     <li role="presentation" class="libg">
+                            <a href="${column.out_url!}" data-target="#" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">${column.name!}
+                                  <span class="glyphicon glyphicon-chevron-down"></span>
+                            </a>
+                            <%if(isNotEmpty(column.sonColumns)){%>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            	<%for(sonColumn in column.sonColumns){%>
+                                <li>
+                                      <a href="${sonColumn.out_url!}">
+                                            ${sonColumn.name!}<span class="glyphicon glyphicon-chevron-down"></span>
+                                       </a>
+                                </li>
+                             	<%}%>
+                            </ul>
+                            <%}else{%>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <li>
+                                      <a href="${column.out_url!}">
+                                            ${column.name!}<span class="glyphicon glyphicon-chevron-down"></span>
+                                       </a>
+                                </li>
+                            </ul>
+                            <%}%>
+                    </li>
+                    <%}%>
+                </ul>  
+            </div>
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</div>
+</div>
+
+<div class="in_bg_rp">
+    <div class="in_bg">
+        <div class="inWrap  newscenterWrap">
+            <div class="center">
+                <div class="centerInner">
+                    <div class="breadcrumb ">
+                        <a href='${domain}/index.html'>首页</a> > <a href='${column1.out_url}'>新闻中心</a>
+                    </div>
+                    $[{"type":"column","quantity":1,"name":"column1","param":"新闻中心"}]
+                    <h3 class="in_title ">名阳新闻中心<span></span></h3>
+                    <div class="in_content">
+                        <div class="item-list row">
+                            <div id="carousel" class="carousel slide">
+                                $[{"type":"news","quantity":3,"name":"marketNews","param":"新闻中心"}]
+                                <div id="pageregion0"><!-- PR{pageregion0}S -->
+                                    <ul class="carousel-inner">
+                                        <%for(news in marketNews){%>
+                                            <%if(newsLP.index == 1){%>
+                                            <li class="item active">
+                                            <%}else{%>
+                                            <li class="item">
+                                            <%}%>
+                                              <div class="image-container">
+	                                              <a href="${domain}/static/${column1.foldername}/${news.links}" target="_self" >
+	                                                    <img src="${domain}${news.imgurl}" width="754" height="415" style="width:745px;height:415px;" />  
+	                                              </a>
+                                              </div>
+                                              <div class="content-container">
+                                                  <a href="${domain}/static/${column1.foldername}/${news.links}" target="_self" >${news.title}</a>
+                                                  <p>${news.description}</p>
+                                                  <span>${news.addtime,dateFormat="yyyy-MM-dd"}</span>
+                                              </div>
+                                            </li>
+                                        <%}%>
+                                    </ul>
+                                    <!-- PR{pageregion0}E -->
+                                </div>
+                                <a href="#carousel" class="carousel-control" id="left" data-slide="prev"><img src="${domain}/images/nav-left.png"/></a>
+                                <a href="#carousel" class="carousel-control" id="right" data-slide="next"><img src="${domain}/images/nav-right.png"/></a>
+                                <a href="#carousel" class="carousel-control left" data-slide="prev" style="width: 1px;"></a>
+                                <a href="#carousel" class="carousel-control right" data-slide="next" style="width: 1px;"></a>
+                        	</div>
+                        	<div class="height10"></div>
+                        	<div class="height10"></div>
+                        	<div class="height10"></div>
+                        	<div class="height10"></div>
+                        	<div class="height10"></div>
+                        	<div class="height10"></div>
+	                        <div class="row">
+	                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" >
+	                                <div class="news_left">
+	                                	$[{"type":"column","quantity":1,"name":"column2","param":"企业要闻"}]
+	                                    <h2><a href="${column2.out_url}">更多</a>企业要闻 </h2>
+	                                    <div id="pageregion1"><!-- PR{pageregion1}S -->
+		                                    $[{"type":"news","quantity":8,"name":"enterpriseNews","param":"企业要闻"}]
+		                                    <ul class="news_list1">
+		                                            <%for(news in enterpriseNews){%>
+		                                            <%if(newsLP.index < 5){ %>
+		                                            <li>
+		                                              <div class="news_img">
+			                                              <a href="${domain}/static/${column2.foldername}/${news.links}" target="_self" >
+			                                                    <img src="${domain}${news.imgurl}" width="160" height="108" />   
+			                                              </a>
+		                                              </div>
+		                                              <div class="news_title">
+		                                                  <a href="${domain}/static/${column2.foldername}/${news.links}" target="_self" >${news.description}</a>
+		                                                  <span>${news.addtime,dateFormat="yyyy-MM-dd"}</span>
+		                                              </div>
+		                                            </li>
+		                                            <%}%>
+		                                            <%}%>
+		                                        <div class="cb"></div>
+		                                    </ul>
+	                                    <!-- PR{pageregion1}E -->
+	                                    </div>
+	                                    <div id="pageregion2"><!-- PR{pageregion2}S -->
+		                                    <ul class="news_list1 hidden-xs">
+		                                            <%for(news in enterpriseNews){%>
+		                                            <%if(newsLP.index >= 5){ %>
+		                                            <li style="border-bottom:0;">
+		                                              <div class="news_img"><a href="${domain}/static/${column2.foldername}/${news.links}" target="_self" >
+		                                                    <img src="${domain}${news.imgurl}" width="160" height="108" />
+		                                              </a></div>
+		                                              <div class="news_title">
+		                                                  <a href="${domain}/static/${column2.foldername}/${news.links}" target="_self" >${news.description}</a>
+		                                                  <span>${news.addtime,dateFormat="yyyy-MM-dd"}</span>
+		                                              </div>
+		                                            </li>
+		                                            <%}%>
+		                                            <%}%>
+		                                        <div class="cb"></div>
+		                                    </ul>
+	                                    <!-- PR{pageregion2}E -->
+	                                    </div>
+	                                    <div class="cb"></div>
+	                                </div>
+	                            </div>
+	                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+	                                <div class="news_right">
+	                                	$[{"type":"column","quantity":1,"name":"column3","param":"机构动态"}]
+	                                    <h2><a href="${column3.out_url}">更多</a>机构动态</h2>
+	                                    <div id="pageregion3"><!-- PR{pageregion3}S -->
+		                                    $[{"type":"news","quantity":10,"name":"dynamicsNews","param":"机构动态"}]
+		                                    <ul>
+		                                        <%for(news in dynamicsNews){%>
+				                                  <%if(newsLP.index < 6){ %>
+		                                          <li><p>${news.addtime,dateFormat="yyyy-MM-dd"}</p><a target="_self" href="${domain}/static/${column3.foldername}/${news.links}" >${news.title}</a></li>
+		                                          <%}%>
+		                                        <%}%>
+		                                    </ul>
+		                                 <!-- PR{pageregion3}E -->
+	                                    </div>
+	                                    <div id="pageregion4"><!-- PR{pageregion4}S -->
+		                                    <ul class="hidden-xs hidden-sm" style="border-top: 1px solid #EEE5E5;">
+		                                        <%for(news in dynamicsNews){%>
+		                                          <%if(newsLP.index >= 6){ %>
+		                                          <li><p>${news.addtime,dateFormat="yyyy-MM-dd"}</p><a target="_self" href="${domain}/static/${column3.foldername}/${news.links}" >${news.title}</a></li>
+		                                          <%}%>
+		                                        <%}%>
+		                                    </ul>
+	                                    <!-- PR{pageregion4}E -->
+	                                    </div>
+	                                    <div class="cb"></div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="row">
+	                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" >
+	                                <div class="news_left">
+	                                	$[{"type":"column","quantity":1,"name":"column4","param":"行业资讯"}]
+	                                    <h2><a href="${column4.out_url}">更多</a> 行业资讯</h2>
+	                                    <div id="pageregion5"><!-- PR{pageregion5}S -->
+		                                    $[{"type":"news","quantity":2,"name":"informationNews","param":"行业资讯"}]
+		                                    <ul class="news_list2">
+		                                		<%for(news in informationNews){%>
+		                                        <li>
+		                                          <div class="news_img"><a href="${domain}/static/${column4.foldername}/${news.links}" target="_self" >
+		                                                <img src="${domain}${news.imgurl}" width="600" height="406" style="width:361px;height:244px;" />
+		                                          </a></div>
+		                                          <div class="news_title">
+		                                              <a href="${domain}/static/${column4.foldername}/${news.links}" target="_self" >${news.title}</a>
+		                                          </div>
+		                                        </li>
+		                                        <%}%>
+		                                    </ul>
+		                                    <!-- PR{pageregion5}E -->
+	                                    </div>
+	                                    <div class="cb"></div>
+	                                </div>
+	                            </div>
+	                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" >
+	                                <div class="news_right">
+	                                $[{"type":"column","quantity":1,"name":"column5","param":"政策法规"}]
+	                                    <h2><a href="${column5.out_url}">更多</a>政策法规</h2>
+	                                    <div id="pageregion6"><!-- PR{pageregion6}S -->
+		                                    $[{"type":"news","quantity":5,"name":"statuteNews","param":"政策法规"}]
+		                                    <ul>
+		                                        <%for(news in statuteNews){%>
+		                                          <li><p>${news.addtime,dateFormat="yyyy-MM-dd"}</p><a target="_self" href="${domain}/static/${column5.foldername}/${news.links}" >${news.title}</a></li>
+		                                        <%}%>
+		                                    </ul>
+	                                    <!-- PR{pageregion6}E -->
+	                                    </div>
+	                                    <div class="cb"></div>
+	                                </div>
+	                            </div>  
+	                        </div>
+	                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inLeft hidden-md hidden-sm hidden-xs">
+                <div class="subMenu">
+					<h3>${newsColumns.name}</h3>
+					$[{"type":"columns","quantity":4,"name":"newsColumns","param":"新闻中心"}]
+					<ul>
+					<%for(column in newsColumns.list){%>
+						<%if(columnLP.index == 1){%>
+						<li class="selected">
+						<%}else{%>
+						<li>
+						<%}%>
+						<a href="${column.out_url}">${column.name}</a>
+						</li>
+					<%}%>
+					<!-- <li class=""><a href="/newscenter/xsqy/">下属企业[if gte IE 7]><!</a><![endif]--><!--[if lte IE 6]><table><tr><td><![endif]
+						<ul>
+							<li class=""><a href="/newscenter/xsqy/yxdc/">越秀地产</a></li>
+							<li class=""><a href="/newscenter/xsqy/yxjt/">越秀交通</a></li>
+							<li class=""><a href="/newscenter/xsqy/yxjr/">越秀金控</a></li>
+							<li class=""><a href="/newscenter/xsqy/yxft/">越秀房托</a></li>
+							<li class=""><a href="/newscenter/xsqy/zzjt/">造纸集团</a></li>
+							<li class=""><a href="/newscenter/xsqy/qtqy/">越秀发展</a></li>
+						</ul>[if lte IE 6]></td></tr></table></a><![endif]
+					</li> -->
+					</ul>
+                </div><!-- end subMenu -->
+            </div><!-- end inLeft -->
+            <div class="cb"></div>
+            <div class="bottomMenu visible-xs-block">
+				<h3>新闻中心</h3>
+				<ul>
+				<%for(column in newsColumns.list){%>
+					<%if(columnLP.index == 1){%>
+					<li class="selected">
+					<%}else{%>
+					<li>
+					<%}%>
+						<a href="${column.out_url}">${column.name}</a>
+					</li>
+				<%}%>
+				<!-- <li class=""><a href="/newscenter/xsqy/">下属企业[if gte IE 7]><!</a><![endif]--><!--[if lte IE 6]><table><tr><td><![endif]
+					<ul>
+						<li class=""><a href="/newscenter/xsqy/yxdc/">越秀地产</a></li>
+						<li class=""><a href="/newscenter/xsqy/yxjt/">越秀交通</a></li>
+						<li class=""><a href="/newscenter/xsqy/yxjr/">越秀金控</a></li>
+						<li class=""><a href="/newscenter/xsqy/yxft/">越秀房托</a></li>
+						<li class=""><a href="/newscenter/xsqy/zzjt/">造纸集团</a></li>
+						<li class=""><a href="/newscenter/xsqy/qtqy/">越秀发展</a></li>
+					</ul>[if lte IE 6]></td></tr></table></a><![endif]
+				</li> -->
+				</ul>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+      <div class="met-footnav text-center" style="padding: 25px 0px 15px 0px;">
+    <div class="container">
+    <div class="row mob-masonry">
+    <div class="col-md-8 info-right" style="color: #ccc;">
+             	<div class="dibu-1" style="">
+				        <div style="text-align: left;">
+				            <p class="lxrx">联系热线：${contact_hotline!} | 地址：${company_address!} </p>
+				        </div>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="dibu-1">
+		             <ol class="" style="color: #5e7387;text-align: left; padding: 0px;">
+			             <li style="text-align: left;">
+			               ${company_name!} | 版权所有 ${web_copyright!} | 技术支持：${technical_support!}
+                         </li>
+		             </ol>
+	            </div>
+           <div class="clearfix mrg-top10" style="margin-top:10px;">	
+		             <div class="col-md-2 col-sm-2 col-xs-6 list masonry-item">
+			             <a href="http://www.12377.cn/"><img src="${domain}/images/footer_img03.png" style="width: 100%;"/></a>
+		             </div>
+		             <div class="col-md-2 col-sm-2 col-xs-6 list masonry-item">
+		             	<a href="http://www.miibeian.gov.cn/publish/query/indexFirst.action"><img src="${domain}/images/footer_img01.png" style="width: 100%;"/></a>
+		             </div>
+		             <div class="col-md-2 col-sm-2 col-xs-6 list masonry-item">
+			             <a href="http://www.gov.cn/"><img src="${domain}/images/logo-foot2.png" style="width: 100%;"/></a>
+		             </div>
+		             <div class="col-md-2 col-sm-2 col-xs-6 list masonry-item">
+			             <a href="http://webscan.360.cn/"><img src="${domain}/images/footer_img02.png" style="width: 100%;"/></a>
+		             </div>
+		        </div>
+        </div>
+            <div class="col-md-4 col-xs-12  clearfix">
+                       <!-- <div class="col-md-3 col-sm-2 col-xs-6 info-left list masonry-item">
+                                            &nbsp;
+                                        </div>
+                                        <div class="col-md-3 col-sm-2 col-xs-6 info-left list masonry-item">
+                                           &nbsp;
+                                        </div> -->
+                <div class="col-md-5 col-sm-2 col-xs-6 info-left list masonry-item">
+                      <img src="${domain}/images/erweima-1.png" style="width: 100%;">
+                  </div>
+                  <div class="col-md-5 col-sm-2 col-xs-6 info-left list masonry-item">
+                     <img src="${domain}/images/erweima-2.png" style="width: 100%;">
+                  </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--   <div class="container text-center">
+  <p>名阳保险销售责任有限公司版权所</p>
+      <p>名阳保险销售责任有限公司版权所</p>
+  <div class="powered_by_metinfo">Powered&nbsp;by&nbsp;<a href="" tppabs="" target="_blank" title="企业网站管理系统">MetInfo</a>&nbsp;5.3.17</div>
+  </div> -->
+</footer>
+
+<script>
+    $(function(){
+        $("#carousel").carousel('cycle');
+    });
+</script>
+<script src="${domain}/js/date_weather.js" type="text/javascript"></script>
+</body>
+
+</html>

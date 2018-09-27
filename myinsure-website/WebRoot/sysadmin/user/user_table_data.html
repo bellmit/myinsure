@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+<title>用户管理</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="${cxt}/hlib/layui/css/layui.css" />
+
+<script type="text/javascript" src="${cxt }/hlib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="${cxt }/hlib/layui/layui.js"
+	charset="utf-8"></script>
+</head>
+<body>
+   <div class="layui-fluid">
+       <form id="searchForm" class="layui-form x-center" action="" >
+           <div class="layui-form-pane">
+               <div class="layui-form-item">
+                   <label class="layui-form-label">用户名称</label>
+                   <div class="layui-input-inline">
+                       <input type="text" id="name" name="name" placeholder="用户名称" class="layui-input"/>
+                   </div>
+                   <div class="layui-input-inline" style="width : 80px">
+                       <button class="layui-btn"  lay-submit="" lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
+                   </div>
+               </div>
+           </div>
+       </form>
+       <hr>
+       <div class="layui-row">
+           <table id="dateTable" class="layui-hide"></table>
+       </div>
+   </div>
+
+<script>
+layui.use('table', function(){
+  var table = layui.table
+  , layer = layui.layer
+  , $ = layui.jquery
+  , form = layui.form;
+  
+  table.render({
+    elem: '#dateTable'
+    , even: true //开启隔行背景
+    , height: 'full-120'    //容器高度
+    ,url:'${cxt }/sysadmin/user/tableData'
+    ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+    ,cols: [[
+      {field:'user_id',  width: '80', title: 'ID', sort: true}
+      ,{field:'user_code', width: '180', title: '用户代码'}
+      ,{field:'real_name',  width: '180',title: '真实姓名'}
+      ,{field:'mob', width: '180',title: '电话号码'}
+    ]]
+  	 , method: 'get'
+     , request: {
+         pageName: 'pageNumber' //页码的参数名称，默认：page
+         ,limitName: 'pageSize' //每页数据量的参数名，默认：limit
+     }
+     , page: true
+     , limits: [10, 30, 50, 100, 300]
+     , limit: 10 //默认采用30
+     , loading: true
+     , done: function (res, curr, count) {
+     }
+  });
+  
+  $("#add").click(function(){
+      pop_show('添加用户','${cxt }/sysadmin/user/add','','', function(){
+          reloadTable($('#name').val());
+      });
+  });
+
+  reloadTable = function (name) {
+      table.reload('dateTable', {
+          url: '${cxt }/sysadmin/user/tableData'
+          ,where: {name: name} //设定异步数据接口的额外参数
+      });
+  }
+
+  form.on('submit(search)', function(data){
+      reloadTable(data.field.name);
+      return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+  });
+});
+</script>
+
+</body>
+</html>

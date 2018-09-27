@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>名阳保险</title>
+
+    <meta name="description" content="data tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="${sys_cxt !}/assets/img/favicon.png" type="image/x-icon">
+    <!--Basic Styles-->
+    <script src="${sys_cxt!}/assets/js/jquery-2.0.3.min.js"></script>
+    <link href="${sys_cxt!}/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="${sys_cxt!}/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="${sys_cxt!}/assets/css/weather-icons.min.css" rel="stylesheet" />
+    <!--Beyond styles-->
+    <link rel="stylesheet" href="${sys_cxt!}/assets/css/beyond.min.css" />
+    <link href="${sys_cxt!}/assets/css/demo.min.css" rel="stylesheet" />
+    <link href="${sys_cxt!}/assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="${sys_cxt!}/assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <!--Page Related styles-->
+    <link href="${sys_cxt!}/assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="${sys_cxt!}/assets/js/skins.min.js"></script>
+	<link href="${sys_cxt!}/css/head.css" rel="stylesheet" type="text/css" />
+	<link href="${sys_cxt!}/css/custom.css" rel="stylesheet" type="text/css"/>
+</head>
+<!-- /Head -->
+<style type="text/css">
+	.header-right{
+	    		width:75%;
+	    		height:41px;
+	    		color:#fff;
+                float: left;
+	    	}
+	    	.header-right dl{
+	    		float: left;
+                color:#fff;
+	    		padding: 0px 0px 0px 0px;
+	    	}
+	    	.header-right dl dt{
+	    		padding: 12px 40px 0px 2px;
+	    		font-size: 14px;
+	    		font-family: "微软雅黑";
+                color:#fff;
+	    	}
+            .header-right dl dt a{
+               color:#fff; 
+            }
+	    	.header-right dl dt:hover {
+               color: #2dc3e8;
+            }
+            .page-header .header-buttons a {
+              height: 35px;
+            }
+			.page-header {
+			  height: 37px;
+			}
+			.page-header .header-title h1 {
+              line-height: 17px;
+            }
+			button{
+				border: 0px;
+				margin:auto auto 10px 10px;
+			}
+			#ss:hover{color: white;}
+</style>
+
+<!-- Body -->
+<body>
+    <!-- Loading Container -->
+    <div class="loading-container">
+        <div class="loading-progress">
+            <div class="rotator">
+                <div class="rotator">
+                    <div class="rotator colored">
+                        <div class="rotator">
+                            <div class="rotator colored">
+                                <div class="rotator colored"></div>
+                                <div class="rotator"></div>
+                            </div>
+                            <div class="rotator colored"></div>
+                        </div>
+                        <div class="rotator"></div>
+                    </div>
+                    <div class="rotator"></div>
+                </div>
+                <div class="rotator"></div>
+            </div>
+            <div class="rotator"></div>
+        </div>
+    </div>
+    <!--  /Loading Container -->
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- 伸展伸缩按钮 Sidebar Collapse -->
+				<div class="sidebar-collapse" id="sidebar-collapse">
+					<i class="collapse-icon fa fa-bars"></i>
+				</div>
+				<!--伸展伸缩按钮结束 /Sidebar Collapse -->
+                <!-- 公司名称-->
+                <!-- /公司名称结束-->
+                
+                <!-- 顶部导航栏开始-->
+                <div class="header-right" style="margin-left: 10%;">
+                 <dl >                    
+			               <dt id="ss"> <span>保商超保险综合管理平台</span></dt>
+			           </dl>
+                	<%for(module in moduleList){%>
+			       	   <dl id="menu-g">                    
+			               <dt> <a href="javascript:showModule('${sys_cxt!}/main/leftFunJson?moduleId=${module.module_id}')">${module.module_name}</a></dt>
+			           </dl>
+				    <%}%>
+        		</div>
+        <!-- /顶部导航栏结束-->
+                <!-- Account Area and Settings --->
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+                        <ul class="account-area">
+                           
+                            <!-- <li>
+                                <a class="wave in dropdown-toggle" data-toggle="dropdown" title="Help" href="#">
+                                    <i class="icon fa fa-envelope"></i>
+                                    <span class="badge">3</span>
+                                </a>
+                                Messages Dropdown
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-messages">
+                                    <li>
+                                        <a href="#">
+                                            <img src="${sys_cxt!}/assets/img/favicon.png" class="message-avatar" alt="Divyia Austin">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    张三
+                                                </span>
+                                                <span class="message-time">
+                                                    2分钟前
+                                                </span>
+                                                <span class="message-subject">
+                                                    方案待审批
+                                                </span>
+                                                <span class="message-body">
+                                                    xxx工程整体方案待审批
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="${sys_cxt!}/assets/img/favicon.png" class="message-avatar" alt="Microsoft Bing">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    王五
+                                                </span>
+                                                <span class="message-time">
+                                                    昨天
+                                                </span>
+                                                <span class="message-subject">
+                                                    请假单待审批‏
+                                                </span>
+                                                <span class="message-body">
+                                                    因身体不适，想请假一天。
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="${sys_cxt!}/assets/img/favicon.png" class="message-avatar" alt="Divyia Austin">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    赵六
+                                                </span>
+                                                <span class="message-time">
+                                                    5月3号
+                                                </span>
+                                                <span class="message-subject">
+                                                    加班申请待审批
+                                                </span>
+                                                <span class="message-body">
+                                                    xxx施工加班3小时
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                /Messages Dropdown
+                            </li> -->
+
+                            <!-- <li>
+                                <a class="dropdown-toggle" data-toggle="dropdown" title="Tasks" href="#">
+                                    <i class="icon fa fa-tasks"></i>
+                                    <span class="badge">4</span>
+                                </a>
+                                Tasks Dropdown
+                                <ul class="pull-right dropdown-menu dropdown-tasks dropdown-arrow ">
+                                    <li class="dropdown-header bordered-darkorange">
+                                        <i class="fa fa-tasks"></i>
+                                        4个任务进行中
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">长庆坊</span>
+                                                <span class="pull-right">65%</span>
+                                            </div>
+
+                                            <div class="progress progress-xs">
+                                                <div style="width:65%" class="progress-bar"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">观山悦</span>
+                                                <span class="pull-right">35%</span>
+                                            </div>
+
+                                            <div class="progress progress-xs">
+                                                <div style="width:35%" class="progress-bar progress-bar-success"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">商品美地城</span>
+                                                <span class="pull-right">75%</span>
+                                            </div>
+
+                                            <div class="progress progress-xs">
+                                                <div style="width:75%" class="progress-bar progress-bar-darkorange"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">Adding Contacts</span>
+                                                <span class="pull-right">10%</span>
+                                            </div>
+
+                                            <div class="progress progress-xs">
+                                                <div style="width:10%" class="progress-bar progress-bar-warning"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="dropdown-footer">
+                                        <a href="#">
+                                            查看所有任务单
+                                        </a>
+                                        <button class="btn btn-xs btn-default shiny darkorange icon-only pull-right"><i class="fa fa-check"></i></button>
+                                    </li>
+                                </ul>
+                                /Tasks Dropdown
+                            </li> -->
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="avatar"  style="border: none;">
+                                        <img  src="${sys_cxt!}/assets/img/avatars/adam-jansen.jpg" style="width:30px;height:30px;border-radius:30px"/>
+                                    </div>
+                                    <section >
+                                        <h2><span class="profile"><span>管理员</span></span></h2>
+                                    </section>
+                                </a>
+                                <!--Login Area Dropdown-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="username"><a>管理员</a></li>
+                                   
+                                    <!--Theme Selector Area-->
+<!--                                     <li class="theme-area">
+                                        <ul class="colorpicker" id="skin-changer">
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#5DB2FF;" rel="../assets/css/skins/blue.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#2dc3e8;" rel="../assets/css/skins/azure.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#03B3B2;" rel="../assets/css/skins/teal.min.css"></a></li>                                            
+                                        </ul>
+                                    </li>
+ -->                                    <!--/Theme Selector Area-->
+                                    <li class="dropdown-footer">
+                                        <a href="../login.html">
+                                            注销
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--/Login Area Dropdown-->
+                            </li>
+                            <!-- /Account Area -->
+                            <!--Note: notice that setting div must start right after account area list.
+                            no space must be between these elements-->
+                            <!-- Settings -->
+                        </ul>
+						
+                        <!-- Settings -->
+                    </div>
+                </div>
+                <!-- /Account Area and Settings -->
+            </div>
+        </div>
+    </div>
+    <!-- /Navbar -->
+    <!-- Main Container -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            <div class="page-sidebar" id="sidebar">
+                <!-- Page Sidebar Header-->
+                <!-- /Page Sidebar Header -->
+                <!-- Sidebar Menu -->
+                <ul class="nav sidebar-menu" id="admin-navbar-side" lay-filter="side">
+                    <!--Dashboard-->
+                    <!--Profile-->
+                </ul>
+                <!-- /Sidebar Menu -->
+            </div>
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content">
+            	<iframe src="" name="content"></iframe>
+            </div>
+            <!-- /Page Content -->
+    	</div>
+    	<!-- /Page Container -->
+    </div>
+    <!-- /Main Container -->
+    <script type="text/javascript" src="${cxt!}/hlib/layui/layui.js"></script>
+	<script src="${sys_cxt!}/js/index.js"></script>
+    <!--Basic Scripts-->
+    <!--<script src="../assets/js/jquery-2.0.3.min.js"></script>-->
+    <script src="${sys_cxt!}/assets/bootstrap/js/bootstrap.min.js"></script>
+    <!--Beyond Scripts-->
+    <script src="${sys_cxt!}/assets/js/beyond.min.js"></script>
+    <!--Page Related Scripts-->
+    <script src="${sys_cxt!}/assets/js/validation/bootstrapValidator.js"></script>
+    <script>
+        $(document).ready(function () {
+
+             $('form').bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                userName: {
+                    message: '用户名验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '用户名不能为空'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 18,
+                            message: '用户名长度必须在6到18位之间'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_]+$/,
+                            message: '用户名只能包含大写、小写、数字和下划线'
+                        }
+                    }
+                },
+                 equipmentName: {
+                    message: '设备名验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '设备名称不能为空'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 18,
+                            message: '设备名称长度必须在6到18位之间'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_]+$/,
+                            message: '设备名称只能包含大写、小写、数字和下划线'
+                        }
+                    }
+                },
+                equipmentCount: {
+                    message: '设备数量验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '设备数量不能为空'
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 11,
+                            message: '设备数量不能大于11位数'
+                        },
+                        regexp: {
+                            regexp: /^[0-9]*[0-9][0-9]*$/,
+                            message: '设备数量只能为正整数'
+                        }
+                    }
+                },
+                phone: {
+                    message: '联系方式验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '联系方式不能为空'
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 11,
+                            message: '手机号码不合法'
+                        },
+                        regexp: {
+                            regexp: /^[1][3458][0-9]{9}$/,
+                            message: '该联系方式只能为手机号'
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: '邮箱不能为空'
+                        },
+                        emailAddress: {
+                            message: '邮箱地址格式有误'
+                        }
+                    }
+                }
+            }
+        });
+
+            
+        });
+    </script>
+    <!--Google Analytics::Demo Only-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-52103994-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript">
+	    function showModule(url){
+			layui.config({
+			    base: '${sys_cxt!}/js/',
+			    version: new Date().getTime()
+			}).use(['element', 'layer', 'navbar', 'tab'], function () {
+			    var element = layui.element,
+			        $ = layui.jquery,
+			        layer = layui.layer,
+			        navbar = layui.navbar();
+				 //设置navbar
+			    navbar.set({
+			        spreadOne: true,
+			        elem: '#admin-navbar-side',
+			        //data: navs
+					cached:false,
+					//url: 'js/nav.json'
+					url:url
+			    });
+			    //渲染navbar
+			    navbar.render();
+			    //监听点击事件
+			    navbar.on('click(side)', function (data) {
+			        tab.tabAdd(data.field);
+			    });
+			});
+		}
+    </script>
+</body>
+<!--  /Body -->
+</html>
+    

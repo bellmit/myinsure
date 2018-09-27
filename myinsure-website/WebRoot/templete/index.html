@@ -1,0 +1,384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>名阳保险销售有限公司</title>
+<meta name="renderer" content="webkit"/>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"/>
+<meta name="generator" content="MetInfo 5.3.17"  data-variable="https://show.metinfo.cn/muban/res019/357/,cn,10001,,10001,res019" />
+<meta name="description" content="${web_describe! }" />
+<meta name="keywords" content="名阳保险" />
+<link href="${domain}/img/4_conew2.png" rel="shortcut icon" type="image/x-icon" />
+<link rel='stylesheet' href="${domain}/css/metinfo.css-201707201627.css" tppabs=""/>
+<link type="text/css" rel="stylesheet" href="${domain}/css/exp_base.css"/>
+<link type="text/css" rel="stylesheet" href="${domain}/css/header-index.css"/>
+<link type="text/css" rel="stylesheet" href="${domain}/css/home.css"/>
+<link type="text/css" rel="stylesheet" href="${domain}/css/main2014.css"/>
+<script type="text/javascript" src="${domain}/js/tangram-1.2.0.js"></script>
+<script type="text/javascript" src="${domain}/js/home.js"></script>
+<!-- <script src="${domain}/js/metinfo.js" tppabs=""></script> -->
+<!-- <script src="${domain}/js/hm.js" tppabs=""></script> -->
+<!--头部js代码（越秀）-->
+<script src="${domain}/js/jquery-1.11.1.min.js"></script>
+<script src="${domain}/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="${domain}/js/header.js"></script> -->
+</head>
+<body class="met-navfixed">
+<nav class="navbar navbar-default met-nav navbar-shadow" role="navigation" style="top: 0; width: 100%;">
+			<div class="collapse navbar-collapse navbar-collapse-toolbar" id="navbar-default-collapse" style="padding-top:10px;">
+	<!--导航+页头-->
+	<div id="yuexiu-member-wrap">
+	  <div class="yuexiu-member-header"></div>
+	  <div class="yuexiu-topLine">
+	    <div id="yuexiu-topLine-in"></div>
+	  </div>
+	</div>
+	<div class="yuexiu-topLine yuexiu-topLineToggle">
+	  <div id="yuexiu-topLine-in"></div>
+	</div>
+	<div class="tou-p1">
+	   <div class="top-1">
+	       全国统一服务专线：${contact_hotline!}
+           <a class="top-a" href="http://iir.circ.gov.cn/web">经纪人查询</a>
+           <!-- <a class="top-a marg-rit30" href="">客户登录</a> -->
+           <div style="clear: both;"></div>
+	    </div>
+	 </div>
+	<div id="yuexiu-header-wrap">
+	  <div class="yuexiu-header">
+	    <!--Logo-->
+	   <a href="${domain}/index.html" class="navbar-brand navbar-logo vertical-align" title="集团公司">
+					<div class="vertical-align-middle">
+					    <img src="${domain}/img/2.gif" tppabs="" alt="集团公司" title="集团公司" />
+					</div>
+		</a>
+	    <!--菜单部分可修改栏目名称以及栏目链接-->
+	    <div class="yuexiu-mainMenu">
+	      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	        <tr>
+	        <%for(column in columns){%>
+	          <td class="yuexiu-seperate">
+	              <img src="${domain}/img/yuexiu_menu_seperate.jpg" />
+	          </td>
+	          <td rel="yuexiu-subNav0${columnLP.index -1}">
+	              <a href="${column.out_url!}">${column.name!}</a>
+	          </td>
+	          <%}%>
+	          <td class="yuexiu-seperate">
+	              <img src="${domain}/img/yuexiu_menu_seperate.jpg" />
+	          </td>
+	      </table>
+	    </div>
+	  </div>
+	</div>
+	<div id="yuexiu-bottomLine">
+	  <div id="yuexiu-bottomLine-in"></div>
+	</div>
+	<div id="yuexiu-breadcrumb">
+	
+	  <div class="yuexiu-subNav yuexiu-default">
+		<!--div class="bread"></div-->
+	
+		<div class="today">
+		  2018年6月14日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;星期五&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  <!-- <img src="img/yintian.png" style="width: 25px;"> -->
+		  阴转晴
+		</div>
+	  </div>
+	  
+	  <!--以下插入二级菜单代码-->
+	  <%for(column in columns){%>
+	  <div class="yuexiu-subNav yuexiu-subNavMenu yuexiu-displayNone yuexiu-subNav0${columnLP.index-1}">
+	   <span>
+		<%for(sonColumn in column.sonColumns){%>
+			<a href="${sonColumn.out_url!}" onfocus='blur()'>${sonColumn.name!}</a>
+		<%}%>
+	   </span>
+	  </div>
+	  <%}%>
+	 </div>
+</div>
+	<div class="container">
+		<ul class="nav navbar-nav navlist">
+		<!-- <div class="pc_header">
+		</div> -->
+		</ul>
+	</div>
+</nav>
+
+<section class="derived-banner">
+<div class="met-banner  " data-height='' style=''>
+		$[{"type":"img","quantity":3,"name":"imgs","param":"0"}]
+        <%for(img in imgs!){%>
+        <div class="slick-slide">
+            <img class="cover-image" src="${domain}${img.carousel_url!}" tppabs="" sizes="(max-width: 767px) 767px" alt="开启新征程"/>
+            <div class="banner-text p-5">
+                <div class='container'>
+                    <div class='banner-text-con'>
+                        <!-- <div>
+                            <h4 class="animation-slide-top">${img.carousel_name!}</h4>
+                            <p class="animation-slide-bottom animation-delay-300">创造人文价值</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%}%>
+</div>
+</section>
+    <div class="met-index-imgnews met-index-body">
+        <div class="container">
+        <div class="newdt">
+            <div class="newdt-biaoti">
+                ${column1.name!}
+                $[{"type":"column","quantity":1,"name":"column1","param":"企业要闻"}]
+            </div>
+            <div class="new-gengduo">
+                <a href="${column1.out_url!}" class="a_747474_12">更多 + </a>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="col-xs-12 right-news nes-xinwen1" style="padding-right: 0px; padding-top: 40px;">
+        <div class="col-md-4 col-xs-12 rnews-img">
+        <div class="slick" id="imgnews-slick">
+        	<!-- $[{"type":"img","quantity":4,"name":"imgList","param":"0"}] -->
+        	$[{"type":"news","quantity":8,"name":"newsList","param":"企业要闻"}]
+        	<%for(news in newsList!){%>
+             	<%if(newsLP.index < 5){%>
+				<div>
+					<a href="${domain}/static/${column1.foldername}/${news.links}" tppabs="" title="${news.title!}" target='_self'>
+						<h3>${news.title!}</h3>
+						<img class="cover-image" src="${domain}${news.imgurl!}" tppabs="" sizes="(max-width: 991px) 991px" alt=""/>
+					</a>
+				</div>
+				<%}%>
+			<%}%>
+        </div>
+        </div>
+        <ul class="col-md-8 col-xs-12 rnews-ul news-ul xinwen" style="border: none;">
+ 			<div class="rightnewslist">
+             	<%for(news in newsList!){%>
+             		<%if(newsLP.index > 4){%>
+                     <dl class="col-md-6 new-dl${newsLP.index}" style="">
+                         <a href="${domain}/static/${column1.foldername}/${news.links}">
+                             <dt>${news.title!}</dt>
+                             <dd>${news.description!}</dd>
+                             <dd style="color:#FF8C00; float: right; margin-top:54px;">发布时间：${news.updatetime!,dateFormat='yyyy-MM-dd'}</dd>
+                         </a>
+                     </dl>
+                     <%}%>
+                 <%}%>
+            </div>
+        </ul>
+        </div>
+        </div>
+    </div>
+
+<div class="met-index-work">
+<div class="container">
+<div class="newdt" style="margin-bottom: 30px;">
+            $[{"type":"column","quantity":1,"name":"column2","param":"新闻中心"}]
+            <div class="newdt-biaoti">
+            	${column2.name!}
+            </div>
+            <div class="new-gengduo">
+                <a href="${column2.out_url!}" class="a_747474_12">更多 + </a>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+<div class="col-md-12 col-xs-12 work-content">
+<div class="nav-tabs-vertical nav-tabs-animate work-tabs">
+                  <div class="tab-content ">
+                      <div class="tab-pane animation-scale-up active workTab" id="workTab1" role="tabpanel">
+                     
+                      <div class="tab-detail clearfix">
+                    
+                      <div class="col-md-4 col-xs-6 tab-detail-right" style="padding-right:0px; padding-left:0px;">
+                      	$[{"type":"column","quantity":1,"name":"column3","param":"领导致辞"}]
+	                      <ul class="blocks-3 lingdao-jiyu" style="padding:5px 0px; background-color: #efefef; margin-left: 0px; margin-right: 0px;">
+	                        <li style="margin-bottom: 0px; height: 30px;line-height: 30px;">
+	                             <a class="ling" href="product.php-lang=cn&class3=146.htm" tppabs="" title="董事长寄语">${column3.name!}</a>
+	                        </li>
+	                        <!--  <div class="new-gengduo" style="padding-right:10px; height: 30px;line-height: 30px;">
+	                            <a href="${column3.out_url!}" class="a_747474_12">更多 + </a>
+	                         </div> -->
+	                      </ul>
+                          <a href="${column3.out_url!}"><img src="${domain}${column3.img_src!}" style="width: 100%; height: 180px;" alt=""></a>
+                          $[{"type":"news","quantity":1,"name":"jiyus","param":"领导致辞"}]
+                          <div class="jiyu">
+                               <%for(jiyu in jiyus){%>
+                               <dl class="new-dl4">
+                                    <a href="${column3.out_url!}">
+                                        <dt>${jiyu.title!}</dt>
+                                        <dd>${jiyu.description!}</dd>
+                                    </a>
+                                </dl>
+                                <%}%>
+                          </div>
+                      </div>
+                      
+                      <!--新闻动态-->
+                      <div class="pcReady1 col-md-4" style="padding-right:0px; padding-left:20px;">
+                          $[{"type":"column","quantity":1,"name":"column4","param":"机构动态"}]
+                          <div class="industry">
+				            <div id="zlsj"><!-- PR{zlsj}S -->	
+				              <h2><a href="${column4.out_url!}">more</a>行业动态</h2>
+				              $[{"type":"news","quantity":6,"name":"zlsjs","param":"机构动态"}]
+				                    <ul>
+				                    <%for(zlsj in zlsjs){%>
+					                    <li class="font-15">
+					                       <a class="col-md-8 wenzi" target="_blank" href="${domain}/static/${column4.foldername!}/${zlsj.links!}" title="">
+					                            ${zlsj.title!}        
+					                       </a>
+					                       <span class="col-md-4">[${zlsj.addtime!,dateFormat='yyyy-MM-dd'}]</span>
+					                    </li>
+					                 <%}%>
+				                    </ul>
+			                	<!-- PR{zlsj}E -->
+			                   </div>
+			                </div>
+                      </div> 
+                      
+                      <!--新闻动态-->
+                      <div class="pcReady1 col-md-4" style="padding-right:0px; padding-left:20px;">
+                          <div class="media">
+                          $[{"type":"column","quantity":1,"name":"column5","param":"行业资讯"}]
+				          <div id="mtbd"><!-- PR{mtbd}S -->
+			    	<h2><a href="${column5.out_url!}">more</a>媒体报道</h2>
+			    	<ul>
+			    		$[{"type":"news","quantity":6,"name":"mtbds","param":"行业资讯"}]
+				    					<%for(mtbd in mtbds){%>
+				    					<li class="font-15">
+					                       <a class="col-md-8 wenzi" target="_blank" href="${domain}/static/${column5.foldername!}/${mtbd.links!}" title="">
+					                            ${mtbd.title!}                
+					                       </a>
+					                       <span class="col-md-4">[${mtbd.addtime!,dateFormat='yyyy-MM-dd'}]</span>
+					                    </li>
+					                    <%}%>
+			   	</ul>
+			   	<!-- PR{mtbd}E --></div>
+		    </div>
+                      </div>
+                      </div>
+                      </div>
+                  </div>
+                </div>
+                </div>
+                <!-- <div class="col-md-4 col-xs-12 work-img">
+                <a href=""><img src="picture/1499854768.png" data-original="picture/1499854768.png" alt=""></a>
+                </div> -->
+                </div>
+</div>
+<div class="met-index-body met-index-theme">
+<div class="container">
+<div class="newdt" style="margin-bottom: 30px;">
+            <div class="newdt-biaoti">
+                ${column6.name!}$[{"type":"column","quantity":1,"name":"column6","param":"合作公司"}]
+            </div>
+            <div class="new-gengduo">
+                <a href="${column6.out_url!}" class="a_747474_12">更多 + </a>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+         <table class="huoban">
+         <!-- $[{"type":"companies","quantity":1,"name":"companies","param":"合作伙伴"}] -->
+		       $[{"type":"news","quantity":28,"name":"cooperCompanies","param":"合作公司"}]
+               <tr>
+               	  <%for(company in cooperCompanies){%>
+                  	  <%if(companyLP.index < 8){%>
+	                  <td style="padding: 15px;">
+	                      <a href="${domain}/static/${column6.foldername}/${company.links}"><img src="${domain}${company.imgurl}" style="width:100%;height:80px;"/></a>
+	                  </td>
+	                  <%}%>
+                  <%}%>
+               </tr>
+               <tr>
+               		<%for(company in cooperCompanies){%>
+                  	  <%if(companyLP.index > 7 && companyLP.index < 15){%>
+	                  <td style="padding: 15px;">
+	                      <a href="${domain}/static/${column6.foldername}/${company.links}"><img src="${domain}${company.imgurl}" style="width:100%;height:80px;"/></a>
+	                  </td>
+	                  <%}%>
+                    <%}%>
+               </tr>
+               <tr>
+               		<%for(company in cooperCompanies){%>
+                  	  <%if(companyLP.index > 14 && companyLP.index < 22){%>
+	                  <td style="padding: 15px;">
+	                      <a href="${domain}/static/${column6.foldername}/${company.links}"><img src="${domain}${company.imgurl}" style="width:100%;height:80px;"/></a>
+	                  </td>
+	                  <%}%>
+                    <%}%>
+               </tr>
+               <tr>
+               		<%for(company in cooperCompanies){%>
+                  	  <%if(companyLP.index > 21 && companyLP.index < 29){%>
+	                  <td style="padding: 15px;">
+	                      <a href="${domain}/static/${column6.foldername}/${company.links}"><img src="${domain}${company.imgurl}" style="width:100%;height:80px;"/></a>
+	                  </td>
+	                  <%}%>
+                    <%}%>
+               </tr>
+         </table>
+</div>
+</div>
+<div class="met-footnav text-center">
+    <div class="container">
+		<div class="row mob-masonry">
+		<div class="col-md-8 info-right" style="color: #ccc;">
+		         <div class="dibu-1" style="">
+				        <div style="text-align: left;">
+				            <p class="lxrx">联系热线：${contact_hotline!} | 地址：${company_address!} </p>
+				        </div>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="dibu-1">
+		             <ol class="" style="color: #5e7387;text-align: left; padding: 0px;">
+			             <li style="text-align: left;">
+			               ${company_name!} | 版权所有 ${web_copyright!} | 技术支持：${technical_support!}
+                         </li>
+		             </ol>
+	            </div>
+		        <div class="clearfix mrg-top10" style="margin-top:10px;">	
+		             <div class="col-md-2 col-sm-2 col-xs-6 list masonry-item">
+			             <a href="http://www.12377.cn/"><img src="${domain}/images/footer_img03.png" style="width: 100%;"/></a>
+		             </div>
+		             <div class="col-md-2 col-sm-2 col-xs-6 list masonry-item">
+		             	<a href="http://www.miibeian.gov.cn/publish/query/indexFirst.action"><img src="${domain}/images/footer_img01.png" style="width: 100%;"/></a>
+		             </div>
+		             <div class="col-md-2 col-sm-2 col-xs-6 list masonry-item">
+			             <a href="http://www.gov.cn/"><img src="${domain}/images/logo-foot2.png" style="width: 100%;"/></a>
+		             </div>
+		             <div class="col-md-2 col-sm-2 col-xs-6 list masonry-item">
+			             <a href="http://webscan.360.cn/"><img src="${domain}/images/footer_img02.png" style="width: 100%;"/></a>
+		             </div>
+		        </div>
+		    </div>
+            <div class="col-md-4 col-xs-12  clearfix">
+                       <!-- <div class="col-md-3 col-sm-2 col-xs-6 info-left list masonry-item">
+                       				              &nbsp;
+                       			            </div>
+                       			            <div class="col-md-3 col-sm-2 col-xs-6 info-left list masonry-item">
+                       				             &nbsp;
+                       			            </div> -->
+				        <div class="col-md-5 col-sm-2 col-xs-6 info-left list masonry-item">
+				              <img src="${domain}/images/erweima-1.png" style="width: 100%;">
+			            </div>
+			            <div class="col-md-5 col-sm-2 col-xs-6 info-left list masonry-item">
+				             <img src="${domain}/images/erweima-2.png" style="width: 100%;">
+			            </div>
+			</div>
+		</div>
+	</div>
+</div>
+<button type="button" class="btn btn-icon btn-primary btn-squared met-scroll-top hide"><i class="icon wb-chevron-up" aria-hidden="true"></i></button>
+<script src="${domain}/js/jquery-1.11.1.min.js"></script>
+<script src="${domain}/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="${domain}/js/header.js"></script>
+<script src="${domain}/js/metinfo.js" tppabs=""></script>
+<script src="${domain}/js/date_weather.js" type="text/javascript"></script>
+</body>
+
+</html>

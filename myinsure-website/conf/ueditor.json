@@ -1,0 +1,19 @@
+{
+    "imageActionName": "uploadimage", 
+    "imageFieldName": "imgFile", 
+    "imageMaxSize": 2048000, 
+    "imageAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"], 
+    "imageCompressEnable": true, 
+    "imageCompressBorder": 1600, 
+    "imageInsertAlign": "none",
+    "imageUrlPrefix": "/myinsure-website/front", 	
+    "imagePathFormat": "", 
+
+    "imageManagerActionName": "listimage", 
+    "imageManagerListPath": "/ueditor/jsp/upload/image/", 
+    "imageManagerListSize": 20, 
+    "imageManagerUrlPrefix": "", 
+    "imageManagerInsertAlign": "none", 
+    "imageManagerAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"] 
+
+}

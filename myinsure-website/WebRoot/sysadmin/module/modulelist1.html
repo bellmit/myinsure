@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<!-- Head -->
+<head>
+<title>模块管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="data tables" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="${sys_cxt}/assets/img/favicon.png" type="image/x-icon" />
+<link rel="stylesheet" href="${cxt }/front/css/button.css" />
+<link href="${sys_cxt}/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+<link href="${sys_cxt}/assets/css/font-awesome.min.css" rel="stylesheet" />
+<link href="${sys_cxt}/assets/css/weather-icons.min.css"
+	rel="stylesheet" />
+<!--Fonts-->
+<!--<link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">-->
+<!--Beyond styles-->
+<link rel="stylesheet" href="${sys_cxt}/assets/css/beyond.min.css" />
+<link href="${sys_cxt}/assets/css/demo.min.css" rel="stylesheet" />
+<link href="${sys_cxt}/assets/css/typicons.min.css" rel="stylesheet" />
+<link href="${sys_cxt}/assets/css/animate.min.css" rel="stylesheet" />
+<link id="skin-link" href="" rel="stylesheet" type="text/css" />
+<!--Page Related styles-->
+<link href="${sys_cxt}/assets/css/dataTables.bootstrap.css"
+	rel="stylesheet" />
+<link href="${sys_cxt }/assets/css/bootstrap.min.css" />
+<!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+<script src="${sys_cxt}/assets/js/jquery-2.0.3.min.js"></script>
+<script src="${sys_cxt}/assets/js/skins.min.js"></script>
+<link href="${sys_cxt}/css/head.css" rel="stylesheet" type="text/css" />
+<link href="${sys_cxt}/css/custom.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="${cxt }/hlib/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="${cxt }/hlib/layui/css/layui.css" />
+<script type="text/javascript" src="${cxt }/hlib/layui/layui.js"></script>
+<script src="${sys_cxt}/assets/js/bootstrap.min.js"></script>
+<style>
+.header-right {
+	width: 75%;
+	height: 41px;
+	background-color: #667add;
+	color: #fff;
+	float: left;
+}
+
+.header-right dl {
+	float: left;
+	color: #fff;
+	padding: 0px 0px 0px 0px;
+}
+
+.header-right dl dt {
+	padding: 12px 40px 0px 2px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color: #fff;
+}
+
+.header-right dl dt a {
+	color: #fff;
+}
+
+.header-right dl dt:hover {
+	color: #2dc3e8;
+}
+
+.page-header .header-buttons a {
+	height: 35px;
+}
+
+.page-header {
+	height: 37px;
+}
+
+.page-header .header-title h1 {
+	line-height: 17px;
+}
+
+button {
+	border: 0px;
+	margin: auto auto 10px 10px;
+}
+/*a:link {color:white}
+      a:visited {color: #00FF00}
+   a:hover {color: #FF00FF}
+   a:active {color: #0000FF}*/
+.more:hover {
+	color: #2894FF;
+	border: 1px solid #E0E0E0;
+	box-shadow: -1px -2px 2px #9D9D9D;
+	background: #fff;
+	padding: 3px;
+}
+
+.tip {
+	color: #2894FF;
+}
+
+.tip li {
+	margin: 10px 5px;
+}
+
+.tip li:hover {
+	background: #84C1FF;
+}
+
+#form tbody tr td input {
+	font-size: 15px;
+}
+.titl{
+font-size: 1.4rem;
+line-height: 35px;
+}
+</style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<!-- Page Header -->
+	<div class="page-header position-relative">
+		<div class="header-title">
+			<span class="titl">
+				网站管理 <span> <i class="fa fa-angle-right"></i> 导航管理
+				</span>
+			</span>
+		</div>
+		<!--Header Buttons-->
+		<div class="header-buttons">
+		</div>
+		<!--Header Buttons End-->
+	</div>
+	<!-- /Page Header -->
+	<!-- Page Body -->
+	<div class="page-body">
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<div class="widget">
+					<div class="widget-header ">
+						<!--  <span class="widget-caption">Simple DataTable</span>-->
+						<div class="widget-buttons">
+						</div>
+					</div>
+					<div class="widget-body" style="overflow-x:hidden;">
+						<div class="admin-main">
+							<a id="addlink" href="javascript:addtr();">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="button button-raised button-primary button-box button-small"
+									type="button" onclick="addMenu(null,1);">
+									<i class="layui-icon">&#xe608;</i> 新增
+								</button>
+							</a> <a href="#" onclick="delBatch()">
+								<button type="button"
+									class="button button-raised button-caution button-box button-small">
+									<i class="layui-icon">&#xe640;</i> 删除
+								</button>
+							</a>
+							<form id="form" action="#" class="layui-form">
+								<input id="count" type="hidden" name="count" value="" />
+								<div class="layui-field-box">
+									<div>
+										<table id="maint" class="layui-table">
+											<colgroup>
+												<col width="35" />
+												<col width="200" />
+												<col width="100" />
+												<col width="230" />
+											</colgroup>
+											<thead>
+												<tr>
+													<th><input type="checkbox" id="chk_all" name="all"
+														onclick="check_all()" lay-ignore /></th>
+													<th align="center">名称</th>
+													<th align="center">排序</th>
+													<th align="center">操作</th>
+												</tr>
+											</thead>
+											<tbody>
+												<%for (column in moduleList!){%>
+												<tr id="tr${column.id}" class="grade-">
+													<td></td>
+													<td><%if (!isEmpty(column.SysModules)) {%>  <img
+														src="../images/anyou.gif" class="parent"
+														onclick="change_pic('${column.id}','${column.sizes}')"
+														id="row123" style="margin-right:6px;" /> <%}else{%> <img
+														src="../images/anyou.gif" class="parent"
+														onclick="change_pic()" id="row123"
+														style="margin-right:6px;visibility:hidden;" /> <%}%>
+														${column.project_name }
+														<div style="clear:both;"></div> <input type="hidden"
+														class="id" value="${column.id}" />
+													</td>
+													<td><div class="input-group">
+															<input type="text" class="form-control" value="${column.order_numb }">
+														</div></td>
+													<td><a href="javascript:#"
+														onclick="ajax_edit('${column.id}')"> <i
+															class="layui-icon">&#xe61d;</i> 保存
+													</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:#"
+														onclick="ajax_delete('${column.id}')"> <i
+															class="layui-icon">&#xe640;</i> 删除
+													</a> &nbsp;&nbsp;&nbsp;
+														<div class="more"
+															style="height:20px;display:inline;position:relative;cursor:pointer;">
+															<i class="layui-icon">&#xe61a;</i> 更多
+														</div>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+												</tr>
+												<%for (c in column.SysModules!){%>
+												<tr id="tr${c.module_id}"
+													class="grade-${c.project_id} tr${c.module_id}"
+													style="display: none">
+													<td></td>
+													<td><%if (!isEmpty(c.SysModules)) {%> <span
+														style="margin-left: 20px"> <img
+															src="../images/anyou.gif" class="parent"
+															onclick="change_pic('${c.module_id}','${c.sizes}')"
+															id="row123" style="margin-right:0px;" /> <%}else{%> <span
+															style="margin-left: 38px"> <%}%> ${c.module_name }</span>
+															<input type="hidden" class="id" value="${c.module_id}" />
+															<div style="clear:both;"></div></td>
+													<td><div class="input-group">
+															<input type="text" class="form-control" value="${c.order_numb }">
+														</div></td>
+													<td><a href="javascript:#"
+														onclick="ajax_edit('${c.module_id}')"> <i
+															class="layui-icon">&#xe61d;</i> 保存
+													</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:#"
+														onclick="ajax_delete('${c.module_id}')"> <i
+															class="layui-icon">&#xe640;</i> 删除
+													</a> &nbsp;&nbsp;&nbsp;
+														<div
+															style="cursor:pointer;height:20px;display:inline;position:relative;"
+															class="more">
+															<i class="layui-icon">&#xe61a;</i> 更多
+														</div>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+												</tr>
+												<%for (col in c.SysModules!){%>
+												<tr class="grade-${col.parent_id}" style="display: none">
+													<td></td>
+													<td><span style="margin-left: 50px">${col.module_name}</span>
+														<input type="hidden" class="id" value="${col.module_id}" />
+														<div style="clear:both;"></div></td>
+													<td><div class="input-group">
+															<input type="text" class="form-control" value="${col.order_numb }">
+														</div></td>
+													<td><a href="javascript:#"
+														onclick="ajax_edit('${col.module_id}')"> <i
+															class="layui-icon">&#xe61d;</i> 保存
+													</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:#"
+														onclick="ajax_delete('${col.module_id}')"><i
+															class="layui-icon">&#xe640;</i> 删除</a> &nbsp;&nbsp;&nbsp;
+														<div
+															style="cursor:pointer;height:20px;display:inline;position:relative;"
+															class="more">
+															<i class="layui-icon">&#xe61a;</i> 更多
+														</div>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+												</tr>
+
+												<%}%> <%}%> <%}%>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="btn" type="button" onclick="ajax_save()"
+										class="button button-raised button-primary button-box button-small">保存</button>
+									&nbsp;&nbsp;&nbsp;
+									<button type="button" class="button button-raised button-default button-box button-small" onclick="fanhui()">取消</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		layui.use([ 'element', 'form' ], function() {
+			var element = layui.element;
+			var form = layui.form;
+			form.render();
+		});
+		layui.use('element', function() {
+			var element = layui.element(); //导航的hover效果、二级菜单等功能，需要依赖element模块
+			//监听导航点击s
+			element.on('nav(demo)', function(elem) {
+				//console.log(elem)
+				layer.msg(elem.text());
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		function fanhui() {
+			window.location.href = window.history.go(-1);
+		}
+		function ajax_edit() {
+			$('#count').val(count);
+			$.ajax({
+				cache : true,
+				type : "POST",
+				url : "saveorupdateColumn",
+				data : $('#form').serialize(),
+				error : function(request) {
+					alert("连接错误");
+				},
+				success : function(data) {
+					if (null != data.error) {
+						return false;
+					} else {
+						//alert("修改成功");
+						layui.use('layer', function() {
+							var layer = layui.layer;
+							layer.msg('修改成功');
+						});
+					}
+					;
+				}
+			});
+		}
+		// 子菜单的打开关闭
+		function change_pic(columnid, size) {
+			$('.grade-' + columnid).toggle();// 当前点击元素下的子菜单class选择器
+			for ( var i = 0; i <size; i++) {
+				var parentid = $($('.grade-' + columnid).find('input[class="id"]')[i])
+						.val();// 当前点击元素的子菜单的id值，其作为下一级菜单的class的后缀
+				if ($('.grade-' + columnid).is(":visible")) {// 如果内容可见
+					$(event.target).attr('src', '../images/anxia.gif');
+				} else {
+					$(event.target).attr('src', '../images/anyou.gif');
+					$('.grade-' + parentid).hide();
+					$('.grade-' + columnid).find('.parent').attr('src',
+							'../images/anyou.gif');
+				}
+			}
+
+		}
+	</script>
+    <!--Beyond Scripts-->
+    <script src="${sys_cxt}/assets/js/beyond.min.js"></script>
+
+    <!--Page Related Scripts-->
+    <script src="${sys_cxt}/assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/ZeroClipboard.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/dataTables.tableTools.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/dataTables.bootstrap.min.js"></script>
+    <script src="${sys_cxt}/module/js/table.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/datatables-init.js"></script>
+    <script>
+        InitiateSimpleDataTable.init();
+        InitiateEditableDataTable.init();
+        InitiateExpandableDataTable.init();
+        InitiateSearchableDataTable.init();
+        InitiateCommonDataTable.init(10);
+    </script>
+</body>
+</html>

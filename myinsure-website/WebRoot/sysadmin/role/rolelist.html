@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<!-- Head -->
+<head>
+<title>模块管理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="description" content="data tables" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="${sys_cxt}/assets/img/favicon.png" type="image/x-icon" />
+<link rel="stylesheet" href="${cxt }/hlib/zTree/css/zTreeStyle/zTreeStyle.css" type="text/css"/>
+<link rel="stylesheet" href="${cxt }/front/css/button.css" />
+<link href="${sys_cxt}/assets/css/bootstrap.min.css" rel="stylesheet" />
+<link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+<link href="${sys_cxt}/assets/css/font-awesome.min.css" rel="stylesheet" />
+<link href="${sys_cxt}/assets/css/weather-icons.min.css" rel="stylesheet" />
+<!--Fonts-->
+<!--<link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">-->
+<!--Beyond styles-->
+<link rel="stylesheet" href="${sys_cxt}/assets/css/beyond.min.css" />
+<link href="${sys_cxt}/assets/css/demo.min.css" rel="stylesheet" />
+<link href="${sys_cxt}/assets/css/typicons.min.css" rel="stylesheet" />
+<link href="${sys_cxt}/assets/css/animate.min.css" rel="stylesheet" />
+<link id="skin-link" href="" rel="stylesheet" type="text/css" />
+<!--Page Related styles-->
+<link href="${sys_cxt}/assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+<!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+<script src="${sys_cxt}/assets/js/jquery-2.0.3.min.js"></script>
+<script src="${sys_cxt}/assets/js/skins.min.js"></script>
+<link href="${sys_cxt}/css/head.css" rel="stylesheet" type="text/css" />
+<link href="${sys_cxt}/css/custom.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${cxt }/hlib/zTree/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="${cxt }/hlib/zTree/js/jquery.ztree.exedit.js"></script>
+<script type="text/javascript" src="${cxt }/hlib/zTree/js/jquery.ztree.excheck.min.js"></script>
+<script type="text/javascript" src="${sys_cxt }/role/js/role.js"></script>
+<script type="text/javascript">
+</script>
+<style>
+.header-right {
+	width: 75%;
+	height: 41px;
+	background-color: #667add;
+	color: #fff;
+	float: left;
+}
+
+.header-right dl {
+	float: left;
+	color: #fff;
+	padding: 0px 0px 0px 0px;
+}
+
+.header-right dl dt {
+	padding: 12px 40px 0px 2px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+	color: #fff;
+}
+
+.header-right dl dt a {
+	color: #fff;
+}
+
+.header-right dl dt:hover {
+	color: #2dc3e8;
+}
+
+.page-header .header-buttons a {
+	height: 35px;
+}
+
+.page-header {
+	height: 37px;
+}
+
+.page-header .header-title h1 {
+	line-height: 17px;
+}
+
+button {
+	border: 0px;
+	margin: auto auto 10px 10px;
+}
+.titl{
+font-size: 1.4rem;
+line-height: 35px;
+}
+/*a:link {color:white}
+      a:visited {color: #00FF00}
+   a:hover {color: #FF00FF}
+   a:active {color: #0000FF}*/
+</style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+	<!-- Page Header -->
+	<div class="page-header position-relative">
+		<div class="header-title">
+			<span class="titl">
+				系统管理 <span> <i class="fa fa-angle-right"></i> 角色列表
+				</span>
+			</span>
+		</div>
+		<!--Header Buttons-->
+		<div class="header-buttons">
+		</div>
+		<!--Header Buttons End-->
+	</div>
+	<!-- /Page Header -->
+	<!-- Page Body -->
+	<div class="page-body">
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<div class="widget">
+					<div class="widget-header ">
+						<!--  <span class="widget-caption">Simple DataTable</span>-->
+						<div class="widget-buttons">
+						</div>
+					</div>
+					<div class="widget-body" style="overflow-x:hidden;">
+						<div id="horizontal-form">
+							<form class="form-horizontal" role="form" id="fhgzwform"
+								name="fhgzwform" method="post">
+								<div class="form-group">
+									<div class="col-sm-2">
+										<a type="button" class="button button-raised button-primary button-box button-small" href="${sys_cxt }/role/roleAdd"> <i class="fa fa-plus"></i>新增
+										</a>
+										<button type="reset" class="button button-raised button-caution button-box button-small" onclick="delBatch()">
+											<i class="fa  fa-undo"></i>刪除
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<form id="form">
+							<table class="table table-striped table-bordered table-hover"
+								id="commontable">
+								<thead>
+									<tr>
+										<th style="width:15%;"><input type="checkbox"
+											id="chk_all" name="all" onclick="check_all()" /></th>
+										<th style="width:15%;font-weight: bold;" align="center">角色名称</th>
+										<th style="width:20%;font-weight: bold;" align="center">角色备注</th>
+										<th style="width:15%;font-weight: bold;" align="center">角色权限</th>
+										<th style="width:20%;font-weight: bold;" align="center">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<% for (role in roleList!) {%>
+									<tr>
+										<td><input type="checkbox" name="roleId"
+											value="${role.role_id}" /></td>
+										<td>${role.role_name }</td>
+										<td>${role.role_memo }</td>
+										<td><a onclick="power('${role.role_id }')">查看编辑权限</a></td>
+										<td><a href="roleEdit?rid=${role.role_id }"
+											class="btn btn-default btn-xs purple"><i
+												class="fa fa-edit"></i>编辑</a>  <a href="#" class="btn btn-default btn-xs black"><i class="fa fa-trash-o"></i> 删除</a>
+										</td>
+									</tr>
+									<%}%>
+								</tbody>
+							</table>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--模态层-->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+				</div>
+				<fieldset class="layui-elem-field fiel" >
+		<legend>机构</legend>
+		<ul id="treeDemo" class="ztree"></ul>
+		</fieldset>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary">提交更改</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
+
+	<!-- ztree -->
+	<script type="text/javascript">
+		//初始化配置
+		var zNodes;
+		var setting = {
+			view : {
+				selectedMulti : false,
+				dblClickExpand : false,
+			//是否支持选中多个节点
+			},
+			data : {
+				simpleData : {
+					enable : false,//是否用简单数据
+				},
+			},
+			/* async : {
+				enable : true, //启用异步
+				url : "getFirm", //异步加载路由
+				autoParam : [ "code", "deci" ], //父级节点回传的值id=zid
+				dataFilter : file
+			//返回数据进行预处理
+			}, */
+			callback : {
+				beforeClick : beforeClickZtree
+			//单机节点事件  
+			}
+		};
+		//加载最外层的树
+		
+
+		//单机节点事件
+		function beforeClickZtree(treeId, treeNode) {
+			var url = "gatSubordinate?code=" + treeNode.code;
+			$("#ifram").attr("src", url);
+		}
+		//异步加载节点，对返回数据进行预处理
+		function file(treeId, parentNode, childNodes) {
+			if (!childNodes)
+				return null;
+			for ( var i = 0; i < childNodes.length; i++) {
+				childNodes.name;//标签的title
+			}
+			return childNodes;//下一级节点，Array(JSON) / JSON / String
+		}
+	//-->
+	</script>
+	
+		<script>
+		function power(id) {alert("s")
+			$.ajax({
+				cache : true,
+				type : "POST",
+				url : "roleFun",
+				data : {
+					"id" : id
+				},
+				async : false,
+				error : function(request) {
+					alert("连接错误");
+				},
+				success : function(data) {
+					
+					$(document).ready(function() {
+						 $('#myModal').modal('show'); 
+						zNodes = data
+						;
+						$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+					});
+					
+				}
+			});
+		}
+	</script>
+    <!--Page Related Scripts-->
+    <script src="${sys_cxt}/assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/ZeroClipboard.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/dataTables.tableTools.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/dataTables.bootstrap.min.js"></script>
+    <script src="${sys_cxt}/role/js/table.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/datatables-init.js"></script>
+    <script>
+        InitiateSimpleDataTable.init();
+        InitiateEditableDataTable.init();
+        InitiateExpandableDataTable.init();
+        InitiateSearchableDataTable.init();
+        InitiateCommonDataTable.init(10);
+    </script>
+</body>
+</html>

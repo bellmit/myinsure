@@ -1,0 +1,1040 @@
+﻿<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>功能总览</title>
+
+    <meta name="description" content="data tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--Basic Styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+
+    <!--Fonts-->
+    <!--<link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">-->
+
+    <!--Beyond styles-->
+    <link rel="stylesheet" href="assets/css/beyond.min.css" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <link href="css/head.css" rel="stylesheet" type="text/css" />
+	<link href="css/custom.css" rel="stylesheet" type="text/css"/>
+
+    <!--Page Related styles-->
+    <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="assets/js/skins.min.js"></script>
+</head>
+<!-- /Head -->
+<style type="text/css">
+	.header-right{
+	    		width:100%;
+	    		height:41px;
+	    		background-color: #f5f5f5 ;
+	    		color:#737373;
+	    	}
+	    	.header-right dl{
+	    		float: right;
+	    		padding: 0px 0px 0px 0px;
+	    	}
+	    	.header-right dl dt{
+	    		padding: 12px 60px 0px 2px;
+	    		font-size: 15px;
+	    		font-family: "微软雅黑";
+	    	}
+	    	.header-right dl dt:hover {
+               color: #2dc3e8 ;
+            }
+            .header-right dl dt font:hover {
+               color: #2dc3e8 ;
+            }
+            .page-header .header-buttons a {
+              height: 35px;
+            }
+			.page-header {
+			  height: 37px;
+			}
+			.page-header .header-title h1 {
+              line-height: 17px;
+            }
+			button{
+				border: 0px;
+				margin:auto auto 10px 10px;
+			}
+			.well.with-header {
+			    padding-top: 60px;
+			    height: 230px;
+			    margin-top: 10px;
+			}
+			.col-lg-3 {
+			    height: 240px;
+			}
+			.widget-header.bordered-bottom {
+			    margin-top: 20px;
+			}
+			.dropdown-container .dropdown-preview>.dropdown-menu {
+			    width: 232px;
+			}
+			.well.with-header {
+			    height: 250px;
+			}
+			.col-lg-3 {
+			    height: 260px;
+			}
+			.dropdown-container {
+			    margin: -8px auto;
+			}
+			.list_li{
+				float: left;
+				width: 50%;
+			}
+</style>
+<!-- Body -->
+<body>
+    <!-- Loading Container -->
+    <div class="loading-container">
+        <div class="loading-progress">
+            <div class="rotator">
+                <div class="rotator">
+                    <div class="rotator colored">
+                        <div class="rotator">
+                            <div class="rotator colored">
+                                <div class="rotator colored"></div>
+                                <div class="rotator"></div>
+                            </div>
+                            <div class="rotator colored"></div>
+                        </div>
+                        <div class="rotator"></div>
+                    </div>
+                    <div class="rotator"></div>
+                </div>
+                <div class="rotator"></div>
+            </div>
+            <div class="rotator"></div>
+        </div>
+    </div>
+    <!--  /Loading Container -->
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left">
+                   <img src="assets/img/gd_logo.png" alt=""  class="head-gdlogo"/>                     
+                </div>
+                <!-- /Navbar Barnd -->
+			 	<!-- Sidebar Collapse -->
+				<!-- /Sidebar Collapse -->
+				  <div class="navbar-header pull-left">                    
+					 <img src="assets/img/logo_liangli.png" alt=""  class="head-lllogo"/>
+                </div>
+               
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+                        <ul class="account-area">
+                           
+                            <li>
+                                <a class="wave in dropdown-toggle" data-toggle="dropdown" title="Help" href="#">
+                                    <i class="icon fa fa-envelope"></i>
+                                    <span class="badge">3</span>
+                                </a>
+                                <!--Messages Dropdown-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-messages">
+                                    <li>
+                                        <a href="#">
+                                            <img src="assets/img/favicon.png" class="message-avatar" alt="Divyia Austin">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    张三
+                                                </span>
+                                                <span class="message-time">
+                                                    2分钟前
+                                                </span>
+                                                <span class="message-subject">
+                                                    方案待审批
+                                                </span>
+                                                <span class="message-body">
+                                                    xxx工程整体方案待审批
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="assets/img/favicon.png" class="message-avatar" alt="Microsoft Bing">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    王五
+                                                </span>
+                                                <span class="message-time">
+                                                    昨天
+                                                </span>
+                                                <span class="message-subject">
+                                                    请假单待审批‏
+                                                </span>
+                                                <span class="message-body">
+                                                    因身体不适，想请假一天。
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="assets/img/favicon.png" class="message-avatar" alt="Divyia Austin">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    赵六
+                                                </span>
+                                                <span class="message-time">
+                                                    5月3号
+                                                </span>
+                                                <span class="message-subject">
+                                                    加班申请待审批
+                                                </span>
+                                                <span class="message-body">
+                                                    xxx施工加班3小时
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--/Messages Dropdown-->
+                            </li>
+
+                            <li>
+                                <a class="dropdown-toggle" data-toggle="dropdown" title="Tasks" href="#">
+                                    <i class="icon fa fa-tasks"></i>
+                                    <span class="badge">4</span>
+                                </a>
+                                <!--Tasks Dropdown-->
+                                <ul class="pull-right dropdown-menu dropdown-tasks dropdown-arrow ">
+                                    <li class="dropdown-header bordered-darkorange">
+                                        <i class="fa fa-tasks"></i>
+                                        4个任务进行中
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">长庆坊</span>
+                                                <span class="pull-right">65%</span>
+                                            </div>
+
+                                            <div class="progress progress-xs">
+                                                <div style="width:65%" class="progress-bar"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">观山悦</span>
+                                                <span class="pull-right">35%</span>
+                                            </div>
+
+                                            <div class="progress progress-xs">
+                                                <div style="width:35%" class="progress-bar progress-bar-success"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">商品美地城</span>
+                                                <span class="pull-right">75%</span>
+                                            </div>
+
+                                            <div class="progress progress-xs">
+                                                <div style="width:75%" class="progress-bar progress-bar-darkorange"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">
+                                            <div class="clearfix">
+                                                <span class="pull-left">Adding Contacts</span>
+                                                <span class="pull-right">10%</span>
+                                            </div>
+
+                                            <div class="progress progress-xs">
+                                                <div style="width:10%" class="progress-bar progress-bar-warning"></div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="dropdown-footer">
+                                        <a href="#">
+                                            查看所有任务单
+                                        </a>
+                                        <button class="btn btn-xs btn-default shiny darkorange icon-only pull-right"><i class="fa fa-check"></i></button>
+                                    </li>
+                                </ul>
+                                <!--/Tasks Dropdown-->
+                            </li>
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="avatar" title="View your public profile">
+                                        <img src="assets/img/avatars/adam-jansen.jpg">
+                                    </div>
+                                    <section>
+                                        <h2><span class="profile"><span>管理员</span></span></h2>
+                                    </section>
+                                </a>
+                                <!--Login Area Dropdown-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="username"><a>管理员</a></li>
+                                   
+                                    <!--Theme Selector Area-->
+                                    <li class="theme-area">
+                                        <ul class="colorpicker" id="skin-changer">
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#5DB2FF;" rel="../assets/css/skins/blue.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#2dc3e8;" rel="../assets/css/skins/azure.min.css"></a></li>
+                                            <li><a class="colorpick-btn" href="#" style="background-color:#03B3B2;" rel="../assets/css/skins/teal.min.css"></a></li>                                            
+                                        </ul>
+                                    </li>
+                                    <!--/Theme Selector Area-->
+									<li class="dropdown-footer">
+                                        <a href="../login.html">
+                                            更改密码
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-footer">
+                                        <a href="../login.html">
+                                            注销
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--/Login Area Dropdown-->
+                            </li>
+                            <!-- /Account Area -->
+                            <!--Note: notice that setting div must start right after account area list.
+                            no space must be between these elements-->
+                            <!-- Settings -->
+                        </ul>
+						
+                        <!-- Settings -->
+                    </div>
+                </div>
+                <!-- /Account Area and Settings -->
+            </div>
+        </div>
+    </div>
+    <!-- /Navbar -->
+    <!-- Main Container -->
+    <!--<div class="main-container container-fluid">-->
+        <!-- Page Container -->
+        <div class="page-container">
+        	<div class="page-sidebar" id="sidebar">
+                <!-- Page Sidebar Header-->
+                <div class="sidebar-header-wrapper">
+                    <input type="text" class="searchinput" />
+                    <i class="searchicon fa fa-search"></i>
+                    <div class="searchhelper">搜索功能列表</div>
+                </div>
+                <!-- /Page Sidebar Header -->
+                <!-- Sidebar Menu -->
+                     <ul class="nav sidebar-menu">
+                    <!--Dashboard-->
+                    <li class="active open">
+                        <a href="#" class="menu-dropdown">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text">个人工作台 </span>
+                             <i class="menu-expand"></i>
+                        </a>
+                               <ul class="submenu">
+                                    <li>
+                                        <a href="../person/jobList.html">
+                                            <span class="menu-text">我的工作列表</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                       <a href="../person/myMonthly.html">
+                                            <span class="menu-text">我的月计划</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../person/departmentMonthly.html">
+                                            <span class="menu-text">部门月计划</span>
+                                        </a>
+                                    </li>
+                                     <li>
+                                        <a href="../person/company.html">
+                                            <span class="menu-text">公司月计划</span>
+                                        </a>
+                                    </li>
+                                     <li>
+                                        <a href="../person/classification.html">
+                                            <span class="menu-text">分类查询</span>
+                                        </a>
+                                    </li>
+                                     <li>
+                                        <a href="../person/personalnform.html">
+                                            <span class="menu-text">个人信息设置</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../person/updatePass.html">
+                                            <span class="menu-text">修改密码</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                    </li>
+                    <!--Profile-->
+                </ul>
+                <!-- /Sidebar Menu -->
+            </div>
+            <!-- Page Content -->
+            <div class="page-content">
+               	<div class="header-right" >
+				<dl id="menu-a">
+					<dt><a href="finance/index.html" style="text-decoration: none;"><font color=" #737373">决策经营分析系统</font></a></dt>
+				</dl>
+				<dl id="menu-b">
+					<dt><a href="OA/index.html" style="text-decoration: none;"><font color=" #737373">办公自动化系统</font></a></dt>
+				</dl>
+				<dl id="menu-i">
+					<dt><a href="project/index.html" style="text-decoration: none;"><font color=" #737373">项目管理</font></a></dt>
+				</dl>
+				<dl id="menu-c">
+					<dt><a href="finance/index.html" style="text-decoration: none;"><font color=" #737373">财务系统</font></a></dt>
+				</dl>
+				<dl id="menu-d">
+					<dt><a href="inventory/index.html" style="text-decoration: none;"><font color=" #737373">采购及库存管理</font></a></dt>
+				</dl>
+				<dl id="menu-d">
+					<dt><a href="vehicleManage/index.html" style="text-decoration: none;"><font color=" #737373">车辆管理系统</font></a></dt>
+				</dl>
+				<dl id="menu-e">
+					<dt><a href="client/index.html" style="text-decoration: none;"><font color=" #737373">客户管理</font></a></dt>
+				</dl>
+				
+				<dl id="menu-i">
+					<dt><a href="person/index.html" style="text-decoration: none;"><font color=" #737373">个人工作台</font></a></dt>
+				</dl>
+		     </div>
+                <!-- /Page Breadcrumb -->
+                <!-- Page Header -->
+                <div class="page-header position-relative">
+                    <div class="header-title">
+                        <h1>
+                                                       功能总览
+                        </h1>
+                    </div>
+                    <!--Header Buttons-->
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                    <!--Header Buttons End-->
+                </div>
+                <!-- /Page Header -->
+                <!-- Page Body -->
+                <div class="page-body">
+                    <!--<h5 class="row-title before-pink"><i class="fa fa-align-justify pink"></i><font class="project_map">项目管理</font></h5>-->
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-xs-12">
+                                  <div class="widget">
+                                        <div class="widget-header bordered-bottom bordered-blue">
+                                            <span class="widget-caption"><i class="fa fa-align-justify blue"></i><font class="project_map">项目管理</font></span>
+
+                                            <div class="widget-buttons">
+                                                <!--<a href="#" data-toggle="maximize">
+                                                    <i class="fa fa-expand"></i>
+                                                </a>-->
+                                                <a href="#" data-toggle="collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </a>
+                                                <!--<a href="#" data-toggle="dispose">
+                                                    <i class="fa fa-times"></i>
+                                                </a>-->
+                                            </div>
+                                        </div>
+                                    <div class="widget-body no-padding">
+                                     <div class="widget-main ">
+                                   <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-blue">项目信息管理</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-blue" >
+                                                    <li>
+                                                        <a href="project/projectmanage.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="临时工程管理">
+                                                        	临时工程管理</a>
+                                                    </li>
+                                                    
+  													<li class="divider"></li>
+  													
+                                                    <li>
+                                                        <a href="project/pro_construction.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="工程施工管理">
+                                                        	工程施工管理</a>
+                                                    </li>
+                                                    
+													  <li class="divider"></li>
+													  
+                                                    <li>
+                                                        <a href="project/pro_acceptance.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="工程验收管理">
+                                                        	工程验收管理</a>
+                                                    </li>
+
+                                                    <li class="divider"></li>
+
+                                                    <li>
+                                                        <a href="project/pro_info.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="工程信息管理">
+                                                        	工程信息管理</a>
+                                                    </li>
+                                                </ul>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-blue">项目勘察管理</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-blue">
+                                                    <li >
+                                                        <a href="project/pro_task_manage.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="任务单管理" >
+                                                        	任务单管理</a>
+                                                    </li>
+                                                     <li class="divider"></li>
+                                                    <li>
+                                                        <a href="project/pro_task_cancel.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="任务单撤销" >
+                                                        	任务单撤销</a>
+                                                    </li>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-blue">项目方案管理</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-blue">
+                                                    <li>
+                                                        <a href="project/pro_program.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="方案管理" >
+                                                        	方案管理</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-blue">项目预算管理</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-blue">
+                                                    <li>
+                                                        <a href="project/pro_budget.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="工程预算管理">工程预算管理</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-blue">开票回款管理</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-blue">
+                                                    <li>
+                                                        <a href="project/pro_back_cash.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="工程回款管理">工程回款管理</a>
+                                                    </li>
+                                                    
+  													<li class="divider"></li>
+  													
+                                                    <li>
+                                                        <a href="project/pro_invoicing.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="工程开票管理">工程开票管理</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-blue">项目合同管理</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-blue">
+                                                    <li >
+                                                        <a href="project/pro_temporary_contract.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="临时合同管理" >
+                                                        	临时合同管理</a>
+                                                    </li>
+                                                     <li class="divider"></li>
+                                                    <li>
+                                                        <a href="project/pro_contract.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="工程合同">工程合同</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                     <li >
+                                                        <a href="project/pro_subcontract.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="工程子合同管理" >
+                                                        	工程子合同管理</a>
+                                                    </li>
+                                                     <li class="divider"></li>
+                                                    <li>
+                                                        <a href="project/pro_contract_search.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="工程合同查询">工程合同查询</a>
+                                                    </li>
+                                                    </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header" >
+                                        <div class="header bordered-blue">计划管理</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-blue">
+                                                    <li class="list_li">
+                                                        <a href="project/pro_up_communication_plan.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="上游沟通计划" >
+                                                        	上游沟通计划</a>
+                                                    </li>
+                                                    <li class="list_li">
+                                                        <a href="project/pro_up_acceptance_plan.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="上游验收计划">上游验收计划</a>
+                                                    </li>
+                                                     <li class="list_li">
+                                                        <a href="project/pro_up_settlement_plan.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="上游结算计划" >
+                                                        	上游结算计划</a>
+                                                    </li>
+                                                    <li class="list_li">
+                                                        <a href="project/pro_down_construction_plan.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="下游施工计划">下游施工计划</a>
+                                                    </li>
+                                                     <li class="list_li_li">
+                                                        <a href="project/pro_down_equipment_materials_procurement_plan.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="下游设备材料采购计划" >
+                                                        	下游设备材料采购计划</a>
+                                                    </li>
+                                                     <li class="list_li_li">
+                                                        <a href="project/pro_down_funds_use.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="下游资金使用计划">下游资金使用计划</a>
+                                                    </li>
+                                                     <li class="list_li">
+                                                        <a href="project/pro_down_equipment_materials_use_plan.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="下游设备材料使用计划" >
+                                                        	下游设备材料使用计划</a>
+                                                    </li>
+                                                   
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-blue" >施工管理</div>
+                                        <div class="dropdown-container" >
+                                            <div class="dropdown-preview" >
+                                                <ul class="dropdown-menu dropdown-blue">
+                                                    <li class="list_li">
+                                                        <a href="project/construct_team_list.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="施工队管理" >
+                                                        	施工队管理</a>
+                                                    </li>
+                                                    <li class="list_li" >
+                                                        <a href="project/construct_site_list.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="现场施工管理" >
+                                                        	现场施工管理</a>
+                                                    </li>
+                                                     <li class="list_li" >
+                                                        <a href="project/construct_charge_list.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="进度款催要" >
+                                                        	进度款催要</a>
+                                                    </li>
+                                                     <li class="list_li" >
+                                                        <a href="project/construct_conclusion_list.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="项目施工总结" >
+                                                        	项目施工总结</a>
+                                                    </li>
+                                                    <li class="list_li" >
+                                                        <a href="project/construct_material_list.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="项目资料清单" >
+                                                        	项目资料清单</a>
+                                                    </li>
+                                                    <li  class="list_li">
+                                                        <a href="#" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="常规巡视记录管理" >
+                                                        	常规巡视记录</a>
+                                                    </li>
+                                                    <li class="list_li" >
+                                                        <a href="project/construct_daiweiuserinfo_list.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="代维客户管理" >
+                                                        	代维客户管理</a>
+                                                    </li>
+                                                     <li class="list_li" >
+                                                        <a href="project/construct_daiweiinfo_list.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="代维现场勘查管理" >
+                                                        	代维现场勘查</a>
+                                                    </li>
+                                                     <li  class="list_li_li" >
+                                                        <a href="project/construct_daiweidev_list.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="代维现场勘察设备记录" >
+                                                        	代维现场勘察设备记录</a>
+                                                    </li>
+                                                     <li class="list_li_li" >
+                                                        <a href="project/construct_daydianli_list.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="日电力生产开工审批" >
+                                                        	日电力生产开工审批</a>
+                                                    </li>
+                                                    <li  class="list_li_li" >
+                                                       <a href="project/construct_daiweidefects_list.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="代维现场勘查缺陷管理" >
+                                                       	代维现场勘查缺陷管理</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+                           </div>
+                           
+                           </div>
+                           
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-xs-12">
+                                  <div class="widget">
+                                        <div class="widget-header bordered-bottom bordered-green">
+                                            <span class="widget-caption"><i class="fa fa-align-justify green"></i><font class="project_map">其它管理</font></span>
+
+                                            <div class="widget-buttons">
+                                                <!--<a href="#" data-toggle="maximize">
+                                                    <i class="fa fa-expand"></i>
+                                                </a>-->
+                                                <a href="#" data-toggle="collapse">
+                                                    <i class="fa fa-minus"></i>
+                                                </a>
+                                                <!--<a href="#" data-toggle="dispose">
+                                                    <i class="fa fa-times"></i>
+                                                </a>-->
+                                            </div>
+                                        </div>
+                                    <div class="widget-body no-padding">
+                                     <div class="widget-main ">
+                                   <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-green">客户管理</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-green" >
+                                                    <li>
+                                                        <a href="client/index.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="客户信息管理">
+                                                        	客户信息管理</a>
+                                                    </li>
+                                                    
+  													<li class="divider"></li>
+  													
+                                                    <li>
+                                                        <a href="client/customerReturnRecordsManagement.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="客户回访计划">
+                                                        	客户回访计划</a>
+                                                    </li>
+                                                    
+													  <li class="divider"></li>
+													  
+                                                    <li>
+                                                        <a href="client/customerReturnRecordsManagement.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="客户回访记录管理">
+                                                        	客户回访记录管理</a>
+                                                    </li>
+
+                                                    <li class="divider"></li>
+
+                                                    <li>
+                                                        <a href="#" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="销售管理">
+                                                        	销售管理</a>
+                                                    </li>
+                                                </ul>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-green">个人工作台</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-green" >
+                                                    <li class="list_li">
+                                                        <a href="../person/jobList.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="我的工作列表">
+                                                        	我的工作列表</a>
+                                                    </li>
+                                                    
+  													
+                                                    <li class="list_li">
+                                                        <a href="../person/myMonthly.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="我的月计划">
+                                                        	我的月计划</a>
+                                                    </li>
+                                                    
+													  
+                                                    <li class="list_li">
+                                                        <a href="../person/departmentMonthly.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="部门月计划">
+                                                        	部门月计划</a>
+                                                    </li>
+
+
+                                                    <li class="list_li">
+                                                        <a href="../person/classification.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="分类查询">
+                                                        	分类查询</a>
+                                                    </li>
+
+                                                    <li class="list_li">
+                                                        <a href="../person/company.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="公司月计划">
+                                                        	公司月计划</a>
+                                                    </li>
+
+                                                    <li class="list_li">
+                                                        <a href="../person/personalnform.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="个人信息设置">
+                                                        	个人信息设置</a>
+                                                    </li>
+
+                                                    <li class="list_li">
+                                                        <a href="../person/updatePass.html" tabindex="-1" data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="密码修改">
+                                                        	密码修改</a>
+                                                    </li>
+                                                </ul>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-green">车辆管理系统</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-green">
+                                                    <li >
+                                                        <a href="../vehicleManage/carPlan.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="用车计划管理" >
+                                                        	用车计划管理</a>
+                                                    </li>
+                                                     <li class="divider"></li>
+                                                    <li>
+                                                        <a href="../vehicleManage/vehicleManagement.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="车辆信息管理" >车辆信息管理</a>
+                                                    </li>
+                                                    </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-green">采购及库存系统</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-green">
+                                                    <li >
+                                                        <a href="inventory/materialPurchasing.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="采购物资计划" >
+                                                        	采购物资计划</a>
+                                                    </li>
+                                                     <li class="divider"></li>
+                                                    <li>
+                                                        <a href="inventory/purchaseList.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="采购物料清单" >
+                                                        	采购物料清单</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                         <a href="inventory/storageRecord.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="物资入库记录" >
+                                                         	物资入库记录</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                         <a href="inventory/materialDelivery.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="物资出库记录" >
+                                                         	物资出库记录</a>
+                                                    </li>
+                                                    </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-green">财务系统</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-green">
+                                                    <li >
+                                                        <a href="#" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="应收管理" >
+                                                        	应收管理</a>
+                                                    </li>
+                                                     <li class="divider"></li>
+                                                    <li>
+                                                        <a href="#" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="应付管理" >应付管理</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a href="#" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="财务结算" >财务结算</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a href="#" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="成本核算" >成本核算</a>
+                                                    </li>
+                                                    </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-green" >办公自动化系统</div>
+                                        <div class="dropdown-container" >
+                                            <div class="dropdown-preview" >
+                                                <ul class="dropdown-menu dropdown-green">
+                                                    <li class="list_li">
+                                                        <a href="OA/oa_personnel.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="人员信息管理" >
+                                                        	人员信息管理</a>
+                                                    </li>
+                                                    <li class="list_li" >
+                                                        <a href="OA/oa_leave.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="请假管理" >请假管理</a>
+                                                    </li>
+                                                     <li class="list_li" >
+                                                        <a href="OA/oa_overtime.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="加班管理" >
+                                                        	加班管理</a>
+                                                    </li>
+                                                    <li  class="list_li" >
+                                                        <a href="OA/oa_inviteJob.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="招聘管理" >招聘管理</a>
+                                                    </li>
+                                                     <li class="list_li" >
+                                                        <a href="OA/oa_training.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="培训管理" >
+                                                        	培训管理</a>
+                                                    </li>
+                                                    <li class="list_li" >
+                                                        <a href="OA/oa_laborContracts.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="员工合同管理" >
+                                                        	员工合同管理</a>
+                                                    </li>
+                                                    <li class="list_li" >
+                                                        <a href="OA/oa_performance.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="绩效系数管理" >绩效系数管理</a>
+                                                    </li>
+                                                     <li class="list_li" >
+                                                        <a href="OA/oa_performanceQuery.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="绩效查询" >
+                                                        	绩效查询</a>
+                                                    </li>
+                                                     <li  class="list_li">
+                                                        <a href="OA/oa_performanceTotal.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="绩效统计" >绩效统计</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-green">决策经营分析系统</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-green">
+                                                    <li >
+                                                        <a href="#" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="信息查询功能" >
+                                                        	信息查询功能</a>
+                                                    </li>
+                                                     <li class="divider"></li>
+                                                    <li>
+                                                        <a href="#" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="统计报表" >统计报表</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a href="#" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="综合分析" >综合分析</a>
+                                                    </li>
+                                                    </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="well with-header">
+                                        <div class="header bordered-green">系统管理</div>
+                                        <div class="dropdown-container">
+                                            <div class="dropdown-preview">
+                                                <ul class="dropdown-menu dropdown-green">
+                                                    <li >
+                                                       <a href="sysConfig/sysuser.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="用户管理" >
+                                                        	用户管理</a>
+                                                    </li>
+                                                     <li class="divider"></li>
+                                                    <li>
+                                                        <a href="sysConfig/role.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="角色管理" >
+                                                        	角色管理</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a href="sysConfig/orgnization.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="组织机构管理" >
+                                                        	组织机构管理</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a href="sysConfig/resource.html" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="功能管理" >
+                                                        	功能管理</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li>
+                                                        <a href="#" tabindex="-1"  data-container="body" data-titleclass="bordered-purple" data-class="dark" data-toggle="popover-hover" data-placement="right"  data-content="权限管理" >
+                                                        	权限管理</a>
+                                                    </li>
+                                                    </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+                           </div>
+                           
+                           </div>
+                           
+                                </div>
+                            </div>
+                    </div>
+                    
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+
+    <!--</div>-->
+
+    <!--Basic Scripts-->
+    <script src="assets/js/jquery-2.0.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!--Beyond Scripts-->
+    <script src="assets/js/beyond.min.js"></script>
+
+    <!--Page Related Scripts-->
+    <script src="assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="assets/js/datatable/ZeroClipboard.js"></script>
+    <script src="assets/js/datatable/dataTables.tableTools.min.js"></script>
+    <script src="assets/js/datatable/dataTables.bootstrap.min.js"></script>
+    <script src="assets/js/datatable/datatables-init.js"></script>
+    <script>InitiateSimpleDataTable.init();
+InitiateEditableDataTable.init();
+InitiateExpandableDataTable.init();
+InitiateSearchableDataTable.init();</script>
+</body>
+<!--  /Body -->
+</html>

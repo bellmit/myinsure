@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<!-- Head -->
+<head>
+    <title>模块管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="description" content="data tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="${sys_cxt}/assets/img/favicon.png" type="image/x-icon"/>
+ <link rel="stylesheet" href="${cxt }/front/css/button.css" />
+    <link href="${sys_cxt}/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/weather-icons.min.css" rel="stylesheet" />
+    <!--Fonts-->
+    <!--<link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">-->
+    <!--Beyond styles-->
+    <link rel="stylesheet" href="${sys_cxt}/assets/css/beyond.min.css" />
+    <link href="${sys_cxt}/assets/css/demo.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <!--Page Related styles-->
+    <link href="${sys_cxt}/assets/css/dataTables.bootstrap.css" rel="stylesheet" />	
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="${sys_cxt}/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="${sys_cxt}/assets/js/skins.min.js"></script>
+    <link href="${sys_cxt}/css/head.css" rel="stylesheet" type="text/css" />
+	<link href="${sys_cxt}/css/custom.css" rel="stylesheet" type="text/css"/>
+	
+	<link rel="stylesheet" href="${sys_cxt}/css/global.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="${cxt}/hlib/layui/css/layui.css" />
+	<script type="text/javascript" src="${cxt }/hlib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="${cxt }/hlib/layui/layui.js" charset="utf-8"></script>
+	<script type="text/javascript" src="${cxt }/hlib/ajaxfileupload.js" charset="utf-8"></script>
+	<script type="text/javascript" src="${sys_cxt}/website/carousel/js/carousel.js"></script>
+<style>
+.header-right{
+  	width:75%;
+  	height:41px;
+  	background-color: #667add;
+  	color:#fff;
+    float: left;
+}
+.header-right dl{
+	float: left;
+	color:#fff;
+	padding: 0px 0px 0px 0px;
+}
+.header-right dl dt{
+	padding: 12px 40px 0px 2px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+    color:#fff;
+}
+.header-right dl dt a{
+   color:#fff; 
+}
+.header-right dl dt:hover {
+   color: #2dc3e8;
+}
+.page-header .header-buttons a {
+  height: 35px;
+}
+.page-header {
+  height: 37px;
+}
+.page-header .header-title h1 {
+           line-height: 17px;
+         }
+button{
+	border: 0px;
+	margin:auto auto 10px 10px;
+}
+.titl{
+font-size: 1.4rem;
+line-height: 35px;
+}
+/*a:link {color:white}
+      a:visited {color: #00FF00}
+   a:hover {color: #FF00FF}
+   a:active {color: #0000FF}*/
+.form-label{min-width:100px;}
+.data_choose{margin-bottom:10px;}
+.data_choose input{width:280px;height:26px;}
+</style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+    <!-- Page Header -->
+    <div class="page-header position-relative">
+        <div class="header-title">
+            <span class="titl">
+                   网站管理                        
+                <span>
+                    <i class="fa fa-angle-right"></i>
+                                           ${title! }
+                </span>
+            </span>
+        </div>
+        <!--Header Buttons-->
+        <div class="header-buttons">
+           <!--  <a class="sidebar-toggler" href="#">
+                <i class="fa fa-arrows-h"></i>
+            </a>
+            <a class="refresh" id="refresh-toggler" href="">
+                <i class="glyphicon glyphicon-refresh"></i>
+            </a>
+            <a class="fullscreen" id="fullscreen-toggler" href="#">
+                <i class="glyphicon glyphicon-fullscreen"></i>
+            </a> -->
+        </div>
+        <!--Header Buttons End-->
+    </div>
+    <!-- /Page Header -->
+    <!-- Page Body -->
+    <div class="page-body">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="widget">
+                    <div class="widget-header ">
+                      <!--  <span class="widget-caption">Simple DataTable</span>-->
+                        <!-- <div class="widget-buttons">
+                            <a href="#" data-toggle="maximize">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                            <a href="#" data-toggle="collapse">
+                                <i class="fa fa-minus"></i>
+                            </a>
+                            <a href="#" data-toggle="dispose">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div> -->
+                    </div>
+                    <div class="widget-body" style="overflow-x:hidden;">
+	                    <div id="photos" style="padding:15px 0;padding-left:%;position:relative;">
+							<form id="form" method="post" class="layui-form">
+								<div class="jqzoom" style="display:inline-block; margin-right:15px;margin-top:15px;margin-left:5%;">
+									<input type="hidden" name="id" value="${list.id! }"/>
+									<div class="layui-form-item">
+					 					<label class="layui-form-label" style="min-width:120px;">机构名称:</label>
+					 					<div class="layui-input-inline">
+					 						<input type="text"  class="layui-input" name="name" id="name" value="${list.ins_name! }"/>
+					 					</div>
+					 				</div> 
+							 		<div class="layui-form-item">
+					 					<label class="layui-form-label" style="min-width:120px;">机构地址:</label>
+					 					<div class="layui-input-inline">
+					 						<input type="text"  class="layui-input" name="address" id="name" value="${list.ins_address! }"/>
+					 					</div>
+					 				</div> 
+					 				<div class="layui-form-item">
+					 					<label class="layui-form-label" style="min-width:120px;">经营范围:</label>
+					 					<div class="layui-input-inline">
+					 						<input type="text"  class="layui-input" name="range" id="name" value="${list.ins_range! }"/>
+					 					</div>
+					 				</div> 
+					 				<div class="layui-form-item">
+					 					<label class="layui-form-label" style="min-width:120px;">负责人:</label>
+					 					<div class="layui-input-inline">
+					 						<input type="text"  class="layui-input" name="controller" id="name" value="${list.ins_controller! }"/>
+					 					</div>
+					 				</div> 
+									<div class="layui-form-item">
+					 					<label class="layui-form-label" style="min-width:120px;">联系电话:</label>
+					 					<div class="layui-input-inline">
+					 						<input type="text"  class="layui-input" name="phone" id="name" value="${list.ins_phone! }"/>
+					 					</div>
+					 				</div> 
+					 				
+					 				<!-- <div class="layui-form-item">
+					 					<label class="layui-form-label" style="min-width:120px;">所属地区:</label>
+					 					<div class="layui-input-inline">
+					 						<input type="text"  class="layui-input" name="province" id="name" value="${list.ins_phone! }"/>
+					 					</div>
+					 				</div>  -->
+					 				<div class="" style="margin-top:15px;text-align:right;padding-right:15px;">
+					 					<button type="button" onclick="save()"  class="button button-pill button-raised button-primary button-small">保存</button>
+					 					<button type="button" class="button button-pill button-raised button-royal  button-small" onclick="javascript:history.back();">返回</button>
+					 				</div> 
+								</div>
+							</form>
+						</div>
+                  	</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- /Page Body -->
+
+    <!--Basic Scripts-->
+    <script src="${sys_cxt}/assets/js/bootstrap.min.js"></script>
+
+    <!--Beyond Scripts-->
+    <script src="${sys_cxt}/assets/js/beyond.min.js"></script>
+
+    <!--Page Related Scripts-->
+    <script src="${sys_cxt}/assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/ZeroClipboard.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/dataTables.tableTools.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/dataTables.bootstrap.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/datatables-init.js"></script>
+    <script>
+        InitiateSimpleDataTable.init();
+        InitiateEditableDataTable.init();
+        InitiateExpandableDataTable.init();
+        InitiateSearchableDataTable.init();
+    </script>
+    <script>
+	layui.use(['form','element' ],function() {
+		var form = layui.form;
+		var element = layui.element; 
+		form.render();
+	});
+	function save(){
+		$.ajax({
+			cache : true,
+			type : "POST",
+			url : "update_save",
+			data :  $('#form').serialize(),
+			dataType:'json',
+			async: false,
+			error : function(request) {
+				alert("连结错误！");
+			},
+			success : function(data) {
+				if(data.msg=="成功"){
+					window.location.href="getList";
+				}
+			}
+		});
+	}
+    </script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<!-- Head -->
+<head>
+    <title>模块管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="description" content="data tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="${sys_cxt}/assets/img/favicon.png" type="image/x-icon"/>
+
+    <link href="${sys_cxt}/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/weather-icons.min.css" rel="stylesheet" />
+    <!--Fonts-->
+    <!--<link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">-->
+    <!--Beyond styles-->
+    <link rel="stylesheet" href="${sys_cxt}/assets/css/beyond.min.css" />
+    <link rel="stylesheet" href="${cxt }/front/css/button.css" />
+    <link href="${sys_cxt}/assets/css/demo.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <!--Page Related styles-->
+    <link href="${sys_cxt}/assets/css/dataTables.bootstrap.css" rel="stylesheet" />	
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="${sys_cxt}/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="${sys_cxt}/assets/js/skins.min.js"></script>
+    <link href="${sys_cxt}/css/head.css" rel="stylesheet" type="text/css" />
+	<link href="${sys_cxt}/css/custom.css" rel="stylesheet" type="text/css"/>
+	
+	<script type="text/javascript" src="${cxt }/hlib/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="${cxt }/hlib/layui/css/layui.css" />
+	<script type="text/javascript" src="${cxt }/hlib/layui/layui.js"></script>
+	<script type="text/javascript" src="${sys_cxt}/website/web/js/web.js"></script>
+	<script type="text/javascript" src="${cxt }/hlib/ajaxfileupload.js" charset="utf-8"></script>
+<style>
+.header-right{
+  	width:75%;
+  	height:41px;
+  	background-color: #667add;
+  	color:#fff;
+    float: left;
+}
+.header-right dl{
+	float: left;
+	color:#fff;
+	padding: 0px 0px 0px 0px;
+}
+.header-right dl dt{
+	padding: 12px 40px 0px 2px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+    color:#fff;
+}
+.header-right dl dt a{
+   color:#fff; 
+}
+.header-right dl dt:hover {
+   color: #2dc3e8;
+}
+.page-header .header-buttons a {
+  height: 35px;
+}
+.page-header {
+  height: 37px;
+}
+.page-header .header-title h1 {
+           line-height: 17px;
+         }
+button{
+	border: 0px;
+	margin:auto auto 10px 10px;
+}
+/*a:link {color:white}
+      a:visited {color: #00FF00}
+   a:hover {color: #FF00FF}
+   a:active {color: #0000FF}*/
+.more:hover {
+	color: #2894FF;
+	border: 1px solid #E0E0E0;
+	box-shadow: -1px -2px 2px #9D9D9D;
+	background: #fff;
+	padding: 3px;
+}
+
+.tip {
+	color: #2894FF;
+}
+
+.tip li {
+	margin: 10px 5px;
+}
+.tip li:hover {
+	background: #84C1FF;
+}
+#form tbody tr td input{
+	font-size:1rem;
+	height: 2em;
+}
+.titl{
+font-size: 1.4rem;
+line-height: 35px;
+}
+#form th{
+font-size: 1.2rem;
+}
+</style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+    <!-- Page Header -->
+    <div class="page-header position-relative">
+        <div class="header-title">
+            <span class="titl">
+                   网站管理                        
+                <span>
+                    <i class="fa fa-angle-right"></i>
+                                           导航管理
+                </span>
+            </span>
+        </div>
+        <!--Header Buttons-->
+        <div class="header-buttons">
+            <!-- <a class="sidebar-toggler" href="#">
+                <i class="fa fa-arrows-h"></i>
+            </a>
+            <a class="refresh" id="refresh-toggler" href="">
+                <i class="glyphicon glyphicon-refresh"></i>
+            </a>
+            <a class="fullscreen" id="fullscreen-toggler" href="#">
+                <i class="glyphicon glyphicon-fullscreen"></i>
+            </a> -->
+        </div>
+        <!--Header Buttons End-->
+    </div>
+    <!-- /Page Header -->
+    <!-- Page Body -->
+    <div class="page-body">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="widget">
+                    <div class="widget-header ">
+                      <!--  <span class="widget-caption">Simple DataTable</span>-->
+                        <!-- <div class="widget-buttons">
+                            <a href="#" data-toggle="maximize">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                            <a href="#" data-toggle="collapse">
+                                <i class="fa fa-minus"></i>
+                            </a>
+                            <a href="#" data-toggle="dispose">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div> -->
+                    </div>
+                    <div class="widget-body" style="overflow-x:hidden;">
+             			<div class="admin-main">
+								<!-- <a id="addlink" href="javascript:addtr();">
+									<button class="layui-btn layui-btn-normal layui-btn-sm"
+										type="button" onclick="addMenu(null,1);">
+										<i class="layui-icon">&#xe608;</i> 新增
+									</button>
+								</a> <a href="#" onclick="delBatch()">
+									<button type="button"
+										class="layui-btn layui-btn-danger layui-btn-sm">
+										<i class="layui-icon">&#xe640;</i> 删除
+									</button>
+								</a> -->
+							<form id="form" action="#" class="layui-form">
+								<input id="count" type="hidden" name="count" value="" />
+									<div class="layui-field-box">
+										<div>
+											<table id="maint" class="layui-table">
+												<colgroup>
+													<col width="50" />
+													<col width="70" />
+													<col width="200" />
+													<col width="140" />
+													<col width="130" />
+													<!-- <col width="150" /> -->
+													<col width="120" />
+													<col width="230" />
+												</colgroup>
+												<thead>
+													<tr>
+														<th><input type="checkbox" id="chk_all" name="all"
+															onclick="check_all()" lay-ignore /></th>
+														<th align="center">排序</th>
+														<th align="center">栏目名称</th>
+														<th align="center">导航栏显示</th>
+														<th align="center">模版类型</th>
+														<th align="center">目录名称</th>
+														<th align="center">操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<%for (column in columnList!){%>
+													<tr id="tr${column.id}" class="grade-${column.wap_nav}">
+														<td><input  class="column" id="id_${column.id}"
+															type="checkbox" name="id_${column.id}"
+															value="${column.id}" lay-ignore /></td>
+														<td><input style="width: 2em;text-align: center;"  type="text" class="layui-input"
+															name="orders_${column.id}" value="${column.orders }" /></td>
+														<td><%if (!isEmpty(column.webColumns)) {%> <img
+															src="${sys_cxt}/images/anyou.gif" class="parent"
+															onclick="change_pic('${column.id}')" id="row123"
+															style="margin-right:6px;" /> <%}else{%> <img
+															src="${sys_cxt}/images/anxia.gif" class="parent"
+															onclick="change_pic()" id="row123"
+															style="margin-right:6px;visibility:hidden;" /> <%}%> <input
+															type="text" class="layui-input" name="name_${column.id}"
+															value="${column.name }" style="display:inline; width:80%;" />
+															<div style="clear:both;"></div> <input type="hidden"
+															class="id" value="${column.id}" />
+														</td>
+														<td><select name="nav_${column.id}"
+															lay-verify="required">
+																<option value="0" ${column.nav=="0"?"selected":'' }>不显示</option>
+																<option value="1" ${column.nav=="1"?'selected':'' }>导航栏显示</option>
+														</select></td>
+														<td><select name="faclass_${column.id}"
+															lay-verify="required">
+																<option value="首页模版" ${column.faclass=="首页模版"?"selected":'' }>首页模版</option>
+																<option value="简单列表" ${column.faclass=="简单列表"?'selected':'' }>简单列表</option>
+																<option value="带图列表" ${column.faclass=="带图列表"?'selected':'' }>带图列表</option>
+																<option value="文章模版" ${column.faclass=="文章模版"?'selected':'' }>文章模版</option>
+														</select></td>
+														<!-- <td><input type="text" class="layui-input"
+															name="out_url_${column.id}"
+															value="${column.out_url }" /></td> -->
+														<td><input type="text" class="layui-input"
+															name="foldername_${column.id}"
+															value="${column.foldername }" /></td>
+														<td>
+															<a href="javascript:#"  onclick="ajax_edit('${column.id}')" class="button button-3d button-primary button-box button-tiny">
+																<i class="layui-icon">&#xe61d;</i> 保存
+															</a>&nbsp;&nbsp;&nbsp;&nbsp;
+															<a href="javascript:#" onclick="ajax_delete('${column.id}')"  class="button button-3d button-caution button-box button-tiny">
+																<i class="layui-icon">&#xe640;</i> 删除
+															</a> &nbsp;&nbsp;&nbsp;
+															<div class="more" style="height:20px;display:inline;position:relative;cursor:pointer;" >
+																<i class="layui-icon">&#xe61a;</i> 更多
+																<ul class="tip"
+																	style="display:none;position:absolute;top:20px;right:-1px;border:1px solid #d0d0d0;width:100px;background:#fff;z-index:1;">
+																	<li onclick="uploadImg('${column.id}')">上传图片</li>
+																	<li onclick="addMenu('${column.id}',2)">添加子栏目</li>
+																	<li class="move-to">移动栏目至<i class="layui-icon"
+																		style="margin-left:2px;color:#d0d0d0;">&#xe625;</i>
+																		<ul class="sub_tip"
+																			style="display:none;position:absolute;top:3px;left:-100px;border:1px solid #d0d0d0;width:120px;background:#fff;z-index:1;">
+																			<%for (coln in columnList!){%> <%if(coln.id !=
+																			column.id){%>
+																			<li parentid="${coln.id}" childid="${column.id}">${coln.name}</li>
+																			<%}%> <%}%>
+																		</ul>
+																	</li>
+																</ul>
+															</div>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+													</tr>
+													<%for (c in column.webColumns!){%>
+													<tr id="tr${c.id}" class="grade-${c.wap_nav} tr${c.id} " style="display: none">
+														<td><input class="column" id="id_${c.id}"
+															type="checkbox" name="id_${c.id}" value="${c.id}" lay-ignore/></td>
+														<td><input style="width: 2em;text-align: center;" type="text" class="layui-input"
+															name="orders_${c.id}" value="${c.orders }" /></td>
+														<td><%if (!isEmpty(c.webColumns)) {%> <img
+															src="${sys_cxt}/images/bg_columnx.gif"
+															style="vertical-align:middle" /> <img
+															src="${sys_cxt}/images/anyou.gif" class="parent"
+															onclick="change_pic('${c.id}')" id="row123"
+															style="margin-right:0px;" /> <%}else{%> <img
+															src="${sys_cxt}/images/bg_column.gif"
+															style="vertical-align:middle;margin-right:1px;" /> <%}%>
+															<input type="text" class="layui-input" name="name_${c.id}"
+															value="${c.name }" style="display:inline-block;width:30%;" />
+															<input type="hidden" class="id" value="${c.id}" />
+															<div style="clear:both;"></div>
+														</td>
+														<td><select name="nav_${c.id}" lay-verify="required">
+																<option value="0" ${c.nav=="0"?"selected":'' }>不显示</option>
+																<option value="1" ${c.nav=="1"?'selected':'' }>导航栏显示</option>
+														</select></td>
+														<td><select name="faclass_${c.id}"
+															lay-verify="required">
+																<option value="首页模版" ${c.faclass=="首页模版"?"selected":'' }>首页模版</option>
+																<option value="简单列表" ${c.faclass=="简单列表"?'selected':'' }>简单列表</option>
+																<option value="带图列表" ${c.faclass=="带图列表"?'selected':'' }>带图列表</option>
+																<option value="文章模版" ${c.faclass=="文章模版"?'selected':'' }>文章模版</option>
+														</select></td>
+														<!-- <td><input type="text" class="layui-input"
+															name="out_url_${c.id}"
+															value="${c.out_url }" /></td> -->
+														<td><input type="text" class="layui-input"
+															name="foldername_${c.id}" value="${c.foldername }" /></td>
+														<td><a href="javascript:#"
+															onclick="ajax_edit('${c.id}')" class="button button-3d button-primary button-box button-tiny">
+															<i class="layui-icon">&#xe61d;</i> 保存</a>&nbsp;&nbsp;&nbsp;&nbsp;
+															<a href="javascript:#" onclick="ajax_delete('${c.id}')" class="button button-3d button-caution button-box button-tiny">
+															<i class="layui-icon">&#xe640;</i> 删除</a> &nbsp;&nbsp;&nbsp;
+															<div
+																style="cursor:pointer;height:20px;display:inline;position:relative;"
+																class="more">
+																<i class="layui-icon">&#xe61a;</i> 更多
+																<ul class="tip"
+																	style="display:none;position:absolute;top:20px;right:-1px;border:1px solid #d0d0d0;width:100px;background:#fff;z-index:1;">
+																	<li onclick="uploadImg('${c.id}')">上传图片</li>
+																	<li onclick="addMenu('${c.id}',3)">添加三级栏目</li>
+																	<li class="move-to">移动栏目至<i class="layui-icon"
+																		style="margin-left:2px;color:#d0d0d0;">&#xe625;</i>
+																		<ul class="sub_tip"
+																			style="display:none;position:absolute;top:3px;left:-100px;border:1px solid #d0d0d0;width:120px;background:#fff;z-index:1;">
+																			<li>升为一级栏目</li> <%for (coln in columnList!){%>
+																			<li parentid="${coln.id}" childid="${c.id}">${coln.name}</li>
+																			<!--  -->
+																			<%}%>
+																		</ul>
+																	</li>
+																</ul>
+															</div>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+													</tr>
+													<%for (col in c.webColumns!){%> 
+													<tr class="grade-${col.wap_nav}" style="display: none">
+														<td><input class="column" id="id" type="checkbox"
+															name="id_${col.id}" value="${col.id}" lay-ignore/></td>
+														<td><input style="width: 2em;text-align: center;" type="text" class="layui-input"
+															name="orders_${col.id}" value="${col.orders }" /></td>
+														<td><img src="${sys_cxt}/images/bg_column1.gif"
+															style="vertical-align:middle" /> <input type="text"
+															class="layui-input" name="name_${col.id}"
+															value="${col.name }" style="display:inline;width:30%;" />
+															<input type="hidden" class="id" value="${col.id}" />
+															<div style="clear:both;"></div></td>
+														<td><select name="nav_${col.id}" lay-verify="required">
+																<option value="0" ${col.nav=="0"?"selected":'' }>不显示</option>
+																<option value="1" ${col.nav=="1"?'selected':'' }>导航栏显示</option>
+														</select></td>
+														<td><select name="faclass_${col.id}"
+															lay-verify="required">
+																<option value="首页模版" ${col.faclass=="首页模版"?"selected":'' }>首页模版</option>
+																<option value="简单列表" ${col.faclass=="简单列表"?'selected':'' }>简单列表</option>
+																<option value="带图列表" ${col.faclass=="带图列表"?'selected':'' }>带图列表</option>
+																<option value="文章模版" ${col.faclass=="文章模版"?'selected':'' }>文章模版</option>
+														</select></td>
+														<!-- <td><input type="text" class="layui-input"
+															name="out_url_${col.id}"
+															value="${col.out_url }" /></td> -->
+														<td><input type="text" class="layui-input"
+															name="foldername_${col.id}" value="${col.foldername }" />
+														</td>
+														<td><a href="javascript:#"
+															onclick="ajax_edit('${col.id}')" class="button button-3d button-primary button-box button-tiny">
+															<i class="layui-icon">&#xe61d;</i> 保存</a>&nbsp;&nbsp;&nbsp;&nbsp;
+															<a href="javascript:#" onclick="ajax_delete('${col.id}')" class="button button-3d button-caution button-box button-tiny"><i
+																class="layui-icon">&#xe640;</i> 删除</a> &nbsp;&nbsp;&nbsp;
+															<div
+																style="cursor:pointer;height:20px;display:inline;position:relative;"
+																class="more">
+																<i class="layui-icon">&#xe61a;</i> 更多
+																<ul class="tip"
+																	style="display:none;position:absolute;top:20px;right:-1px;border:1px solid #d0d0d0;width:100px;background:#fff;z-index:1;">
+																	<li onclick="uploadImg('${col.id}')">上传图片</li>
+																	<li class="move-to">移动栏目至<i class="layui-icon"
+																		style="margin-left:2px;color:#d0d0d0;">&#xe625;</i>
+																		<ul class="sub_tip"
+																			style="display:none;position:absolute;top:3px;left:-100px;border:1px solid #d0d0d0;width:120px;background:#fff;z-index:1;">
+																			<li>升为一级栏目</li> <%for (coln in columnList!){%>
+																			<li parentid="${coln.id}" childid="${col.id}">${coln.name}</li>
+																			<!--  -->
+																			<%}%>
+																		</ul>
+																	</li>
+																</ul>
+															</div>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+													</tr>
+	
+													<%}%> <%}%> <%}%>
+												</tbody>
+											</table>
+											<table>
+												<tr>
+													<td width="3%"></td>
+													<td width="20%" colspan='2'><a
+														href="javascript:addMenu(null,1);">+添加一级栏目</a></td>
+													<td width="12%"></td>
+													<td width="12%"></td>
+													<td width="12%"></td>
+													<td></td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<div id="imgUp"></div>
+									<div>
+										<button id="btn" type="button" onclick="ajax_save()"
+											class="button button-pill button-raised button-primary button-small">保存</button>
+										&nbsp;&nbsp;&nbsp;
+										<button type="button" class="button button-pill button-raised button-royal  button-small" onclick="fanhui()">取消</button>
+									</div>
+							</form>
+						</div>
+					</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- /Page Body -->
+  <!--Basic Scripts-->
+  <script src="${sys_cxt}/assets/js/bootstrap.min.js"></script>
+  <!--Beyond Scripts-->
+  <script src="${sys_cxt}/assets/js/beyond.min.js"></script>
+  <!--Page Related Scripts-->
+  <script src="${sys_cxt}/assets/js/datatable/jquery.dataTables.min.js"></script>
+  <script src="${sys_cxt}/assets/js/datatable/ZeroClipboard.js"></script>
+  <script src="${sys_cxt}/assets/js/datatable/dataTables.tableTools.min.js"></script>
+  <script src="${sys_cxt}/assets/js/datatable/dataTables.bootstrap.min.js"></script>
+  <script src="${sys_cxt}/assets/js/datatable/datatables-init.js"></script>
+  <script>
+      InitiateSimpleDataTable.init();
+      InitiateEditableDataTable.init();
+      InitiateExpandableDataTable.init();
+      InitiateSearchableDataTable.init();
+  </script>
+  <script>
+	layui.use([ 'element', 'form'], function() {
+		var element = layui.element;
+		var form = layui.form;
+		form.render();
+	});
+	layui.use('element', function() {
+		var element = layui.element(); //导航的hover效果、二级菜单等功能，需要依赖element模块
+		//监听导航点击s
+		element.on('nav(demo)', function(elem) {
+			//console.log(elem)
+			layer.msg(elem.text());
+		});
+	});
+</script>
+<script type="text/javascript">
+	function fanhui() {
+		window.location.href = window.history.go(-1);
+	}
+	function ajax_edit() {
+		$('#count').val(count);
+		$.ajax({
+			cache : true,
+			type : "POST",
+			url : "saveorupdateColumn",
+			data : $('#form').serialize(),
+			error : function(request) {
+				alert("连接错误");
+			},
+			success : function(data) {
+				if (null != data.error) {
+					return false;
+				} else {
+					//alert("修改成功");
+					layui.use('layer', function() {
+						var layer = layui.layer;
+						layer.msg('修改成功');
+					});
+				};
+			}
+		});
+	}
+	//点击弹出图片选择框
+	$(function() {  
+	    $("#addImg").on("click",function(){
+		    var uploadFile = '<input type="file" id="imageFile" name="image" style="display:none;" onchange="upload(this)"/>';  
+		    $("#imgUp").append($(uploadFile));//添加上传图片节点  
+		    $("#imageFile").click(); //执行点击事件         
+	    });
+	});
+	//点击弹出图片选择框
+	function uploadImg(columnId){
+		var uploadFile = '<input type="file" id="imageFile" name="image" style="display:none;" onchange="upload(this,' + columnId + ')"/>';  
+	    $("#imgUp").append($(uploadFile));//添加上传图片节点  
+	    $("#imageFile").click();
+	}
+	//上传图片
+	function upload(obj,columnId) {
+		var fileName = $('#imageFile').val();
+		$.ajaxFileUpload({
+			url : 'uploadImg', //提交的路径
+			secureuri : false, // 是否启用安全提交，默认为false
+			fileElementId : 'imageFile', // file控件id
+			dataType : 'json',
+			data : {fileName:fileName,columnId:columnId},//传递参数，用于解析出文件名// 键:值，传递文件名
+			success : function(data, status) {
+				if (data.error == 0) {
+					layui.use('layer', function(){
+					 	var layer = layui.layer;
+					 	layer.msg("上传成功！");
+					 });
+				} else {
+					layui.use('layer', function(){
+					 	var layer = layui.layer;
+					 	layer.msg("上传失败！");
+					 });
+				}
+				$('#imageFile').remove();
+			},
+			error : function(data, status) {
+				layui.use('layer', function(){
+				 	var layer = layui.layer;
+				 	layer.msg("连接错误");
+				 });
+				$('#imageFile').remove();
+			}
+		});
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<!-- Head -->
+<head>
+    <title>模块管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="description" content="data tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="${sys_cxt}/assets/img/favicon.png" type="image/x-icon"/>
+
+    <link href="${sys_cxt}/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/weather-icons.min.css" rel="stylesheet" />
+    <!--Fonts-->
+    <!--<link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">-->
+    <!--Beyond styles-->
+    <link rel="stylesheet" href="${sys_cxt}/assets/css/beyond.min.css" />
+    <link href="${sys_cxt}/assets/css/demo.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="${sys_cxt}/assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    <!--Page Related styles-->
+    <link href="${sys_cxt}/assets/css/dataTables.bootstrap.css" rel="stylesheet" />	
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="${sys_cxt}/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="${sys_cxt}/assets/js/skins.min.js"></script>
+    <link href="${sys_cxt}/css/head.css" rel="stylesheet" type="text/css" />
+	<link href="${sys_cxt}/css/custom.css" rel="stylesheet" type="text/css"/>
+	
+	<script type="text/javascript" src="${sys_cxt }/fun/js/fun.js"></script>
+<style>
+.header-right{
+  	width:75%;
+  	height:41px;
+  	background-color: #667add;
+  	color:#fff;
+    float: left;
+}
+.header-right dl{
+	float: left;
+	color:#fff;
+	padding: 0px 0px 0px 0px;
+}
+.header-right dl dt{
+	padding: 12px 40px 0px 2px;
+	font-size: 14px;
+	font-family: "微软雅黑";
+    color:#fff;
+}
+.header-right dl dt a{
+   color:#fff; 
+}
+.header-right dl dt:hover {
+   color: #2dc3e8;
+}
+.page-header .header-buttons a {
+  height: 35px;
+}
+.page-header {
+  height: 37px;
+}
+.page-header .header-title h1 {
+           line-height: 17px;
+         }
+button{
+	border: 0px;
+	margin:auto auto 10px 10px;
+}
+.titl{
+font-size: 1.4rem;
+line-height: 35px;
+}
+.url{
+margin-left: 10%;
+}
+#form span{
+font-size: 1rem;
+}
+/*a:link {color:white}
+      a:visited {color: #00FF00}
+   a:hover {color: #FF00FF}
+   a:active {color: #0000FF}*/
+</style>
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body>
+    <!-- Page Header -->
+    <div class="page-header position-relative">
+        <div class="header-title">
+            <span class="titl">
+                   网站管理                      
+                <span>
+                    <i class="fa fa-angle-right"></i>
+                            生成静态页               
+                </span>
+            </span>
+        </div>
+        <!--Header Buttons-->
+        <div class="header-buttons">
+           <!--  <a class="sidebar-toggler" href="#">
+                <i class="fa fa-arrows-h"></i>
+            </a>
+            <a class="refresh" id="refresh-toggler" href="">
+                <i class="glyphicon glyphicon-refresh"></i>
+            </a>
+            <a class="fullscreen" id="fullscreen-toggler" href="#">
+                <i class="glyphicon glyphicon-fullscreen"></i>
+            </a> -->
+        </div>
+        <!--Header Buttons End-->
+    </div>
+    <!-- /Page Header -->
+    <!-- Page Body -->
+    <div class="page-body">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="widget">
+                    <div class="widget-header ">
+                      <!--  <span class="widget-caption">Simple DataTable</span>-->
+                        <!-- <div class="widget-buttons">
+                            <a href="#" data-toggle="maximize">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                            <a href="#" data-toggle="collapse">
+                                <i class="fa fa-minus"></i>
+                            </a>
+                            <a href="#" data-toggle="dispose">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div> -->
+                    </div>
+                    <div class="widget-body" style="overflow-x:hidden;">
+	                      <table class="table table-striped table-bordered table-hover">
+	                           <!-- <tr><td>所有页面：</td><td>生成静态页</td></tr> -->
+	                           <tr>
+	                           		<td><span style="display:inline-block;min-width:100px;">网站首页栏目：</span><a href="javascript:generateHtml(82)">生成网站首页 &nbsp;&nbsp;&nbsp;</a><span class="url"><a href="${domain!}/index.html" target="_blank">查看</a></span></td>
+	                           </tr>
+	                           <tr>
+	                           		<td><span style="display:inline-block;min-width:100px;">走进名阳栏目：</span><a href="javascript:generateHtml(142)">生成走进名阳页</a><span class="url"><a href="${domain!}/zoujinmingyang.html" target="_blank">查看</a></span></td>
+	                           </tr>
+	                           <tr>
+	                           		<td><span style="display:inline-block;min-width:100px;">新闻中心栏目：</span><a href="javascript:generateHtml(164)">生成新闻中心页</a><span class="url"><a href="${domain!}/news.html" target="_blank">查看</a></span></td>
+	                           </tr>
+	                           <tr>
+	                           		<td><span style="display:inline-block;min-width:100px;">名阳家园栏目：</span><a href="javascript:generateHtml(162)">生成名阳家园页</a><span class="url"><a href="${domain!}/mingyangjiayuan.html" target="_blank">查看</a></span></td>
+	                           </tr>
+	                           <tr>
+	                           		<td><span style="display:inline-block;min-width:100px;">保险超市栏目：</span><a href="javascript:generateHtml(160)">生成保险超市页</a><span class="url"><a href="${domain!}/supermarket.html" target="_blank">查看</a></span></td>
+	                           </tr>
+	                           <tr>
+	                           		<td><span style="display:inline-block;min-width:100px;">加盟名阳栏目：</span><a href="javascript:generateHtml(158)">生成加盟名阳页</a><span class="url"><a href="${domain!}/jiamengmingyang.html" target="_blank">查看</a></span></td>
+	                           </tr>
+	                      <!-- <tr><td><span style="display:inline-block;min-width:100px;">联系我们栏目：</span><a href="javascript:generateHtml(156)">生成静态页</a></td></tr> -->
+	                           <tr>
+	                           		<td><span style="display:inline-block;min-width:100px;">全部新闻：</span><a href="javascript:generateNewsHtml()">生成全部新闻页</a></td>
+	                           </tr>
+	                      </table>
+                  	</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- /Page Body -->
+
+    <!--Basic Scripts-->
+    <script src="${sys_cxt}/assets/js/bootstrap.min.js"></script>
+
+    <!--Beyond Scripts-->
+    <script src="${sys_cxt}/assets/js/beyond.min.js"></script>
+
+    <!--Page Related Scripts-->
+    <script src="${sys_cxt}/assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/ZeroClipboard.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/dataTables.tableTools.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/dataTables.bootstrap.min.js"></script>
+    <script src="${sys_cxt}/assets/js/datatable/datatables-init.js"></script>
+    <script>
+        InitiateSimpleDataTable.init();
+        InitiateEditableDataTable.init();
+        InitiateExpandableDataTable.init();
+        InitiateSearchableDataTable.init();
+    </script>
+    <script>
+    //生成栏目页
+    function generateHtml(columnId){
+    	$.ajax({
+            type: "get",
+            async: false,
+            url: '${sys_cxt}/website/generate/generateHtml',
+            dataType: "json",
+            data:{columnId:columnId},
+            success:function (data) {
+                alert(data.msg);
+            },
+            error:function () {
+            	alert("链接错误");
+            }
+        });
+    }
+    //生成新闻页
+    function generateNewsHtml(){
+    	$.ajax({
+            type: "get",
+            async: false,
+            url: '${sys_cxt}/website/generate/generateNewsHtml',
+            dataType: "json",
+            data:{},
+            success:function (data) {
+                alert(data.msg);
+            },
+            error:function () {
+            	alert("链接错误");
+            }
+        });
+    }
+    </script>
+</body>
+</html>
